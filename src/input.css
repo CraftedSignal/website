@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/space-grotesk-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/space-grotesk-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./fonts/space-grotesk-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/space-grotesk-latin-700-normal.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(90, 176, 255, 0.08), transparent 25%),
+    radial-gradient(circle at 80% 10%, rgba(126, 208, 192, 0.08), transparent 22%),
+    #070b12;
+  color: #e4eaf5;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.code-shell {
+  position: relative;
+  height: 360px;
+}
+.code-shell pre {
+  height: 100%;
+  overflow: auto;
+  pointer-events: none;
+  white-space: pre;
+  padding: 1rem;
+  margin: 0;
+  background: transparent;
+}
+.code-shell code {
+  display: block;
+  font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace';
+  line-height: 1.5rem;
+  tab-size: 2;
+  background: transparent;
+  padding: 0;
+}
+.code-shell .hljs {
+  background: transparent;
+  padding: 0;
+}
+.code-shell textarea {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  background: transparent;
+  color: transparent;
+  caret-color: #5ab0ff;
+  font-family: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace';
+  line-height: 1.5rem;
+  padding: 1rem;
+  outline: none;
+  overflow: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+.code-shell textarea::selection {
+  background: rgba(90, 176, 255, 0.16);
+}
