@@ -78,7 +78,7 @@
 </head>
 <body class="min-h-screen text-text">
 <header class="sticky top-0 z-20 backdrop-blur bg-base/80 border-b border-stroke">
-  <div class="max-w-6xl mx-auto py-4 flex items-center justify-between gap-4">
+  <div class="max-w-6xl mx-auto px-4 md:px-0 py-4 flex items-center justify-between gap-4">
     <div class="flex items-center gap-2 font-display text-lg font-semibold">
 
         <span class="flex items-center">
@@ -96,7 +96,7 @@
 
     <div class="flex items-center gap-3">
       <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="https://github.com/signalforge/docs">Docs</a>
-      <a class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:sales@craftedsignal.example">Try for yourself</a>
+      <a class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:sales@craftedsignal.example">Try<span class="hidden sm:inline"> for yourself</span></a>
       <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="mailto:hello@craftedsignal.io;Subject=CraftedSignal">Contact</a>
     </div>
   </div>
@@ -167,10 +167,10 @@
 
           <br/>
 
-          <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="font-semibold">Suggestion: Improve webshell coverage</div>
-              <span class="text-xs font-semibold text-accent">AI</span>
+          <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2 overflow-hidden">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="font-semibold break-words flex-1 min-w-0">Suggestion: Improve webshell coverage</div>
+              <span class="text-xs font-semibold text-accent whitespace-nowrap flex-shrink-0">AI</span>
             </div>
 
             <span class="text-xs text-muted">
@@ -186,10 +186,10 @@
             </div>
           </div>
 
-          <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="font-semibold">Canary: Encoded PowerShell</div>
-              <span class="text-xs font-semibold text-accent">Testing</span>
+          <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2 overflow-hidden">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="font-semibold break-words flex-1 min-w-0">Canary: Encoded PowerShell</div>
+              <span class="text-xs font-semibold text-accent whitespace-nowrap flex-shrink-0">Testing</span>
             </div>
 
             <span class="text-xs text-muted">
@@ -209,16 +209,16 @@
     </div>
   </section>
 
-  <section class="px-6 py-10 md:py-12 bg-panel/50 border-y border-stroke">
-    <div class="max-w-6xl mx-auto space-y-4">
-      <div class="flex items-center justify-between flex-wrap gap-3 pl-2">
+  <section class="px-0 md:px-6 py-10 md:py-12 bg-panel/50 border-y border-stroke">
+    <div class="max-w-6xl mx-auto px-6 md:px-0 space-y-4">
+      <div class="flex items-center justify-between flex-wrap gap-3">
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Problems we kill</p>
           <h3 class="font-display text-xl md:text-2xl font-semibold">The obvious SOC headaches, solved</h3>
         </div>
-        <span class="text-sm text-muted pr-2">We stop these from slowing you down.</span>
+        <span class="text-sm text-muted">We stop these from slowing you down.</span>
       </div>
-      <div id="problems-slider" class="flex gap-3 overflow-x-auto pb-2 snap-x scroll-smooth no-scrollbar pl-1">
+      <div id="problems-slider" class="flex gap-3 overflow-x-auto pb-2 snap-x scroll-smooth no-scrollbar -mx-6 md:mx-0 px-6 md:px-0">
         <div class="flex-none w-64 snap-start rounded-2xl border border-stroke bg-base/70 p-4">
           <div class="font-semibold">Noisy rules</div>
           <p class="text-sm text-muted">Noise budgets and auto-rollback on breach.</p>
@@ -275,15 +275,15 @@
           <h2 class="font-display text-2xl md:text-3xl font-semibold">Edit, test, and save detection rules</h2>
           <p class="text-muted max-w-3xl">Work directly in the code editor with syntax highlighting, guardrails, and browser-side saves before you deploy.</p>
         </div>
-        <div class="rounded-xl border border-stroke bg-panel/80 p-4 shadow-soft space-y-2">
-          <div class="flex items-center justify-between">
+        <div class="rounded-xl border border-stroke bg-panel/80 p-4 shadow-soft space-y-2 w-full sm:w-auto">
+          <div class="flex items-center justify-between gap-2">
             <span class="text-xs font-semibold uppercase tracking-[0.12em] text-accent2">Guardrails</span>
-            <span class="text-xs text-muted">live</span>
+            <span class="text-xs text-muted whitespace-nowrap">live</span>
           </div>
           <div class="flex flex-wrap gap-2 text-xs text-muted">
-            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70">Noise budget: 0.2%</span>
-            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70">Cost cap: €12/d</span>
-            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70">Coverage: TA0002/TA0003</span>
+            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70 whitespace-nowrap">Noise budget: 0.2%</span>
+            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70 whitespace-nowrap">Cost cap: €12/d</span>
+            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70 whitespace-nowrap">Coverage: TA0002/TA0003</span>
           </div>
         </div>
       </div>
@@ -291,44 +291,44 @@
       <div class="grid lg:grid-cols-3 gap-6">
         <div class="space-y-4">
           <div class="rounded-2xl border border-stroke bg-panel/80 p-4 shadow-soft space-y-4">
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
               <h3 class="font-semibold">Rule library</h3>
-              <span class="text-xs font-semibold px-3 py-1 rounded-lg border border-accent/30 bg-accent/10 text-accent">Live + shadow</span>
+              <span class="text-xs font-semibold px-3 py-1 rounded-lg border border-accent/30 bg-accent/10 text-accent whitespace-nowrap">Live + shadow</span>
             </div>
             <div class="space-y-3">
-              <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <div class="font-semibold text-text">Encoded PowerShell</div>
-                    <p class="text-xs text-muted">Shadow eval · Sentinel + Splunk</p>
+              <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2 overflow-hidden">
+                <div class="flex items-start justify-between gap-2 flex-wrap">
+                  <div class="min-w-0 flex-1">
+                    <div class="font-semibold text-text break-words">Encoded PowerShell</div>
+                    <p class="text-xs text-muted break-words">Shadow eval · Sentinel + Splunk</p>
                   </div>
-                  <span class="px-2 py-1 rounded-lg bg-accent/10 text-xs text-accent font-semibold">Noise +0.2%</span>
+                  <span class="px-2 py-1 rounded-lg bg-accent/10 text-xs text-accent font-semibold whitespace-nowrap flex-shrink-0">Noise +0.2%</span>
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs">
                   <button data-rule-id="encoded-powershell" class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/10 text-accent hover:scale-[1.01] transition">Load</button>
                   <span class="px-3 py-1.5 rounded-lg border border-stroke text-muted">Shadow eval</span>
                 </div>
               </div>
-              <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <div class="font-semibold text-text">Webshell Uploads</div>
-                    <p class="text-xs text-muted">Production · WAF + Apache/IIS</p>
+              <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2 overflow-hidden">
+                <div class="flex items-start justify-between gap-2 flex-wrap">
+                  <div class="min-w-0 flex-1">
+                    <div class="font-semibold text-text break-words">Webshell Uploads</div>
+                    <p class="text-xs text-muted break-words">Production · WAF + Apache/IIS</p>
                   </div>
-                  <span class="px-2 py-1 rounded-lg bg-accent2/10 text-xs text-accent2 font-semibold">Attested</span>
+                  <span class="px-2 py-1 rounded-lg bg-accent2/10 text-xs text-accent2 font-semibold whitespace-nowrap flex-shrink-0">Attested</span>
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs">
                   <button data-rule-id="webshell-upload" class="px-3 py-1.5 rounded-lg border border-accent2/40 bg-accent2/10 text-text hover:scale-[1.01] transition">Load</button>
                   <span class="px-3 py-1.5 rounded-lg border border-stroke text-muted">Noise budget 0.1%</span>
                 </div>
               </div>
-              <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <div class="font-semibold text-text">Suspicious Kerberoasting</div>
-                    <p class="text-xs text-muted">Testing · Sigma → Splunk</p>
+              <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2 overflow-hidden">
+                <div class="flex items-start justify-between gap-2 flex-wrap">
+                  <div class="min-w-0 flex-1">
+                    <div class="font-semibold text-text break-words">Suspicious Kerberoasting</div>
+                    <p class="text-xs text-muted break-words">Testing · Sigma → Splunk</p>
                   </div>
-                  <span class="px-2 py-1 rounded-lg bg-base/80 border border-stroke text-xs text-muted font-semibold">Needs review</span>
+                  <span class="px-2 py-1 rounded-lg bg-base/80 border border-stroke text-xs text-muted font-semibold whitespace-nowrap flex-shrink-0">Needs review</span>
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs">
                   <button data-rule-id="kerberoasting" class="px-3 py-1.5 rounded-lg border border-stroke text-text hover:border-accent/50 hover:text-accent transition">Load</button>
@@ -339,26 +339,26 @@
           </div>
         </div>
 
-        <div class="lg:col-span-2 rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-4">
-          <div class="flex items-center justify-between flex-wrap gap-3">
-            <div>
+        <div class="lg:col-span-2 rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-4 overflow-hidden">
+          <div class="flex items-start justify-between flex-wrap gap-3">
+            <div class="min-w-0 flex-1">
               <p class="text-xs text-muted">Active rule</p>
               <div class="flex items-center gap-2 flex-wrap">
-                <h3 id="active-rule-title" class="font-semibold text-lg">Encoded PowerShell</h3>
-                <span id="rule-context" class="px-2 py-1 rounded-lg border border-stroke bg-base/70 text-xs text-muted">Shadow eval</span>
+                <h3 id="active-rule-title" class="font-semibold text-lg break-words">Encoded PowerShell</h3>
+                <span id="rule-context" class="px-2 py-1 rounded-lg border border-stroke bg-base/70 text-xs text-muted whitespace-nowrap flex-shrink-0">Shadow eval</span>
               </div>
             </div>
-            <div class="flex items-center gap-2">
-              <span id="save-status" class="text-xs font-semibold px-3 py-1 rounded-lg border border-stroke bg-base/70 text-muted">Draft</span>
-              <button id="save-rule" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-accent to-accent2 text-sm font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition">Save rule</button>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span id="save-status" class="text-xs font-semibold px-3 py-1 rounded-lg border border-stroke bg-base/70 text-muted whitespace-nowrap">Draft</span>
+              <button id="save-rule" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-accent to-accent2 text-sm font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition whitespace-nowrap">Save rule</button>
             </div>
           </div>
           <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-3">
-            <div class="flex items-center justify-between text-xs text-muted">
-              <span>Edit in a syntax-highlighted code editor</span>
-              <span class="flex items-center gap-2">
-                  <span class="px-2 py-1 rounded-md border border-stroke bg-panel/70 text-[11px] text-muted">YAML · KQL · SPL</span>
-                  <button id="copy-rule" class="px-3 py-1.5 rounded-md border border-stroke hover:border-accent/50 hover:text-text transition text-[11px]">Copy</button>
+            <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-muted overflow-hidden">
+              <span class="break-words"><span class="hidden sm:inline">Edit in a syntax-highlighted </span>Code editor</span>
+              <span class="flex items-center gap-2 flex-wrap flex-shrink-0">
+                  <span class="px-2 py-1 rounded-md border border-stroke bg-panel/70 text-[11px] text-muted whitespace-nowrap">YAML · KQL · SPL</span>
+                  <button id="copy-rule" class="px-3 py-1.5 rounded-md border border-stroke hover:border-accent/50 hover:text-text transition text-[11px] whitespace-nowrap">Copy</button>
                 </span>
             </div>
             <div class="code-shell rounded-lg border border-stroke bg-base/80">
@@ -366,9 +366,9 @@
               <textarea id="rule-editor" spellcheck="false" aria-label="Rule code editor" class="text-sm leading-6"></textarea>
             </div>
             <div class="flex flex-wrap gap-2 text-xs text-muted">
-              <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">Local save persists in your browser</span>
-              <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">Auto-highlights as you type</span>
-              <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">Guardrails: noise, cost, coverage</span>
+              <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 whitespace-nowrap">Local save persists in your browser</span>
+              <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 whitespace-nowrap">Auto-highlights as you type</span>
+              <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 whitespace-nowrap">Guardrails: noise, cost, coverage</span>
             </div>
           </div>
         </div>
@@ -376,8 +376,8 @@
     </div>
   </section>
 
-  <section id="value" class="px-6 py-14 md:py-20 bg-panel/50 border-y border-stroke">
-    <div class="max-w-6xl mx-auto space-y-6">
+  <section id="value" class="px-0 md:px-6 py-14 md:py-20 bg-panel/50 border-y border-stroke">
+    <div class="max-w-6xl mx-auto px-6 md:px-0 space-y-6">
       <div class="flex flex-col gap-2">
         <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Why CraftedSignal</p>
         <h2 class="font-display text-2xl md:text-3xl font-semibold">Guardrails built for efficient SOCs</h2>
@@ -515,8 +515,8 @@
     </div>
   </section>
 
-  <section id="roi" class="px-6 py-14 md:py-20 bg-panel/50 border-y border-stroke">
-    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+  <section id="roi" class="px-0 md:px-6 py-14 md:py-20 bg-panel/50 border-y border-stroke">
+    <div class="max-w-6xl mx-auto px-6 md:px-0 grid lg:grid-cols-2 gap-8 items-start">
       <div class="space-y-3">
         <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Easy Return on Investment</p>
         <h2 class="font-display text-2xl md:text-3xl font-semibold">Make the baby steps visible</h2>
@@ -640,8 +640,8 @@
     </div>
   </section>
 
-  <section class="px-6 py-14 md:py-20 bg-panel/60 border-t border-stroke">
-    <div class="max-w-5xl mx-auto text-center space-y-4">
+  <section class="px-0 md:px-6 py-14 md:py-20 bg-panel/60 border-t border-stroke">
+    <div class="max-w-5xl mx-auto px-6 md:px-0 text-center space-y-4">
 
       <h2 class="font-display text-3xl font-semibold">Ready to rollout efficiency to your SOC?</h2>
       <p class="text-muted max-w-2xl mx-auto">Noise budgets, cost controls, data contracts, and rollback you can trust — across your tech stack. We never own, but improve.</p>
