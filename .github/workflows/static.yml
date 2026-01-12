@@ -1,4 +1,4 @@
-# Deploy static content to GitHub Pages with auto-releases
+# Deploy Hugo site to GitHub Pages with auto-releases
 name: Deploy and Release
 
 on:
@@ -29,32 +29,33 @@ jobs:
       - name: Generate version
         id: version
         run: |
-          # Generate version: v1.0.{run_number}
           VERSION="v1.0.${{ github.run_number }}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Generated version: $VERSION"
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build assets
-        run: npm run build
-
-      - name: Prepare deployment
-        run: npm run deploy:prepare
+      - name: Build site
+        run: hugo --minify
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: website-${{ steps.version.outputs.version }}
-          path: '.deploy'
+          path: 'public'
           retention-days: 30
 
       - name: Setup Pages
@@ -63,7 +64,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: '.deploy'
+          path: 'public'
 
   deploy:
     needs: build

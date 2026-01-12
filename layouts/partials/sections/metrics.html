@@ -1,0 +1,33 @@
+<section id="metrics" class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-6">
+    <div class="flex flex-col gap-2">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "metricsLabel" | default "Metrics & ROI" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "metricsTitle" | default "Make detection discipline measurable" }}</h2>
+      <p class="text-muted max-w-3xl">{{ i18n "metricsDescription" | default "Report noise saved, cost avoided, TTDetect/TTRem, SNR, parser/data-contract SLOs, and MITRE coverage on a single dashboard so leadership sees continuous improvement." }}</p>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "metricsCard1Title" | default "Operational SLOs" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "metricsCard1Desc" | default "TTDetect (time to detect), TTRem (time to repair), alert latency, data quality SLOs, and noise budgets per team with burn-down and breach alerts." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "metricsCard2Title" | default "Quality & Coverage" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "metricsCard2Desc" | default "SNR scoring, confidence decay, portability score, and coverage heatmaps by MITRE tactic/technique with data-source readiness." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "metricsCard3Title" | default "Cost & Efficiency" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "metricsCard3Desc" | default "Cost per signal, cheap vs high-fidelity routing, ingestion waste avoided by blocking rules on bad parser/enrichment contracts." }}</p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-stroke bg-panel/80 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "dashboardTitle" | default "Dashboard outline" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "dashboardDesc" | default "Top KPIs (SNR, noise burn, TTDetect, TTRem, cost avoided), a coverage heatmap with cheapest/high-fidelity suggestions, and quick actions for incidents + detection debt." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-panel/80 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "exportsTitle" | default "Exports & ROI storytelling" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "exportsDesc" | default "Noise saved and cost avoided counters drop into exec packs, charts, and API feeds so you can prove detection engineering improvements." }}</p>
+      </div>
+    </div>
+  </div>
+</section>

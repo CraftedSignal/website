@@ -1,0 +1,259 @@
+# Navigation
+[navProblem]
+other = "Problem"
+
+[navArchitecture]
+other = "Architecture"
+
+[navRules]
+other = "Rules"
+
+[navTrust]
+other = "Trust"
+
+[navPeople]
+other = "People"
+
+[navMetrics]
+other = "Metrics"
+
+[navFlow]
+other = "Flow"
+
+[navROI]
+other = "ROI"
+
+[navDocs]
+other = "Docs"
+
+[navTry]
+other = "Try"
+
+[navTrySuffix]
+other = "for yourself"
+
+[navContact]
+other = "Contact"
+
+# Meta
+[tagline]
+other = "SOC Control Plane for Detection Engineering"
+
+[metaDescription]
+other = "Detection-as-Code platform with noise budgets, cost controls, and guardrails. Stop shipping broken rules and detection debt. Manage your SOC like a true development factory."
+
+[ogTitle]
+other = "SOC Control Plane"
+
+[ogDescription]
+other = "Detection-as-Code platform with noise budgets, cost controls, and guardrails for efficient SOC operations."
+
+[schemaDescription]
+other = "SOC Control Plane for Detection Engineering. Manage SIEM rules with noise budgets, cost controls, and detection-as-code workflows."
+
+# Hero Section
+[heroBadge]
+other = "Detection Engineering Control Plane"
+
+[heroTitle]
+other = "SignalForge treats SOC detections like software: canonical rules, validated translation, and health guardrails before an alert ever runs."
+
+[heroDescription]
+other = "Start with MITRE-aligned intent, write canonical IR that passes schema lint, unit fixtures, and replay, then translate safely across every SIEM/XDR with scoped canaries, blast radius controls, and audit trails. Noise budgets, cost caps, and data-contract horming keep teams honest while the orchestration engine enforces approvals and rollbacks for you."
+
+[heroStep1]
+other = "1) Ideate a rule, map to MITRE, capture noise/cost expectations."
+
+[heroStep2]
+other = "2) Build canonical IR, run lint + unit + replay tests, log portability and capability scores."
+
+[heroStep3]
+other = "3) Shadow eval with projected alerts/cost, submit the canary to approvals, and guard noise budgets."
+
+[heroStep4]
+other = "4) Monitor TTDetect/TTRem, SNR, parser drift, and auto-suggest tuning or retirement."
+
+# Tags
+[tagDetectionsAsCode]
+other = "Detections as Code"
+
+[tagNoiseBudgets]
+other = "Noise Budgets"
+
+[tagParserSLOs]
+other = "Parser SLOs"
+
+[tagMITRE]
+other = "MITRE Coverage"
+
+[tagMultiSIEM]
+other = "Multi-SIEM Translation"
+
+[tagAIGuardrails]
+other = "AI Guardrails"
+
+# CTAs
+[ctaDemo]
+other = "Schedule a live demo"
+
+[ctaControlPlane]
+other = "See the control plane"
+
+# Health Card
+[healthGlance]
+other = "SOC health at a glance"
+
+[signalMetrics]
+other = "Signal metrics"
+
+[metricSNR]
+other = "Signal-to-noise score"
+
+[metricTTDetect]
+other = "TTDetect median"
+
+[metricTTRem]
+other = "TTRem SLAs"
+
+[metricNoiseBudget]
+other = "Noise budget burn"
+
+[guardrailsTitle]
+other = "Guardrails enforced in every stage"
+
+[guardrailsDescription]
+other = "Noise budgets, cost caps, parser SLOs, portability diffs, and AI-assisted suggestions run in the sandbox before promotion."
+
+[featureShadow]
+other = "Shadow evaluation"
+
+[featureCost]
+other = "Cost projections"
+
+[featureRunbook]
+other = "Runbook & approval checklist"
+
+# Architecture Section
+[archLabel]
+other = "Control plane anatomy"
+
+[archTitle]
+other = "Control logic instead of platform syntax"
+
+[archDescription]
+other = "Governance, rule lifecycle, and observability live outside every SIEM/XDR. A canonical AST/IR describes intent, a translator renders SPL/KQL/FalconQL with portability scores, a sandbox and replay path validate capability, and the orchestrator stages safe deploys and rollbacks."
+
+[archCard1Title]
+other = "Canonical Rule & Translation Engine"
+
+[archCard1Desc]
+other = "Capture filters, joins, thresholds, and MITRE mapping in a neutral AST, then emit platform renderings while surfacing diffs so analysts understand drift."
+
+[archCard2Title]
+other = "Test & Validation Engine"
+
+[archCard2Desc]
+other = "Lint for syntax/capabilities, run positive/negative fixtures, historical replay, and continuous validation to quarantine flaky parsers or noisy rules before approval."
+
+[archCard3Title]
+other = "Deployment Orchestrator"
+
+[archCard3Desc]
+other = "Change windows, approvals, blast-radius controls, scoped kill switches, and rollback automation ensure every promotion obeys noise, cost, and data guardrails."
+
+[archCard4Title]
+other = "Health & Analytics Engine"
+
+[archCard4Desc]
+other = "SNR, TTDetect, TTRem, noise budgets, parser SLOs, and coverage heatmaps keep SOC leaders focused on detectable gaps and detection debt backlogs."
+
+[archCard5Title]
+other = "Secure Agents & Translation Sandbox"
+
+[archCard5Desc]
+other = "Signed bundles, outbound-only agents, and sandboxed evaluation plug into customer boundaries without exposing logs or inbound ports."
+
+# Problems Section
+[problemsLabel]
+other = "Problems we kill"
+
+[problemsTitle]
+other = "The obvious SOC headaches, solved"
+
+[problemsSubtitle]
+other = "We stop these from slowing you down."
+
+# Footer
+[footerTagline]
+other = "Detection Engineering Control Plane"
+
+[footerSlogan]
+other = "Detection engineering, done right."
+
+# Common
+[load]
+other = "Load"
+
+[copy]
+other = "Copy"
+
+[draft]
+other = "Draft"
+
+[live]
+other = "live"
+
+[guardrails]
+other = "Guardrails"
+
+[attested]
+other = "Attested"
+
+[portable]
+other = "Portable"
+
+[noiseLabel]
+other = "Noise"
+
+[noiseBudget]
+other = "Noise budget"
+
+[shadowEval]
+other = "Shadow eval"
+
+[needsReview]
+other = "Needs review"
+
+[saveRule]
+other = "Save rule"
+
+[activeRule]
+other = "Active rule"
+
+[codeEditor]
+other = "Code editor"
+
+[editInEditor]
+other = "Edit in a syntax-highlighted "
+
+[localSave]
+other = "Local save persists in your browser"
+
+[autoHighlight]
+other = "Auto-highlights as you type"
+
+[guardrailsNCC]
+other = "Guardrails: noise, cost, coverage"
+
+# Final CTA
+[ctaTitle]
+other = "Ready to rollout efficiency to your SOC?"
+
+[ctaDescription]
+other = "Noise budgets, cost controls, data contracts, and rollback you can trust — across your tech stack. We never own, but improve."
+
+[ctaTry]
+other = "Try it now"
+
+[ctaDocs]
+other = "View the docs"

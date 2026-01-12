@@ -1,0 +1,108 @@
+<section id="rules" class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-6">
+    <div class="flex flex-wrap items-start justify-between gap-4">
+      <div class="space-y-2">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "rulesLabel" | default "Rules workspace" }}</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "rulesTitle" | default "Edit, test, and save detection rules" }}</h2>
+        <p class="text-muted max-w-3xl">{{ i18n "rulesDescription" | default "Work directly in the code editor with syntax highlighting, guardrails, and browser-side saves before you deploy." }}</p>
+      </div>
+      <div class="rounded-xl border border-stroke bg-panel/80 p-4 shadow-soft space-y-2 w-full sm:w-auto">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-xs font-semibold uppercase tracking-[0.12em] text-accent2">{{ i18n "guardrails" | default "Guardrails" }}</span>
+          <span class="text-xs text-muted whitespace-nowrap">{{ i18n "live" | default "live" }}</span>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs text-muted">
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70 whitespace-nowrap">{{ i18n "noiseBudgetValue" | default "Noise budget: 0.2%" }}</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70 whitespace-nowrap">{{ i18n "costCapValue" | default "Cost cap: €12/d" }}</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/70 whitespace-nowrap">{{ i18n "coverageValue" | default "Coverage: TA0002/TA0003" }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-stroke bg-panel/80 p-4 shadow-soft space-y-4">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <h3 class="font-semibold">{{ i18n "ruleLibrary" | default "Rule library" }}</h3>
+            <span class="text-xs font-semibold px-3 py-1 rounded-lg border border-accent/30 bg-accent/10 text-accent whitespace-nowrap">{{ i18n "liveShadow" | default "Live + shadow" }}</span>
+          </div>
+          <div class="space-y-3">
+            <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2 overflow-hidden">
+              <div class="flex items-start justify-between gap-2 flex-wrap">
+                <div class="min-w-0 flex-1">
+                  <div class="font-semibold text-text break-words">{{ i18n "rule1Name" | default "Encoded PowerShell" }}</div>
+                  <p class="text-xs text-muted break-words">{{ i18n "rule1Context" | default "Shadow eval · Sentinel + Splunk" }}</p>
+                </div>
+                <span class="px-2 py-1 rounded-lg bg-accent/10 text-xs text-accent font-semibold whitespace-nowrap flex-shrink-0">{{ i18n "noiseLabel" | default "Noise" }} +0.2%</span>
+              </div>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <button data-rule-id="encoded-powershell" class="px-3 py-1.5 rounded-lg border border-accent/30 bg-accent/10 text-accent hover:scale-[1.01] transition">{{ i18n "load" | default "Load" }}</button>
+                <span class="px-3 py-1.5 rounded-lg border border-stroke text-muted">{{ i18n "shadowEval" | default "Shadow eval" }}</span>
+              </div>
+            </div>
+            <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2 overflow-hidden">
+              <div class="flex items-start justify-between gap-2 flex-wrap">
+                <div class="min-w-0 flex-1">
+                  <div class="font-semibold text-text break-words">{{ i18n "rule2Name" | default "Webshell Uploads" }}</div>
+                  <p class="text-xs text-muted break-words">{{ i18n "rule2Context" | default "Production · WAF + Apache/IIS" }}</p>
+                </div>
+                <span class="px-2 py-1 rounded-lg bg-accent2/10 text-xs text-accent2 font-semibold whitespace-nowrap flex-shrink-0">{{ i18n "attested" | default "Attested" }}</span>
+              </div>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <button data-rule-id="webshell-upload" class="px-3 py-1.5 rounded-lg border border-accent2/40 bg-accent2/10 text-text hover:scale-[1.01] transition">{{ i18n "load" | default "Load" }}</button>
+                <span class="px-3 py-1.5 rounded-lg border border-stroke text-muted">{{ i18n "noiseBudget" | default "Noise budget" }} 0.1%</span>
+              </div>
+            </div>
+            <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-2 overflow-hidden">
+              <div class="flex items-start justify-between gap-2 flex-wrap">
+                <div class="min-w-0 flex-1">
+                  <div class="font-semibold text-text break-words">{{ i18n "rule3Name" | default "Suspicious Kerberoasting" }}</div>
+                  <p class="text-xs text-muted break-words">{{ i18n "rule3Context" | default "Testing · Sigma → Splunk" }}</p>
+                </div>
+                <span class="px-2 py-1 rounded-lg bg-base/80 border border-stroke text-xs text-muted font-semibold whitespace-nowrap flex-shrink-0">{{ i18n "needsReview" | default "Needs review" }}</span>
+              </div>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <button data-rule-id="kerberoasting" class="px-3 py-1.5 rounded-lg border border-stroke text-text hover:border-accent/50 hover:text-accent transition">{{ i18n "load" | default "Load" }}</button>
+                <span class="px-3 py-1.5 rounded-lg border border-stroke text-muted">{{ i18n "portable" | default "Portable" }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-4 overflow-hidden">
+        <div class="flex items-start justify-between flex-wrap gap-3">
+          <div class="min-w-0 flex-1">
+            <p class="text-xs text-muted">{{ i18n "activeRule" | default "Active rule" }}</p>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h3 id="active-rule-title" class="font-semibold text-lg break-words">{{ i18n "rule1Name" | default "Encoded PowerShell" }}</h3>
+              <span id="rule-context" class="px-2 py-1 rounded-lg border border-stroke bg-base/70 text-xs text-muted whitespace-nowrap flex-shrink-0">{{ i18n "shadowEval" | default "Shadow eval" }}</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span id="save-status" class="text-xs font-semibold px-3 py-1 rounded-lg border border-stroke bg-base/70 text-muted whitespace-nowrap">{{ i18n "draft" | default "Draft" }}</span>
+            <button id="save-rule" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-accent to-accent2 text-sm font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition whitespace-nowrap">{{ i18n "saveRule" | default "Save rule" }}</button>
+          </div>
+        </div>
+        <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-3">
+          <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-muted overflow-hidden">
+            <span class="break-words"><span class="hidden sm:inline">{{ i18n "editInEditor" | default "Edit in a syntax-highlighted " }}</span>{{ i18n "codeEditor" | default "Code editor" }}</span>
+            <span class="flex items-center gap-2 flex-wrap flex-shrink-0">
+              <span class="px-2 py-1 rounded-md border border-stroke bg-panel/70 text-[11px] text-muted whitespace-nowrap">YAML · KQL · SPL</span>
+              <button id="copy-rule" class="px-3 py-1.5 rounded-md border border-stroke hover:border-accent/50 hover:text-text transition text-[11px] whitespace-nowrap">{{ i18n "copy" | default "Copy" }}</button>
+            </span>
+          </div>
+          <div class="code-shell rounded-lg border border-stroke bg-base/80">
+            <pre aria-hidden="true" class="text-sm leading-6"><code id="rules-highlighted" class="language-yaml"></code></pre>
+            <textarea id="rule-editor" spellcheck="false" aria-label="Rule code editor" class="text-sm leading-6"></textarea>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs text-muted">
+            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 whitespace-nowrap">{{ i18n "localSave" | default "Local save persists in your browser" }}</span>
+            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 whitespace-nowrap">{{ i18n "autoHighlight" | default "Auto-highlights as you type" }}</span>
+            <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 whitespace-nowrap">{{ i18n "guardrailsNCC" | default "Guardrails: noise, cost, coverage" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

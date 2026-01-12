@@ -1,0 +1,77 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary Meta Tags -->
+<title>{{ .Site.Title }} – {{ i18n "tagline" | default .Site.Params.tagline }}</title>
+<meta name="title" content="{{ .Site.Title }} – {{ i18n "tagline" | default .Site.Params.tagline }}">
+<meta name="description" content="{{ i18n "metaDescription" | default .Site.Params.description }}">
+<meta name="keywords" content="SIEM, detection engineering, SOC, detection-as-code, MITRE ATT&CK, Splunk, Sentinel, security automation">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Site.Title }} – {{ i18n "ogTitle" | default "SOC Control Plane" }}">
+<meta property="og:description" content="{{ i18n "ogDescription" | default "Detection-as-Code platform with noise budgets, cost controls, and guardrails for efficient SOC operations." }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}assets/og-image.png">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ .Site.Title }} – {{ i18n "ogTitle" | default "SOC Control Plane" }}">
+<meta name="twitter:description" content="{{ i18n "ogDescription" | default "Detection-as-Code platform with noise budgets, cost controls, and guardrails for efficient SOC operations." }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}assets/twitter-card.png">
+
+<!-- Robots -->
+<meta name="robots" content="index, follow">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ .Site.Title }}",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Web",
+  "description": "{{ i18n "schemaDescription" | default "SOC Control Plane for Detection Engineering. Manage SIEM rules with noise budgets, cost controls, and detection-as-code workflows." }}",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Detection-as-Code",
+    "Noise Budget Management",
+    "Cost Guardrails",
+    "MITRE ATT&CK Coverage",
+    "Multi-SIEM Support",
+    "AI-Powered Suggestions"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ .Site.BaseURL }}assets/logo.png",
+  "sameAs": [
+    "{{ .Site.Params.githubURL }}"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Sales",
+    "email": "{{ .Site.Params.salesEmail }}"
+  }
+}
+</script>
+
+{{ $css := resources.Get "css/main.css" | css.PostCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ $hljs := resources.Get "css/hljs.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $hljs.RelPermalink }}" />

@@ -1,0 +1,35 @@
+<section id="trust" class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-6">
+    <div class="flex flex-col gap-2">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "trustLabel" | default "Trust & compliance" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "trustTitle" | default "Control plane security, boundaries, and auditability" }}</h2>
+      <p class="text-muted max-w-3xl">{{ i18n "trustDescription" | default "SignalForge stores only rules and metadata; approval workflows, signed bundles, RBAC, and immutable audit logs keep every change verifiable without touching customer log data." }}</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "trustCard1Title" | default "Data Boundaries" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "trustCard1Desc" | default "Control plane rules and metadata stay separate from customer logs; outbound-only agents and signed config bundles avoid opening inbound ports." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "trustCard2Title" | default "Identity & Access" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "trustCard2Desc" | default "SSO/SAML/OIDC with MFA, tenant-scoped RBAC, separation of duties, and just-in-time breakglass access keep approvals auditable." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "trustCard3Title" | default "Secrets & Keys" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "trustCard3Desc" | default "Per-tenant vaulted credentials, short-lived deploy tokens, and rotation policies protect agent sessions." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "trustCard4Title" | default "Audit & Logging" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "trustCard4Desc" | default "Immutable logs for rules, tests, deploys, and approvals; tamper-evident storage exportable to SIEMs for compliance reviews." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "trustCard5Title" | default "Supply Chain" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "trustCard5Desc" | default "Signed artifacts (CLI, agents), SBOM, dependency pinning, and rule pack attestations align with SLSA/SOC2 goals." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">{{ i18n "trustCard6Title" | default "Compliance Targets" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "trustCard6Desc" | default "SOC 2 Type II, ISO 27001, and NIS2 reporting support with configurable data residency and retention." }}</p>
+      </div>
+    </div>
+  </div>
+</section>

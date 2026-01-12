@@ -1,0 +1,102 @@
+<section id="flow" class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-6">
+    <div class="flex flex-col gap-2">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "flowLabel" | default "How it works" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold mb-2">{{ i18n "flowTitle" | default "Connect → Baseline → Improve" }}</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-5">
+        <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center font-semibold text-accent">1</div>
+          <div>
+            <h3 class="font-semibold">{{ i18n "flowStep1Title" | default "Connect & import" }}</h3>
+            <p class="text-muted text-sm">{{ i18n "flowStep1Desc" | default "Connect your SIEM of choice. We import your rules, baselines, mappings and alert history. On-prem or cloud based." }}</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center font-semibold text-accent">2</div>
+          <div>
+            <h3 class="font-semibold">{{ i18n "flowStep2Title" | default "Baseline & score" }}</h3>
+            <p class="text-muted text-sm">{{ i18n "flowStep2Desc" | default "We uncover noisy/broken/stale/never-triggering rules. Build SNR, cost, MITRE coverage scores." }}</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center font-semibold text-accent">3</div>
+          <div>
+            <h3 class="font-semibold">{{ i18n "flowStep3Title" | default "Guardrails on change" }}</h3>
+            <p class="text-muted text-sm">{{ i18n "flowStep3Desc" | default "Noise budgets, cost projections, parser SLOs, portability diffs. Shadow and canary before prod." }}</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center font-semibold text-accent">4</div>
+          <div>
+            <h3 class="font-semibold">{{ i18n "flowStep4Title" | default "Deploy from Code" }}</h3>
+            <p class="text-muted text-sm">{{ i18n "flowStep4Desc" | default "We generate your Detections as Code. Deploy with approvals, blast radius control and rollbacks from the web interface or code." }}</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center font-semibold text-accent">5</div>
+          <div>
+            <h3 class="font-semibold">{{ i18n "flowStep5Title" | default "Monitor & tune" }}</h3>
+            <p class="text-muted text-sm">{{ i18n "flowStep5Desc" | default "Continuously monitor SOC health: SNR, cost drift, data contracts. Auto-suggest suppressions and retire dead rules." }}</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center font-semibold text-accent">6</div>
+          <div>
+            <h3 class="font-semibold">{{ i18n "flowStep6Title" | default "Improve your coverage" }}</h3>
+            <p class="text-muted text-sm">{{ i18n "flowStep6Desc" | default "Get AI or Threat Intelligence-based suggestions for new rules to add or merge in your current rules." }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold">{{ i18n "afterSetupTitle" | default "What you can do after setup" }}</h3>
+          <span class="px-2 py-1 rounded-lg bg-accent/10 text-accent text-xs font-semibold">{{ i18n "afterSetupBadge" | default "Analyst/SOC lead" }}</span>
+        </div>
+        <div class="space-y-3">
+          <div class="rounded-xl border border-stroke bg-base/70 p-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-text">{{ i18n "action1Title" | default "Approve a canary" }}</span>
+              <span class="text-xs text-accent">{{ i18n "action1Stats" | default "Alerts: 5/h · Noise +0.2% · Cost €12/d" }}</span>
+            </div>
+            <p class="text-sm text-muted mt-1">{{ i18n "action1Desc" | default "Blast radius: 10% indexes · rollback armed." }}</p>
+          </div>
+          <div class="rounded-xl border border-stroke bg-base/70 p-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-text">{{ i18n "action2Title" | default "Test before production" }}</span>
+              <span class="text-xs text-accent">{{ i18n "action2Stats" | default "Latency 1.2s · Cost guardrail" }}</span>
+            </div>
+            <p class="text-sm text-muted mt-1">{{ i18n "action2Desc" | default "Projected alerts/cost before anything hits prod." }}</p>
+          </div>
+          <div class="rounded-xl border border-stroke bg-base/70 p-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-text">{{ i18n "action3Title" | default "Tackle noise generators" }}</span>
+              <span class="text-xs text-accent">{{ i18n "action3Stats" | default "Reason logged" }}</span>
+            </div>
+            <p class="text-sm text-muted mt-1">{{ i18n "action3Desc" | default "Pause with one click; auto-rollback and audit trail." }}</p>
+          </div>
+          <div class="rounded-xl border border-stroke bg-base/70 p-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-text">{{ i18n "action4Title" | default "Uncover rule drift" }}</span>
+              <span class="text-xs text-accent">{{ i18n "action4Stats" | default "Quarantined" }}</span>
+            </div>
+            <p class="text-sm text-muted mt-1">{{ i18n "action4Desc" | default "See affected rules, unblock once data contracts are green." }}</p>
+          </div>
+          <div class="rounded-xl border border-stroke bg-base/70 p-3">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-text">{{ i18n "action5Title" | default "Retire stale/never-triggering" }}</span>
+              <span class="text-xs text-accent">{{ i18n "action5Stats" | default "Decay flagged" }}</span>
+            </div>
+            <p class="text-sm text-muted mt-1">{{ i18n "action5Desc" | default "Decline rules that haven't fired; auto-suggest tests or retirement." }}</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm text-muted">
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">Splunk | Sentinel</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">Jira | ServiceNow</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">Sigma | YARA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

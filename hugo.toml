@@ -1,0 +1,67 @@
+baseURL = 'https://craftedsignal.io/'
+languageCode = 'en'
+title = 'CraftedSignal'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+
+# Enable i18n
+enableMissingTranslationPlaceholders = true
+
+[params]
+  description = "SOC Control Plane for Detection Engineering"
+  tagline = "Detection-as-Code platform with noise budgets, cost controls, and guardrails"
+  email = "hello@craftedsignal.io"
+  salesEmail = "sales@craftedsignal.io"
+  docsURL = "https://github.com/signalforge/docs"
+  githubURL = "https://github.com/signalforge"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    [languages.en.params]
+      subtitle = "Detection Engineering Control Plane"
+
+  # Ready for future languages
+  # [languages.de]
+  #   languageName = "Deutsch"
+  #   weight = 2
+  #   [languages.de.params]
+  #     subtitle = "Detection Engineering Kontrollzentrum"
+
+  # [languages.nl]
+  #   languageName = "Nederlands"
+  #   weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[build]
+  [build.buildStats]
+    enable = true
+
+[minify]
+  minifyOutput = true
+
+[outputs]
+  home = ["HTML"]
+
+[sitemap]
+  changeFreq = "weekly"
+  priority = 0.5
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.x]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true

@@ -1,30 +1,23 @@
 {
-  "name": "website",
+  "name": "craftedsignal-website",
   "version": "1.0.0",
-  "description": "CraftedSignal marketing site",
-  "main": "index.js",
+  "description": "CraftedSignal marketing site - Hugo + Tailwind CSS",
+  "type": "module",
   "scripts": {
-    "build:css": "mkdir -p dist && tailwindcss -c tailwind.config.js -i src/input.css -o dist/styles.css --minify && cat node_modules/highlight.js/styles/atom-one-dark.css >> dist/styles.css",
-    "build:js": "mkdir -p dist && esbuild src/app.js --bundle --minify --format=iife --outfile=dist/app.js",
-    "copy:fonts": "mkdir -p dist/fonts && cp node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2 node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2 node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2 node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2 dist/fonts/ && cp node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2 node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2 node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2 node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2 dist/fonts/",
-    "build": "npm run build:css && npm run build:js && npm run copy:fonts",
-    "deploy:prepare": "rm -rf .deploy && mkdir -p .deploy && cp index.html robots.txt sitemap.xml .deploy/ && cp -r dist .deploy/dist"
+    "dev": "hugo server --buildDrafts --buildFuture",
+    "build": "hugo --minify",
+    "clean": "rm -rf public resources"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": ["hugo", "tailwindcss", "detection-engineering"],
+  "author": "CraftedSignal",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "esbuild": "^0.27.2",
-    "tailwindcss": "^3.4.19"
-  },
-  "dependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
-    "highlight.js": "^11.11.1"
-  },
-  "browserslist": [
-    "defaults",
-    "not IE 11"
-  ]
+    "autoprefixer": "^10.4.20",
+    "highlight.js": "^11.11.1",
+    "postcss": "^8.5.0",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.19"
+  }
 }

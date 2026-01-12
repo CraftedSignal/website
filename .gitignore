@@ -1,10 +1,14 @@
 # Dependencies
 node_modules/
 
-# Build output - automatically generated during deployment
-dist/
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+hugo_stats.json
 
-# Deployment preparation directory
+# Legacy build directories
+dist/
 .deploy/
 
 # OS files
