@@ -1,72 +1,103 @@
 <section id="problem" class="px-6 py-14 md:py-20">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start">
-    <div class="space-y-6">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+    <div class="space-y-4">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-        {{ i18n "heroBadge" | default "Detection Engineering Control Plane" }}
+        {{ i18n "heroBadge" | default "SOC Control Plane" }}
       </div>
 
       <h1 class="font-display text-3xl md:text-5xl font-semibold leading-tight">
-        {{ i18n "heroTitle" | default "SignalForge treats SOC detections like software: canonical rules, validated translation, and health guardrails before an alert ever runs." }}
+        {{ i18n "heroTitle" | default "Your SOC is burning out and full of tech debt." }}
       </h1>
 
-      <p class="text-lg text-muted max-w-3xl">
-        {{ i18n "heroDescription" | default "Start with MITRE-aligned intent, write canonical IR that passes schema lint, unit fixtures, and replay, then translate safely across every SIEM/XDR with scoped canaries, blast radius controls, and audit trails. Noise budgets, cost caps, and data-contract horming keep teams honest while the orchestration engine enforces approvals and rollbacks for you." }}
+      <p class="text-lg text-muted max-w-2xl pb-3">
+        {{ i18n "heroDescription" | default "We generate guardrails around your detection rules: noise budgets, cost caps, TTP fidelity, and safe deploy/rollback, so you stop shipping noise, broken/stale rules, and detection debt." }}<br/>
+        {{ i18n "heroTagline" | default "Manage your SOC like a true development factory." }}
       </p>
 
-      <div class="grid sm:grid-cols-2 gap-3 text-sm text-muted">
-        <div>{{ i18n "heroStep1" | default "1) Ideate a rule, map to MITRE, capture noise/cost expectations." }}</div>
-        <div>{{ i18n "heroStep2" | default "2) Build canonical IR, run lint + unit + replay tests, log portability and capability scores." }}</div>
-        <div>{{ i18n "heroStep3" | default "3) Shadow eval with projected alerts/cost, submit the canary to approvals, and guard noise budgets." }}</div>
-        <div>{{ i18n "heroStep4" | default "4) Monitor TTDetect/TTRem, SNR, parser drift, and auto-suggest tuning or retirement." }}</div>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagDetectionsAsCode" | default "Detections as Code" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagDeployment" | default "Deployment & Rollback" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagPortability" | default "Rule Portability & Cost" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagFalsePositives" | default "False Positives" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagDetectionGaps" | default "Detection gaps" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagMITRE" | default "MITRE TTP coverage" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagAI" | default "AI based optimizations & suggestions" }}</span>
+        <span class="px-3 py-2 rounded-sm border border-stroke text-sm text-muted bg-panel/60">{{ i18n "tagThreatIntel" | default "Threat Intelligence Feeds" }}</span>
       </div>
 
-      <div class="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.12em]">
-        <span class="px-3 py-2 rounded-sm border border-stroke bg-panel/60 text-muted">{{ i18n "tagDetectionsAsCode" | default "Detections as Code" }}</span>
-        <span class="px-3 py-2 rounded-sm border border-stroke bg-panel/60 text-muted">{{ i18n "tagNoiseBudgets" | default "Noise Budgets" }}</span>
-        <span class="px-3 py-2 rounded-sm border border-stroke bg-panel/60 text-muted">{{ i18n "tagParserSLOs" | default "Parser SLOs" }}</span>
-        <span class="px-3 py-2 rounded-sm border border-stroke bg-panel/60 text-muted">{{ i18n "tagMITRE" | default "MITRE Coverage" }}</span>
-        <span class="px-3 py-2 rounded-sm border border-stroke bg-panel/60 text-muted">{{ i18n "tagMultiSIEM" | default "Multi-SIEM Translation" }}</span>
-        <span class="px-3 py-2 rounded-sm border border-stroke bg-panel/60 text-muted">{{ i18n "tagAIGuardrails" | default "AI Guardrails" }}</span>
-      </div>
-
+      <!--
       <div class="flex flex-wrap gap-3 pt-2">
         <a class="inline-flex px-5 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:{{ .Site.Params.salesEmail }}">{{ i18n "ctaDemo" | default "Schedule a live demo" }}</a>
-        <a class="inline-flex px-5 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="#architecture">{{ i18n "ctaControlPlane" | default "See the control plane" }}</a>
+        <a class="inline-flex px-5 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="#flow">{{ i18n "ctaHowItWorks" | default "See how it works" }}</a>
       </div>
+    -->
     </div>
 
-    <div class="relative rounded-3xl border border-stroke bg-panel/90 shadow-soft p-6 space-y-5">
-      <div class="flex items-center justify-between">
-        <div class="text-sm font-semibold text-muted">{{ i18n "healthGlance" | default "SOC health at a glance" }}</div>
-        <span class="px-2 py-1 rounded-lg bg-accent/10 text-accent text-xs font-semibold">{{ i18n "signalMetrics" | default "Signal metrics" }}</span>
-      </div>
-      <div class="grid grid-cols-2 gap-4 text-center">
-        <div>
-          <div class="text-3xl font-bold">4.8</div>
-          <div class="text-xs text-muted">{{ i18n "metricSNR" | default "Signal-to-noise score" }}</div>
+    <div class="relative lg:justify-self-end">
+      <div class="absolute -inset-6 bg-gradient-to-br from-accent/10 via-transparent to-accent2/10 blur-3xl"></div>
+      <div class="relative rounded-2xl border border-stroke bg-panel/90 shadow-soft p-6 space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="text-sm font-semibold text-muted">{{ i18n "ruleInsights" | default "Rule Insights" }}</div>
+          <span class="px-2 py-1 rounded-lg bg-accent/10 text-accent text-xs font-semibold">{{ i18n "socHealth" | default "SOC Health" }}</span>
         </div>
-        <div>
-          <div class="text-3xl font-bold">6m</div>
-          <div class="text-xs text-muted">{{ i18n "metricTTDetect" | default "TTDetect median" }}</div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center pt-5">
+          <div>
+            <div class="text-2xl font-bold">123</div>
+            <div class="text-sm text-muted">{{ i18n "metricNoisy" | default "Noisy" }}</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold">42</div>
+            <div class="text-sm text-muted">{{ i18n "metricStale" | default "Stale" }}</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold">3</div>
+            <div class="text-sm text-muted">{{ i18n "metricBroken" | default "Broken" }}</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold">5</div>
+            <div class="text-sm text-muted">{{ i18n "metricUndeployed" | default "Undeployed" }}</div>
+          </div>
         </div>
-        <div>
-          <div class="text-3xl font-bold">2d</div>
-          <div class="text-xs text-muted">{{ i18n "metricTTRem" | default "TTRem SLAs" }}</div>
+
+        <br/>
+
+        <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2 overflow-hidden">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <div class="font-semibold break-words flex-1 min-w-0">{{ i18n "suggestion1Title" | default "Suggestion: Improve webshell coverage" }}</div>
+            <span class="text-xs font-semibold text-accent whitespace-nowrap flex-shrink-0">{{ i18n "aiLabel" | default "AI" }}</span>
+          </div>
+
+          <span class="text-xs text-muted">
+            {{ i18n "suggestion1Desc" | default "Modify your webshell detection rule to also work for Unix/Linux-based systems." }}
+          </span>
+
+          <p class="text-sm text-muted pb-2 pt-2"><strong>{{ i18n "impactLabel" | default "Impact" }}</strong>: 0.2 alerts/d · €0.2/d · 0.1% noise · TA0002/TA0003</p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-accent/10 text-sm text-text border border-accent/20">{{ i18n "actionDeploy" | default "Deploy" }}</span>
+            <span class="px-3 py-1.5 rounded-lg bg-accent2/10 text-sm text-text border border-accent2/20">{{ i18n "actionTest" | default "Test" }}</span>
+            <a href="#rules" class="px-3 py-1.5 rounded-lg border border-stroke text-sm text-muted hover:border-accent/50 hover:text-text transition">{{ i18n "actionEdit" | default "Edit in Code Editor" }}</a>
+          </div>
         </div>
-        <div>
-          <div class="text-3xl font-bold">62%</div>
-          <div class="text-xs text-muted">{{ i18n "metricNoiseBudget" | default "Noise budget burn" }}</div>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-stroke bg-base/60 p-4 space-y-3">
-        <div class="text-xs font-semibold text-muted">{{ i18n "guardrailsTitle" | default "Guardrails enforced in every stage" }}</div>
-        <p class="text-sm text-muted leading-relaxed">
-          {{ i18n "guardrailsDescription" | default "Noise budgets, cost caps, parser SLOs, portability diffs, and AI-assisted suggestions run in the sandbox before promotion." }}
-        </p>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 rounded-lg border border-stroke text-xs text-muted">{{ i18n "featureShadow" | default "Shadow evaluation" }}</span>
-          <span class="px-3 py-1.5 rounded-lg border border-stroke text-xs text-muted">{{ i18n "featureCost" | default "Cost projections" }}</span>
-          <span class="px-3 py-1.5 rounded-lg border border-stroke text-xs text-muted">{{ i18n "featureRunbook" | default "Runbook & approval checklist" }}</span>
+
+        <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2 overflow-hidden">
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <div class="font-semibold break-words flex-1 min-w-0">{{ i18n "canaryTitle" | default "Canary: Encoded PowerShell" }}</div>
+            <span class="text-xs font-semibold text-accent whitespace-nowrap flex-shrink-0">{{ i18n "testingLabel" | default "Testing" }}</span>
+          </div>
+
+          <span class="text-xs text-muted">
+            {{ i18n "canaryDesc" | default "Deploy a canary to ensure you properly detect encoded PowerShell payloads." }}
+          </span>
+
+          <p class="text-sm text-muted pb-2 pt-2"><strong>{{ i18n "impactLabel" | default "Impact" }}</strong>: 3 alerts/d · €0.4/d · 0% noise · TA0002/TA0003</p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-accent/10 text-sm text-text border border-accent/20">{{ i18n "actionDeploy" | default "Deploy" }}</span>
+            <span class="px-3 py-1.5 rounded-lg bg-accent2/10 text-sm text-text border border-accent2/20">{{ i18n "actionTest" | default "Test" }}</span>
+            <a href="#rules" class="px-3 py-1.5 rounded-lg border border-stroke text-sm text-muted hover:border-accent/50 hover:text-text transition">{{ i18n "actionEdit" | default "Edit in Code Editor" }}</a>
+          </div>
         </div>
       </div>
     </div>
