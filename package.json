@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "mkdir -p dist && tailwindcss -c tailwind.config.js -i src/input.css -o dist/styles.css --minify && cat node_modules/highlight.js/styles/atom-one-dark.css >> dist/styles.css",
     "build:js": "mkdir -p dist && esbuild src/app.js --bundle --minify --format=iife --outfile=dist/app.js",
-    "copy:fonts": "mkdir -p dist/fonts && cp node_modules/@fontsource/inter/files/inter-latin-{400,500,600,700}-normal.woff2 dist/fonts/ && cp node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-{400,500,600,700}-normal.woff2 dist/fonts/",
+    "copy:fonts": "mkdir -p dist/fonts && cp node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2 node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2 node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2 node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2 dist/fonts/ && cp node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-400-normal.woff2 node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-500-normal.woff2 node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-600-normal.woff2 node_modules/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff2 dist/fonts/",
     "build": "npm run build:css && npm run build:js && npm run copy:fonts",
     "deploy:prepare": "rm -rf .deploy && mkdir -p .deploy && cp index.html robots.txt sitemap.xml .deploy/ && cp -r dist .deploy/dist"
   },
