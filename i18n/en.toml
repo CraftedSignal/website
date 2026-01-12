@@ -56,9 +56,12 @@ other = "SOC Control Plane for Detection Engineering. Manage SIEM rules with noi
 other = "Detection Engineering Control Plane"
 
 [heroTitle]
-other = "SignalForge treats SOC detections like software: canonical rules, validated translation, and health guardrails before an alert ever runs."
+other = "Your SOC is burning out and full of tech debt."
 
 [heroDescription]
+other = "We generate guardrails around your detection rules: noise budgets, cost caps, TTP fidelity, and safe deploy/rollback, so you stop shipping noise, broken/stale rules, and detection debt.\nManage your SOC like a true development factory."
+
+[heroTagline]
 other = "Start with MITRE-aligned intent, write canonical IR that passes schema lint, unit fixtures, and replay, then translate safely across every SIEM/XDR with scoped canaries, blast radius controls, and audit trails. Noise budgets, cost caps, and data-contract horming keep teams honest while the orchestration engine enforces approvals and rollbacks for you."
 
 [heroStep1]
@@ -183,6 +186,72 @@ other = "The obvious SOC headaches, solved"
 [problemsSubtitle]
 other = "We stop these from slowing you down."
 
+[problem1Title]
+other = "Noisy rules"
+
+[problem1Desc]
+other = "Noise budgets and auto-rollback on breach."
+
+[problem2Title]
+other = "Broken rules"
+
+[problem2Desc]
+other = "Parser/enrichment SLO checks; drift quarantine."
+
+[problem3Title]
+other = "Missing coverage"
+
+[problem3Desc]
+other = "MITRE mapping + gap analysis before deploy."
+
+[problem4Title]
+other = "Never-triggering rules"
+
+[problem4Desc]
+other = "Shadow eval + decay tracking and retirement."
+
+[problem5Title]
+other = "Stale rules"
+
+[problem5Desc]
+other = "Confidence decay and auto-review tasks."
+
+[problem6Title]
+other = "ATT&CK gaps"
+
+[problem6Desc]
+other = "Coverage heatmap with required data sources."
+
+[problem7Title]
+other = "Slow rules"
+
+[problem7Desc]
+other = "Performance lint and cost projections before prod."
+
+[problem8Title]
+other = "Cost surprises"
+
+[problem8Desc]
+other = "Alert/ingestion projections with cost guardrails."
+
+[problem9Title]
+other = "Drifted parsers"
+
+[problem9Desc]
+other = "Data contracts and SLOs block bad deploys."
+
+[problem10Title]
+other = "Platform drift"
+
+[problem10Desc]
+other = "Portability diffs across SPL/KQL/FalconQL."
+
+[problem11Title]
+other = "Orphaned runbooks"
+
+[problem11Desc]
+other = "Runbook compliance and required context checks."
+
 # Footer
 [footerTagline]
 other = "Detection Engineering Control Plane"
@@ -257,3 +326,536 @@ other = "Try it now"
 
 [ctaDocs]
 other = "View the docs"
+
+[ctaHowItWorks]
+other = "See how it works"
+
+# Flow Section
+[flowLabel]
+other = "How it works"
+
+[flowTitle]
+other = "Connect → Baseline → Improve"
+
+[flowStep1Title]
+other = "Connect & import"
+
+[flowStep1Desc]
+other = "Connect your SIEM of choice. We import your rules, baselines, mappings and alert history. On-prem or cloud based."
+
+[flowStep2Title]
+other = "Baseline & score"
+
+[flowStep2Desc]
+other = "We uncover noisy/broken/stale/never-triggering rules. Build SNR, cost, MITRE coverage scores."
+
+[flowStep3Title]
+other = "Guardrails on change"
+
+[flowStep3Desc]
+other = "Noise budgets, cost projections, parser SLOs, portability diffs. Shadow and canary before prod."
+
+[flowStep4Title]
+other = "Deploy from Code"
+
+[flowStep4Desc]
+other = "We generate your Detections as Code. Deploy with approvals, blast radius control and rollbacks from the web interface or code."
+
+[flowStep5Title]
+other = "Monitor & tune"
+
+[flowStep5Desc]
+other = "Continuously monitor SOC health: SNR, cost drift, data contracts. Auto-suggest suppressions and retire dead rules."
+
+[flowStep6Title]
+other = "Improve your coverage"
+
+[flowStep6Desc]
+other = "Get AI or Threat Intelligence-based suggestions for new rules to add or merge in your current rules."
+
+[afterSetupTitle]
+other = "What you can do after setup"
+
+[afterSetupBadge]
+other = "Analyst/SOC lead"
+
+[action1Title]
+other = "Approve a canary"
+
+[action1Stats]
+other = "Alerts: 5/h · Noise +0.2% · Cost €12/d"
+
+[action1Desc]
+other = "Blast radius: 10% indexes · rollback armed."
+
+[action2Title]
+other = "Test before production"
+
+[action2Stats]
+other = "Latency 1.2s · Cost guardrail"
+
+[action2Desc]
+other = "Projected alerts/cost before anything hits prod."
+
+[action3Title]
+other = "Tackle noise generators"
+
+[action3Stats]
+other = "Reason logged"
+
+[action3Desc]
+other = "Pause with one click; auto-rollback and audit trail."
+
+[action4Title]
+other = "Uncover rule drift"
+
+[action4Stats]
+other = "Quarantined"
+
+[action4Desc]
+other = "See affected rules, unblock once data contracts are green."
+
+[action5Title]
+other = "Retire stale/never-triggering"
+
+[action5Stats]
+other = "Decay flagged"
+
+[action5Desc]
+other = "Decline rules that haven't fired; auto-suggest tests or retirement."
+
+# Trust Section
+[trustLabel]
+other = "Trust & compliance"
+
+[trustTitle]
+other = "Control plane security, boundaries, and auditability"
+
+[trustDescription]
+other = "SignalForge stores only rules and metadata; approval workflows, signed bundles, RBAC, and immutable audit logs keep every change verifiable without touching customer log data."
+
+[trustCard1Title]
+other = "Data Boundaries"
+
+[trustCard1Desc]
+other = "Control plane rules and metadata stay separate from customer logs; outbound-only agents and signed config bundles avoid opening inbound ports."
+
+[trustCard2Title]
+other = "Identity & Access"
+
+[trustCard2Desc]
+other = "SSO/SAML/OIDC with MFA, tenant-scoped RBAC, separation of duties, and just-in-time breakglass access keep approvals auditable."
+
+[trustCard3Title]
+other = "Secrets & Keys"
+
+[trustCard3Desc]
+other = "Per-tenant vaulted credentials, short-lived deploy tokens, and rotation policies protect agent sessions."
+
+[trustCard4Title]
+other = "Audit & Logging"
+
+[trustCard4Desc]
+other = "Immutable logs for rules, tests, deploys, and approvals; tamper-evident storage exportable to SIEMs for compliance reviews."
+
+[trustCard5Title]
+other = "Supply Chain"
+
+[trustCard5Desc]
+other = "Signed artifacts (CLI, agents), SBOM, dependency pinning, and rule pack attestations align with SLSA/SOC2 goals."
+
+[trustCard6Title]
+other = "Compliance Targets"
+
+[trustCard6Desc]
+other = "SOC 2 Type II, ISO 27001, and NIS2 reporting support with configurable data residency and retention."
+
+# Personas Section
+[personasLabel]
+other = "Personas & journeys"
+
+[personasTitle]
+other = "Every role gets tailored guardrails"
+
+[personasDescription]
+other = "Detection engineers, SOC leads, MSSP operators, and CISOs each have their own SLOs and workflows; SignalForge connects the dots between code, approvals, and auditability."
+
+[persona1Title]
+other = "Detection Engineer"
+
+[persona1Desc]
+other = "Ship canonical rules with linted fixtures, replay/portability scores, shadow evals, and guardrails before any SIEM syntax ships."
+
+[persona1Goal]
+other = "Goal: fast feedback, reusable rules, safe deploys."
+
+[persona2Title]
+other = "SOC Lead / Manager"
+
+[persona2Desc]
+other = "Monitor noise budgets, approvals, coverage heatmaps, and detection debt so governance and drift are visible to leadership."
+
+[persona2Goal]
+other = "Goal: governance, coverage, audit-ready reporting."
+
+[persona3Title]
+other = "MSSP Operator"
+
+[persona3Desc]
+other = "Handle multi-tenant policies, templates, change windows, and delegated approvals while keeping secrets isolated per tenant."
+
+[persona3Goal]
+other = "Goal: fleet controls, per-tenant isolation, predictable windows."
+
+[persona4Title]
+other = "CISO / Compliance"
+
+[persona4Desc]
+other = "Prove MITRE coverage, approvals, and audit trails with exports and immutable logs for SOC2/NIS2 auditors."
+
+[persona4Goal]
+other = "Goal: coverage reports, separation of duties, exportable evidence."
+
+# Metrics Section
+[metricsLabel]
+other = "Metrics & ROI"
+
+[metricsTitle]
+other = "Make detection discipline measurable"
+
+[metricsDescription]
+other = "Report noise saved, cost avoided, TTDetect/TTRem, SNR, parser/data-contract SLOs, and MITRE coverage on a single dashboard so leadership sees continuous improvement."
+
+[metricsCard1Title]
+other = "Operational SLOs"
+
+[metricsCard1Desc]
+other = "TTDetect (time to detect), TTRem (time to repair), alert latency, data quality SLOs, and noise budgets per team with burn-down and breach alerts."
+
+[metricsCard2Title]
+other = "Quality & Coverage"
+
+[metricsCard2Desc]
+other = "SNR scoring, confidence decay, portability score, and coverage heatmaps by MITRE tactic/technique with data-source readiness."
+
+[metricsCard3Title]
+other = "Cost & Efficiency"
+
+[metricsCard3Desc]
+other = "Cost per signal, cheap vs high-fidelity routing, ingestion waste avoided by blocking rules on bad parser/enrichment contracts."
+
+[dashboardTitle]
+other = "Dashboard outline"
+
+[dashboardDesc]
+other = "Top KPIs (SNR, noise burn, TTDetect, TTRem, cost avoided), a coverage heatmap with cheapest/high-fidelity suggestions, and quick actions for incidents + detection debt."
+
+[exportsTitle]
+other = "Exports & ROI storytelling"
+
+[exportsDesc]
+other = "Noise saved and cost avoided counters drop into exec packs, charts, and API feeds so you can prove detection engineering improvements."
+
+# Rules Section
+[rulesLabel]
+other = "Rules workspace"
+
+[rulesTitle]
+other = "Edit, test, and save detection rules"
+
+[rulesDescription]
+other = "Work directly in the code editor with syntax highlighting, guardrails, and browser-side saves before you deploy."
+
+[noiseBudgetValue]
+other = "Noise budget: 0.2%"
+
+[costCapValue]
+other = "Cost cap: €12/d"
+
+[coverageValue]
+other = "Coverage: TA0002/TA0003"
+
+[ruleLibrary]
+other = "Rule library"
+
+[liveShadow]
+other = "Live + shadow"
+
+[rule1Name]
+other = "Encoded PowerShell"
+
+[rule1Context]
+other = "Shadow eval · Sentinel + Splunk"
+
+[rule2Name]
+other = "Webshell Uploads"
+
+[rule2Context]
+other = "Production · WAF + Apache/IIS"
+
+[rule3Name]
+other = "Suspicious Kerberoasting"
+
+[rule3Context]
+other = "Testing · Sigma → Splunk"
+
+# Value Section
+[valueLabel]
+other = "Why CraftedSignal"
+
+[valueTitle]
+other = "Guardrails built for efficient SOCs"
+
+[valueDescription]
+other = "Operational discipline over meaningless dashboards. Every deploy should respect cost, noise, and data quality constraints."
+
+[valueCard1Title]
+other = "Noise budgets & detection debt"
+
+[valueCard1Desc]
+other = "Enforce per-team noise budgets and TTRem SLAs. Auto-prioritize fixes by blast radius and MITRE gaps."
+
+[valueCard2Title]
+other = "Shadow eval with cost guardrails"
+
+[valueCard2Desc]
+other = "Dry-run rules on live streams with projected alert volume and ingestion cost. Block promotion if budgets break."
+
+[valueCard3Title]
+other = "Data contracts & parser SLOs"
+
+[valueCard3Desc]
+other = "Treat enrichments and parsers as dependencies. Quarantine rules when schemas drift; alert data owners automatically."
+
+[valueCard4Title]
+other = "Portability & semantic drift"
+
+[valueCard4Desc]
+other = "Canonical IR with portability scores and round-trip diffs across SPL/KQL/FalconQL. No syntax roulette."
+
+[valueCard5Title]
+other = "MSSP-grade change control"
+
+[valueCard5Desc]
+other = "Fleet change windows, tenant isolation, scoped kill switches, and delegated approvals for managed clients."
+
+[valueCard6Title]
+other = "Trust & attested content"
+
+[valueCard6Desc]
+other = "Signed packs with provenance, SBOM, and quality gates. Certified partner program and marketplace-ready."
+
+# ROI Section
+[roiLabel]
+other = "Easy Return on Investment"
+
+[roiTitle]
+other = "Make the baby steps visible"
+
+[roiDescription]
+other = "Show the value of your disciplined detection engineering: noise saved, cost avoided, and faster time to react. Your team will love this."
+
+[roiStat1]
+other = "Noise saved alerts/mo"
+
+[roiStat2]
+other = "Ingestion cost avoided"
+
+[roiStat3]
+other = "Coverage gain across techniques"
+
+[roiStat4]
+other = "Faster TTRem for broken rules"
+
+[execTitle]
+other = "Executive Overviews"
+
+[execBadge]
+other = "Scheduled Exports"
+
+[execDesc]
+other = "Noise saved and cost avoided counters you can drop into board packs."
+
+[execStat1]
+other = "True Positive Rate"
+
+[execStat2]
+other = "Rules to Fix"
+
+[execStat3]
+other = "Rule Health Score"
+
+[chartTitle]
+other = "Workload Statistics"
+
+[chartPeriod]
+other = "last 12 weeks"
+
+[chartLegend1]
+other = "Detection Coverage"
+
+[chartLegend2]
+other = "Team Workload"
+
+# Demo Section
+[demoLabel]
+other = "Demo scenario"
+
+[demoTitle]
+other = "Guardrails in action"
+
+[demoDescription]
+other = "Shadow → cost guardrail → portability diff → canary → rollback."
+
+[demoScenarioTitle]
+other = "Encoded PowerShell across Splunk + Sentinel"
+
+[demoStep1]
+other = "Shadow eval: 5 alerts/h, €12/d, 0.2% noise budget; latency 1.2s."
+
+[demoStep2]
+other = "Portability: SPL vs KQL diff highlighted; portability score 0.86."
+
+[demoStep3]
+other = "Approvals: impact summary auto-sent to Slack + Jira."
+
+[demoStep4]
+other = "Canary: 12% blast radius; auto-rollback threshold at +0.5% noise budget."
+
+[demoStep5]
+other = "Rollback: triggered on spike; rule returns to shadow; audit trail captured."
+
+[safetyTitle]
+other = "Deploy safety controls"
+
+[safety1Title]
+other = "Kill switches"
+
+[safety1Desc]
+other = "Scoped pauses with justification and audit trail."
+
+[safety2Title]
+other = "Blast radius"
+
+[safety2Desc]
+other = "Subset indexes/workspaces with rollback hooks."
+
+[safety3Title]
+other = "Data contracts"
+
+[safety3Desc]
+other = "Block deploys on parser/enrichment SLO failures."
+
+[safety4Title]
+other = "Attestation"
+
+[safety4Desc]
+other = "Signed rule packs with provenance and SBOM."
+
+# Testing Section
+[testingLabel]
+other = "Testing & automation"
+
+[testingTitle]
+other = "Validation pipelines with human-in-the-loop AI"
+
+[testingDescription]
+other = "Static lint, unit fixtures, replay, and continuous validation block flaky data before deploys while AI suggestions stay explainable and require analyst approval."
+
+[testingCard1Title]
+other = "Static validation"
+
+[testingCard1Desc]
+other = "Syntax checks, field guards, capability lint per SIEM, parser health, and portability scoring enforced in CI."
+
+[testingCard2Title]
+other = "Unit + replay"
+
+[testingCard2Desc]
+other = "Positive & negative fixtures, historical replay, shadow evals, and cost estimates compare implementations (cheap vs high-fidelity)."
+
+[testingCard3Title]
+other = "Continuous validation"
+
+[testingCard3Desc]
+other = "Schema drift, data quality SLOs, noise budget guardrails, and auto-quarantine keep detection debt visible."
+
+[aiPrinciplesTitle]
+other = "AI assistance principles"
+
+[aiPrinciplesDesc]
+other = "Draft rules, highlight semantic drift, and propose health fixes, but never auto-deploy. Prompts, deltas, and confidence scores stay visible, PII is redacted, and risky commands are blocked."
+
+[aiFeature1]
+other = "Explainable prompts"
+
+[aiFeature2]
+other = "Human approval required"
+
+[aiFeature3]
+other = "Knowledge retrieval"
+
+# Hero Section Additional
+[ruleInsights]
+other = "Rule Insights"
+
+[socHealth]
+other = "SOC Health"
+
+[metricNoisy]
+other = "Noisy"
+
+[metricStale]
+other = "Stale"
+
+[metricBroken]
+other = "Broken"
+
+[metricUndeployed]
+other = "Undeployed"
+
+[suggestion1Title]
+other = "Suggestion: Improve webshell coverage"
+
+[suggestion1Desc]
+other = "Modify your webshell detection rule to also work for Unix/Linux-based systems."
+
+[canaryTitle]
+other = "Canary: Encoded PowerShell"
+
+[canaryDesc]
+other = "Deploy a canary to ensure you properly detect encoded PowerShell payloads."
+
+[aiLabel]
+other = "AI"
+
+[impactLabel]
+other = "Impact"
+
+[actionDeploy]
+other = "Deploy"
+
+[actionTest]
+other = "Test"
+
+[actionEdit]
+other = "Edit in Code Editor"
+
+# Additional Tags
+[tagDeployment]
+other = "Deployment & Rollback"
+
+[tagPortability]
+other = "Rule Portability & Cost"
+
+[tagFalsePositives]
+other = "False Positives"
+
+[tagDetectionGaps]
+other = "Detection gaps"
+
+[tagAI]
+other = "AI based optimizations & suggestions"
+
+[tagThreatIntel]
+other = "Threat Intelligence Feeds"
