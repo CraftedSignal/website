@@ -37,19 +37,19 @@ other = "Contact"
 
 # Meta
 [tagline]
-other = "SOC Control Plane for Detection Engineering"
+other = "Detection Engineering Control Plane"
 
 [metaDescription]
-other = "Detection-as-Code platform with noise budgets, cost controls, and guardrails. Stop shipping broken rules and detection debt. Manage your SOC like a true development factory."
+other = "Detection Engineering Control Plane. Write rules once, deploy to Splunk, Sentinel, and CrowdStrike with noise budgets, cost controls, and safe rollbacks. Stop shipping broken rules and detection debt."
 
 [ogTitle]
-other = "SOC Control Plane"
+other = "Detection Engineering Control Plane"
 
 [ogDescription]
-other = "Detection-as-Code platform with noise budgets, cost controls, and guardrails for efficient SOC operations."
+other = "Write detection rules once, deploy safely to Splunk, Sentinel, and CrowdStrike. Noise budgets, cost controls, canary deployments, and automatic rollbacks."
 
 [schemaDescription]
-other = "SOC Control Plane for Detection Engineering. Manage SIEM rules with noise budgets, cost controls, and detection-as-code workflows."
+other = "Detection Engineering Control Plane for SOC teams. Write rules once in canonical format, deploy safely across multiple SIEMs with noise budgets, cost controls, and audit trails."
 
 # Hero Section
 [heroBadge]
@@ -62,7 +62,7 @@ other = "Your SOC is burning out and full of tech debt."
 other = "We generate guardrails around your detection rules: noise budgets, cost caps, TTP fidelity, and safe deploy/rollback, so you stop shipping noise, broken/stale rules, and detection debt.\nManage your SOC like a true development factory."
 
 [heroTagline]
-other = "Start with MITRE-aligned intent, write canonical IR that passes schema lint, unit fixtures, and replay, then translate safely across every SIEM/XDR with scoped canaries, blast radius controls, and audit trails. Noise budgets, cost caps, and data-contract horming keep teams honest while the orchestration engine enforces approvals and rollbacks for you."
+other = "Write rules once in a canonical format. Deploy safely to Splunk, Sentinel, and CrowdStrike with canary releases, blast-radius controls, and automatic rollbacks."
 
 [heroStep1]
 other = "1) Ideate a rule, map to MITRE, capture noise/cost expectations."
@@ -316,10 +316,10 @@ other = "Guardrails: noise, cost, coverage"
 
 # Final CTA
 [ctaTitle]
-other = "Ready to rollout efficiency to your SOC?"
+other = "Ready to stop shipping noisy rules?"
 
 [ctaDescription]
-other = "Noise budgets, cost controls, data contracts, and rollback you can trust — across your tech stack. We never own, but improve."
+other = "Write rules once, deploy safely to Splunk, Sentinel, and CrowdStrike. Noise budgets, cost controls, and automatic rollbacks across your entire detection stack."
 
 [ctaTry]
 other = "Try it now"
@@ -432,7 +432,7 @@ other = "Trust & compliance"
 other = "Control plane security, boundaries, and auditability"
 
 [trustDescription]
-other = "SignalForge stores only rules and metadata; approval workflows, signed bundles, RBAC, and immutable audit logs keep every change verifiable without touching customer log data."
+other = "CraftedSignal stores only rules and metadata; approval workflows, signed bundles, RBAC, and immutable audit logs keep every change verifiable without touching customer log data."
 
 [trustCard1Title]
 other = "Data Boundaries"
@@ -478,7 +478,7 @@ other = "Personas & journeys"
 other = "Every role gets tailored guardrails"
 
 [personasDescription]
-other = "Detection engineers, SOC leads, MSSP operators, and CISOs each have their own SLOs and workflows; SignalForge connects the dots between code, approvals, and auditability."
+other = "Detection engineers, SOC leads, MSSP operators, and CISOs each have their own SLOs and workflows; CraftedSignal connects the dots between code, approvals, and auditability."
 
 [persona1Title]
 other = "Detection Engineer"
@@ -585,7 +585,7 @@ other = "Live + shadow"
 other = "Encoded PowerShell"
 
 [rule1Context]
-other = "Shadow eval · Sentinel + Splunk"
+other = "Shadow eval · Splunk + Sentinel + CrowdStrike"
 
 [rule2Name]
 other = "Webshell Uploads"
@@ -708,13 +708,13 @@ other = "Guardrails in action"
 other = "Shadow → cost guardrail → portability diff → canary → rollback."
 
 [demoScenarioTitle]
-other = "Encoded PowerShell across Splunk + Sentinel"
+other = "Encoded PowerShell across Splunk, Sentinel, and CrowdStrike"
 
 [demoStep1]
 other = "Shadow eval: 5 alerts/h, €12/d, 0.2% noise budget; latency 1.2s."
 
 [demoStep2]
-other = "Portability: SPL vs KQL diff highlighted; portability score 0.86."
+other = "Portability: SPL vs KQL vs FalconQL diff highlighted; portability score 0.86."
 
 [demoStep3]
 other = "Approvals: impact summary auto-sent to Slack + Jira."
@@ -849,13 +849,13 @@ other = "Deployment & Rollback"
 other = "Rule Portability & Cost"
 
 [tagFalsePositives]
-other = "False Positives"
+other = "Noise Management"
 
 [tagDetectionGaps]
-other = "Detection gaps"
+other = "Coverage Gaps"
 
 [tagAI]
-other = "AI based optimizations & suggestions"
+other = "AI-Assisted Tuning"
 
 [tagThreatIntel]
-other = "Threat Intelligence Feeds"
+other = "Multi-SIEM Translation"

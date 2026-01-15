@@ -8,12 +8,12 @@ defaultContentLanguageInSubdir = false
 enableMissingTranslationPlaceholders = true
 
 [params]
-  description = "SOC Control Plane for Detection Engineering"
-  tagline = "Detection-as-Code platform with noise budgets, cost controls, and guardrails"
+  description = "Detection Engineering Control Plane"
+  tagline = "Write rules once, deploy everywhere safely. Noise budgets, cost controls, and guardrails for Splunk, Sentinel, and CrowdStrike."
   email = "hello@craftedsignal.io"
   salesEmail = "sales@craftedsignal.io"
-  docsURL = "https://github.com/signalforge/docs"
-  githubURL = "https://github.com/signalforge"
+  docsURL = "https://docs.craftedsignal.io"
+  githubURL = "https://github.com/craftedsignal"
 
 [languages]
   [languages.en]
