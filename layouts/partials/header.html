@@ -19,7 +19,7 @@
 
     <div class="flex items-center gap-3">
       <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="{{ .Site.Params.docsURL }}">{{ i18n "navDocs" | default "Docs" }}</a>
-      <a class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:{{ .Site.Params.salesEmail }}">{{ i18n "navTry" | default "Try" }}<span class="hidden sm:inline"> {{ i18n "navTrySuffix" | default "for yourself" }}</span></a>
+      <a class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:{{ .Site.Params.salesEmail }}">{{ i18n "navTry" | default "Try" }}&nbsp;<span class="hidden sm:inline"> {{ i18n "navTrySuffix" | default "for yourself" }}</span></a>
       <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="mailto:{{ .Site.Params.email }}">{{ i18n "navContact" | default "Contact" }}</a>
     </div>
   </div>
