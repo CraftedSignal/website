@@ -49,7 +49,7 @@ other = "Detection Engineering Control Plane"
 other = "Write detection rules once, deploy safely to Splunk, Sentinel, and CrowdStrike. Noise budgets, cost controls, canary deployments, and automatic rollbacks."
 
 [schemaDescription]
-other = "Detection Engineering Control Plane for SOC teams. Write rules once in canonical format, deploy safely across multiple SIEMs with noise budgets, cost controls, and audit trails."
+other = "Detection Engineering Control Plane for SOC teams. Manage detection rules across Splunk, Sentinel, and CrowdStrike with noise budgets, cost controls, and audit trails."
 
 # Hero Section
 [heroBadge]
@@ -62,13 +62,13 @@ other = "Your SOC is burning out and full of tech debt."
 other = "We generate guardrails around your detection rules: noise budgets, cost caps, TTP fidelity, and safe deploy/rollback, so you stop shipping noise, broken/stale rules, and detection debt.\nManage your SOC like a true development factory."
 
 [heroTagline]
-other = "Write rules once in a canonical format. Deploy safely to Splunk, Sentinel, and CrowdStrike with canary releases, blast-radius controls, and automatic rollbacks."
+other = "Manage detection rules across Splunk, Sentinel, and CrowdStrike. Deploy safely with canary releases, blast-radius controls, and automatic rollbacks."
 
 [heroStep1]
 other = "1) Ideate a rule, map to MITRE, capture noise/cost expectations."
 
 [heroStep2]
-other = "2) Build canonical IR, run lint + unit + replay tests, log portability and capability scores."
+other = "2) Run AI quality analysis, lint checks, and unit tests. Track quality scores and MITRE coverage."
 
 [heroStep3]
 other = "3) Shadow eval with projected alerts/cost, submit the canary to approvals, and guard noise budgets."
@@ -138,19 +138,19 @@ other = "Runbook & approval checklist"
 
 # Architecture Section
 [archLabel]
-other = "Control plane anatomy"
+other = "Control plane features"
 
 [archTitle]
-other = "Control logic instead of platform syntax"
+other = "Fight for quality instead of fighting fires"
 
 [archDescription]
-other = "Governance, rule lifecycle, and observability live outside every SIEM/XDR. A canonical AST/IR describes intent, a translator renders SPL/KQL/FalconQL with portability scores, a sandbox and replay path validate capability, and the orchestrator stages safe deploys and rollbacks."
+other = "Governance, rule lifecycle, and observability live outside every SIEM/XDR. AI-powered analysis validates rule quality, the test engine runs validation, and the orchestrator stages safe deploys with automatic rollbacks."
 
 [archCard1Title]
-other = "Canonical Rule & Translation Engine"
+other = "AI Quality & Analysis Engine"
 
 [archCard1Desc]
-other = "Capture filters, joins, thresholds, and MITRE mapping in a neutral AST, then emit platform renderings while surfacing diffs so analysts understand drift."
+other = "AI-powered rule analysis evaluates quality, identifies gaps, suggests improvements, and maps to MITRE ATT&CK. Automated drift detection catches when rules change in your SIEM."
 
 [archCard2Title]
 other = "Test & Validation Engine"
@@ -185,6 +185,12 @@ other = "The obvious SOC headaches, solved"
 
 [problemsSubtitle]
 other = "We stop these from slowing you down."
+
+[problem0Title]
+other = "Burnout"
+
+[problem0Desc]
+other = "Diagnose problematic rules causing analyst burnout."
 
 [problem1Title]
 other = "Noisy rules"
@@ -432,50 +438,50 @@ other = "Trust & compliance"
 other = "Control plane security, boundaries, and auditability"
 
 [trustDescription]
-other = "CraftedSignal stores only rules and metadata; approval workflows, signed bundles, RBAC, and immutable audit logs keep every change verifiable without touching customer log data."
+other = "CraftedSignal stores only rules and metadata; approval workflows, RBAC, and audit logs keep every change verifiable without touching customer log data."
 
 [trustCard1Title]
 other = "Data Boundaries"
 
 [trustCard1Desc]
-other = "Control plane rules and metadata stay separate from customer logs; outbound-only agents and signed config bundles avoid opening inbound ports."
+other = "Control plane stores rules and metadata; customer logs stay in your SIEM. No inbound ports required."
 
 [trustCard2Title]
 other = "Identity & Access"
 
 [trustCard2Desc]
-other = "SSO/SAML/OIDC with MFA, tenant-scoped RBAC, separation of duties, and just-in-time breakglass access keep approvals auditable."
+other = "Passkey/WebAuthn plus MFA via authenticator apps. Role-based access control and approval workflows keep changes auditable."
 
 [trustCard3Title]
 other = "Secrets & Keys"
 
 [trustCard3Desc]
-other = "Per-tenant vaulted credentials, short-lived deploy tokens, and rotation policies protect agent sessions."
+other = "SIEM credentials stored encrypted. API keys with configurable expiration for integrations."
 
 [trustCard4Title]
 other = "Audit & Logging"
 
 [trustCard4Desc]
-other = "Immutable logs for rules, tests, deploys, and approvals; tamper-evident storage exportable to SIEMs for compliance reviews."
+other = "Audit logs for rules, tests, deploys, and approvals. Complete change history for compliance reviews."
 
 [trustCard5Title]
 other = "Supply Chain"
 
 [trustCard5Desc]
-other = "Signed artifacts (CLI, agents), SBOM, dependency pinning, and rule pack attestations align with SLSA/SOC2 goals."
+other = "Open source codebase with dependency pinning. Self-hostable with full control over your deployment."
 
 [trustCard6Title]
 other = "Compliance Targets"
 
 [trustCard6Desc]
-other = "SOC 2 Type II, ISO 27001, and NIS2 reporting support with configurable data residency and retention."
+other = "Audit logs and approval workflows support compliance requirements. Self-host for full data control."
 
 # Personas Section
 [personasLabel]
 other = "Personas & journeys"
 
 [personasTitle]
-other = "Every role gets tailored guardrails"
+other = "Every role gets empowered"
 
 [personasDescription]
 other = "Detection engineers, SOC leads, MSSP operators, and CISOs each have their own SLOs and workflows; CraftedSignal connects the dots between code, approvals, and auditability."
@@ -484,7 +490,7 @@ other = "Detection engineers, SOC leads, MSSP operators, and CISOs each have the
 other = "Detection Engineer"
 
 [persona1Desc]
-other = "Ship canonical rules with linted fixtures, replay/portability scores, shadow evals, and guardrails before any SIEM syntax ships."
+other = "Ship quality rules with AI analysis, automated tests, shadow evals, and guardrails. Get fast feedback before deploying to production."
 
 [persona1Goal]
 other = "Goal: fast feedback, reusable rules, safe deploys."
@@ -502,19 +508,19 @@ other = "Goal: governance, coverage, audit-ready reporting."
 other = "MSSP Operator"
 
 [persona3Desc]
-other = "Handle multi-tenant policies, templates, change windows, and delegated approvals while keeping secrets isolated per tenant."
+other = "Manage multiple SIEM connections from a single instance. Use groups and approval workflows to organize detection rules."
 
 [persona3Goal]
-other = "Goal: fleet controls, per-tenant isolation, predictable windows."
+other = "Goal: centralized management, organized workflows, consistent processes."
 
 [persona4Title]
 other = "CISO / Compliance"
 
 [persona4Desc]
-other = "Prove MITRE coverage, approvals, and audit trails with exports and immutable logs for SOC2/NIS2 auditors."
+other = "Track MITRE coverage, approvals, and audit trails. Export change history for compliance reviews."
 
 [persona4Goal]
-other = "Goal: coverage reports, separation of duties, exportable evidence."
+other = "Goal: coverage reports, approval trails, exportable evidence."
 
 # Metrics Section
 [metricsLabel]
@@ -631,7 +637,7 @@ other = "Treat enrichments and parsers as dependencies. Quarantine rules when sc
 other = "Portability & semantic drift"
 
 [valueCard4Desc]
-other = "Canonical IR with portability scores and round-trip diffs across SPL/KQL/FalconQL. No syntax roulette."
+other = "Native support for SPL, KQL, and FalconQL. Drift detection catches unauthorized changes across all your SIEMs."
 
 [valueCard5Title]
 other = "MSSP-grade change control"
