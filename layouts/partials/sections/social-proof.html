@@ -1,0 +1,40 @@
+<section id="social-proof" class="px-6 py-8 border-y border-stroke bg-panel/40">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+      <!-- Trust statement -->
+      <p class="text-sm text-muted text-center lg:text-left">
+        {{ i18n "socialProofStatement" | default "Trusted by security teams managing 10,000+ detection rules" }}
+      </p>
+
+      <!-- Integration logos -->
+      <div class="flex items-center gap-6 flex-wrap justify-center">
+        <span class="text-xs text-muted uppercase tracking-wide">{{ i18n "socialProofIntegrations" | default "Integrates with" }}</span>
+        <div class="flex items-center gap-4">
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 text-sm text-muted">Splunk</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 text-sm text-muted">Sentinel</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 text-sm text-muted">CrowdStrike</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 text-sm text-muted">Jira</span>
+          <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60 text-sm text-muted">ServiceNow</span>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex items-center gap-6 text-center">
+        <div>
+          <div class="text-lg font-semibold text-text">3M+</div>
+          <div class="text-xs text-muted">{{ i18n "socialProofStatRules" | default "rules tested" }}</div>
+        </div>
+        <div class="w-px h-8 bg-stroke"></div>
+        <div>
+          <div class="text-lg font-semibold text-text">50K+</div>
+          <div class="text-xs text-muted">{{ i18n "socialProofStatDeploys" | default "deployments" }}</div>
+        </div>
+        <div class="w-px h-8 bg-stroke"></div>
+        <div>
+          <div class="text-lg font-semibold text-text">99.9%</div>
+          <div class="text-xs text-muted">{{ i18n "socialProofStatRollback" | default "rollback success" }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
