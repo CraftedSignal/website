@@ -6,15 +6,24 @@
     </h1>
 
     <p class="text-xl text-muted max-w-3xl mx-auto">
-      {{ i18n "heroNewDescription" | default "The detection engineering platform that brings CI/CD discipline to your security rules. Test before deploy. Rollback in seconds. Works across Splunk, Sentinel, and CrowdStrike." }}
+      {{ i18n "heroNewDescription" | default "The detection engineering platform that brings CI/CD discipline to your
+      security rules. Test before deploy. Rollback in seconds. Works across Splunk, Sentinel, and CrowdStrike." }}
     </p>
 
     <!-- Primary CTAs -->
     <div class="flex flex-wrap justify-center gap-4 pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://demo.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
+      <a
+        class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition"
+        href="https://demo.craftedsignal.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {{ i18n "heroNewCtaTry" | default "Try the demo" }}
       </a>
-      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="#how-it-works">
+      <a
+        class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition"
+        href="#how-it-works"
+      >
         {{ i18n "heroNewCtaHow" | default "See how it works" }}
       </a>
     </div>
@@ -23,13 +32,22 @@
     <div id="persona-selector" class="pt-8 opacity-0 translate-y-4 transition-all duration-500">
       <p class="text-sm text-muted mb-4">{{ i18n "heroPersonaPrompt" | default "I'm a:" }}</p>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href="/for/detection-engineers/" class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition">
+        <a
+          href="/for/detection-engineers/"
+          class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition"
+        >
           {{ i18n "heroPersonaEngineer" | default "Detection Engineer" }}
         </a>
-        <a href="/for/soc-leaders/" class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition">
+        <a
+          href="/for/soc-leaders/"
+          class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition"
+        >
           {{ i18n "heroPersonaManager" | default "SOC Lead / Manager" }}
         </a>
-        <a href="/for/cisos/" class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition">
+        <a
+          href="/for/cisos/"
+          class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition"
+        >
           {{ i18n "heroPersonaCiso" | default "CISO / Compliance" }}
         </a>
       </div>
@@ -39,17 +57,21 @@
 
 <script>
   // Show persona selector after 3 seconds or on scroll
-  (function() {
-    const selector = document.getElementById('persona-selector');
+  (function () {
+    const selector = document.getElementById("persona-selector");
     let shown = false;
     function showSelector() {
       if (shown) return;
       shown = true;
-      selector.classList.remove('opacity-0', 'translate-y-4');
+      selector.classList.remove("opacity-0", "translate-y-4");
     }
     setTimeout(showSelector, 3000);
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 100) showSelector();
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (window.scrollY > 100) showSelector();
+      },
+      { passive: true },
+    );
   })();
 </script>

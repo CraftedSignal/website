@@ -2,25 +2,54 @@
   <div class="max-w-6xl mx-auto px-4 md:px-0 py-4 flex items-center justify-between gap-4">
     <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center gap-2 font-display text-lg font-semibold">
       <span class="flex items-center">
-        <span class="text-accent font-semibold">crafted</span><span>signal</span>
+        <span class="text-accent font-semibold">crafted</span>
+        <span>signal</span>
       </span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-4 text-sm text-muted flex-wrap">
-      <a href="#problem" class="hover:text-text transition">{{ i18n "navProblem" | default "Problem" }}</a>
-      <a href="#architecture" class="hover:text-text transition">{{ i18n "navArchitecture" | default "Architecture" }}</a>
-      <a href="#rules" class="hover:text-text transition">{{ i18n "navRules" | default "Rules" }}</a>
-      <a href="#trust" class="hover:text-text transition">{{ i18n "navTrust" | default "Trust" }}</a>
-      <a href="#personas" class="hover:text-text transition">{{ i18n "navPeople" | default "People" }}</a>
-      <a href="#metrics" class="hover:text-text transition">{{ i18n "navMetrics" | default "Metrics" }}</a>
-      <a href="#flow" class="hover:text-text transition">{{ i18n "navFlow" | default "Flow" }}</a>
-      <a href="#roi" class="hover:text-text transition">{{ i18n "navROI" | default "ROI" }}</a>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-muted">
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-text transition">
+          {{ i18n "navSolutions" | default "Solutions" }}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div
+          class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
+        >
+          <div class="rounded-xl border border-stroke bg-panel shadow-soft p-2 min-w-[200px]">
+            <a href="/for/detection-engineers/" class="block px-4 py-2 rounded-lg hover:bg-base/60 transition">
+              {{ i18n "navForEngineers" | default "For Detection Engineers" }}
+            </a>
+            <a href="/for/soc-leaders/" class="block px-4 py-2 rounded-lg hover:bg-base/60 transition">
+              {{ i18n "navForManagers" | default "For SOC Leaders" }}
+            </a>
+            <a href="/for/cisos/" class="block px-4 py-2 rounded-lg hover:bg-base/60 transition">
+              {{ i18n "navForCisos" | default "For CISOs" }}
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#how-it-works" class="hover:text-text transition">{{ i18n "navHowItWorks" | default "How it works" }}</a>
+      <a href="{{ .Site.Params.docsURL }}" class="hover:text-text transition">{{ i18n "navDocs" | default "Docs" }}</a>
     </nav>
 
     <div class="flex items-center gap-3">
-      <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="{{ .Site.Params.docsURL }}">{{ i18n "navDocs" | default "Docs" }}</a>
-      <a class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://demo.craftedsignal.io/" target="_blank" rel="noopener noreferrer">{{ i18n "navTry" | default "Try" }}&nbsp;<span class="hidden sm:inline"> {{ i18n "navTrySuffix" | default "for yourself" }}</span></a>
-      <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="mailto:{{ .Site.Params.email }}">{{ i18n "navContact" | default "Contact" }}</a>
+      <a
+        class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition"
+        href="https://demo.craftedsignal.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ i18n "navTry" | default "Try demo" }}
+      </a>
+      <a
+        class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition"
+        href="mailto:{{ .Site.Params.salesEmail }}"
+      >
+        {{ i18n "navContact" | default "Contact" }}
+      </a>
     </div>
   </div>
 </header>

@@ -1,26 +1,45 @@
 <section id="trust" class="px-6 py-14 md:py-20">
   <div class="max-w-6xl mx-auto space-y-6">
     <div class="flex flex-col gap-2">
-      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "trustLabel" | default "Trust & compliance" }}</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "trustTitle" | default "Security, auditability, and deployment flexibility" }}</h2>
-      <p class="text-muted max-w-3xl">{{ i18n "trustDescription" | default "CraftedSignal stores only rules and metadata. Deploy on your terms: SaaS, on-premises, or fully air-gapped." }}</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+        {{ i18n "trustLabel" | default "Trust & compliance" }}
+      </p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">
+        {{ i18n "trustTitle" | default "Security, auditability, and deployment flexibility" }}
+      </h2>
+      <p class="text-muted max-w-3xl">
+        {{ i18n "trustDescription" | default "CraftedSignal stores only rules and metadata. Deploy on your terms: SaaS,
+        on-premises, or fully air-gapped." }}
+      </p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "trustCard1Title" | default "Security" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "trustCard1Desc" | default "RBAC with role-based permissions. Passkey/WebAuthn and authenticator app MFA support." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "trustCard1Desc" | default "RBAC with role-based permissions. Passkey/WebAuthn and authenticator app
+          MFA support." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "trustCard2Title" | default "Audit & Logging" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "trustCard2Desc" | default "Audit logs for all changes. Rule, test, and deployment history exportable for compliance reviews." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "trustCard2Desc" | default "Audit logs for all changes. Rule, test, and deployment history exportable
+          for compliance reviews." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "trustCard3Title" | default "Deployment Options" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "trustCard3Desc" | default "SaaS or on-premises. Air-gapped deployments supported. No external callbacks." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "trustCard3Desc" | default "SaaS or on-premises. Air-gapped deployments supported. No external
+          callbacks." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "trustCard4Title" | default "AI Control" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "trustCard4Desc" | default "Self-host AI via Ollama, or disable it entirely. Your data stays yours." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "trustCard4Desc" | default "Self-host AI via Ollama, or disable it entirely. Your data stays yours."
+          }}
+        </p>
       </div>
     </div>
   </div>

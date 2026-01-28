@@ -2,27 +2,38 @@
   <div class="max-w-6xl mx-auto px-6 md:px-0 space-y-4">
     <div class="flex items-center justify-between flex-wrap gap-3">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "problemsLabel" | default "Problems we kill" }}</p>
-        <h3 class="font-display text-xl md:text-2xl font-semibold">{{ i18n "problemsTitle" | default "The obvious SOC headaches, solved" }}</h3>
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+          {{ i18n "problemsLabel" | default "Problems we kill" }}
+        </p>
+        <h3 class="font-display text-xl md:text-2xl font-semibold">
+          {{ i18n "problemsTitle" | default "The obvious SOC headaches, solved" }}
+        </h3>
       </div>
-      <span class="text-sm text-muted">{{ i18n "problemsSubtitle" | default "We stop these from slowing you down." }}</span>
+      <span class="text-sm text-muted">
+        {{ i18n "problemsSubtitle" | default "We stop these from slowing you down." }}
+      </span>
     </div>
-    <div id="problems-slider" class="flex gap-3 overflow-x-auto pb-2 snap-x scroll-smooth no-scrollbar -mx-6 md:mx-0 px-6 md:px-0">
-      {{ $problems := slice
-        (dict "title" (i18n "problem0Title" | default "Noisy rules") "desc" (i18n "problem0Desc" | default "Noise budgets and auto-rollback on breach."))
-        (dict "title" (i18n "problem1Title" | default "Noisy rules") "desc" (i18n "problem1Desc" | default "Noise budgets and auto-rollback on breach."))
-        (dict "title" (i18n "problem2Title" | default "Broken rules") "desc" (i18n "problem2Desc" | default "Parser/enrichment SLO checks; drift quarantine."))
-        (dict "title" (i18n "problem3Title" | default "Missing coverage") "desc" (i18n "problem3Desc" | default "MITRE mapping + gap analysis before deploy."))
-        (dict "title" (i18n "problem4Title" | default "Never-triggering rules") "desc" (i18n "problem4Desc" | default "Shadow eval + decay tracking and retirement."))
-        (dict "title" (i18n "problem5Title" | default "Stale rules") "desc" (i18n "problem5Desc" | default "Confidence decay and auto-review tasks."))
-        (dict "title" (i18n "problem6Title" | default "ATT&CK gaps") "desc" (i18n "problem6Desc" | default "Coverage heatmap with required data sources."))
-        (dict "title" (i18n "problem7Title" | default "Slow rules") "desc" (i18n "problem7Desc" | default "Performance lint and cost projections before prod."))
-        (dict "title" (i18n "problem8Title" | default "Cost surprises") "desc" (i18n "problem8Desc" | default "Alert/ingestion projections with cost guardrails."))
-        (dict "title" (i18n "problem9Title" | default "Drifted parsers") "desc" (i18n "problem9Desc" | default "Data contracts and SLOs block bad deploys."))
-        (dict "title" (i18n "problem10Title" | default "Platform drift") "desc" (i18n "problem10Desc" | default "Portability diffs across SPL/KQL/FalconQL."))
-        (dict "title" (i18n "problem11Title" | default "Orphaned runbooks") "desc" (i18n "problem11Desc" | default "Runbook compliance and required context checks."))
-      }}
-      {{ range $problems }}
+    <div
+      id="problems-slider"
+      class="flex gap-3 overflow-x-auto pb-2 snap-x scroll-smooth no-scrollbar -mx-6 md:mx-0 px-6 md:px-0"
+    >
+      {{ $problems := slice (dict "title" (i18n "problem0Title" | default "Noisy rules") "desc" (i18n "problem0Desc" |
+      default "Noise budgets and auto-rollback on breach.")) (dict "title" (i18n "problem1Title" | default "Noisy
+      rules") "desc" (i18n "problem1Desc" | default "Noise budgets and auto-rollback on breach.")) (dict "title" (i18n
+      "problem2Title" | default "Broken rules") "desc" (i18n "problem2Desc" | default "Parser/enrichment SLO checks;
+      drift quarantine.")) (dict "title" (i18n "problem3Title" | default "Missing coverage") "desc" (i18n "problem3Desc"
+      | default "MITRE mapping + gap analysis before deploy.")) (dict "title" (i18n "problem4Title" | default
+      "Never-triggering rules") "desc" (i18n "problem4Desc" | default "Shadow eval + decay tracking and retirement."))
+      (dict "title" (i18n "problem5Title" | default "Stale rules") "desc" (i18n "problem5Desc" | default "Confidence
+      decay and auto-review tasks.")) (dict "title" (i18n "problem6Title" | default "ATT&CK gaps") "desc" (i18n
+      "problem6Desc" | default "Coverage heatmap with required data sources.")) (dict "title" (i18n "problem7Title" |
+      default "Slow rules") "desc" (i18n "problem7Desc" | default "Performance lint and cost projections before prod."))
+      (dict "title" (i18n "problem8Title" | default "Cost surprises") "desc" (i18n "problem8Desc" | default
+      "Alert/ingestion projections with cost guardrails.")) (dict "title" (i18n "problem9Title" | default "Drifted
+      parsers") "desc" (i18n "problem9Desc" | default "Data contracts and SLOs block bad deploys.")) (dict "title" (i18n
+      "problem10Title" | default "Platform drift") "desc" (i18n "problem10Desc" | default "Portability diffs across
+      SPL/KQL/FalconQL.")) (dict "title" (i18n "problem11Title" | default "Orphaned runbooks") "desc" (i18n
+      "problem11Desc" | default "Runbook compliance and required context checks.")) }} {{ range $problems }}
       <div class="flex-none w-64 snap-start rounded-2xl border border-stroke bg-base/70 p-4">
         <div class="font-semibold">{{ .title }}</div>
         <p class="text-sm text-muted">{{ .desc }}</p>

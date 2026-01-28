@@ -1,29 +1,50 @@
 <section id="testing" class="px-6 py-14 md:py-20 bg-panel/50 border-y border-stroke">
   <div class="max-w-6xl mx-auto space-y-6">
     <div class="flex flex-col gap-2">
-      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "testingLabel" | default "Testing & automation" }}</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "testingTitle" | default "Testing & Validation" }}</h2>
-      <p class="text-muted max-w-3xl">{{ i18n "testingDescription" | default "Static lint, unit fixtures, replay, and continuous validation catch problems before they reach production." }}</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+        {{ i18n "testingLabel" | default "Testing & automation" }}
+      </p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">
+        {{ i18n "testingTitle" | default "Testing & Validation" }}
+      </h2>
+      <p class="text-muted max-w-3xl">
+        {{ i18n "testingDescription" | default "Static lint, unit fixtures, replay, and continuous validation catch
+        problems before they reach production." }}
+      </p>
     </div>
     <div class="grid lg:grid-cols-3 gap-4">
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "testingCard1Title" | default "Static validation" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "testingCard1Desc" | default "Syntax checks, field guards, capability lint per SIEM, parser health, and portability scoring enforced in CI." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "testingCard1Desc" | default "Syntax checks, field guards, capability lint per SIEM, parser health,
+          and portability scoring enforced in CI." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "testingCard2Title" | default "Unit + replay" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "testingCard2Desc" | default "Positive & negative fixtures, historical replay, shadow evals, and cost estimates compare implementations (cheap vs high-fidelity)." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "testingCard2Desc" | default "Positive & negative fixtures, historical replay, shadow evals, and cost
+          estimates compare implementations (cheap vs high-fidelity)." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
         <h3 class="font-semibold">{{ i18n "testingCard3Title" | default "Continuous validation" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "testingCard3Desc" | default "Schema drift, data quality SLOs, noise budget guardrails, and auto-quarantine keep detection debt visible." }}</p>
+        <p class="text-sm text-muted">
+          {{ i18n "testingCard3Desc" | default "Schema drift, data quality SLOs, noise budget guardrails, and
+          auto-quarantine keep detection debt visible." }}
+        </p>
       </div>
     </div>
     <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
       <h3 class="font-semibold">{{ i18n "aiPrinciplesTitle" | default "AI Capabilities" }}</h3>
-      <p class="text-sm text-muted">{{ i18n "aiPrinciplesDesc" | default "Rule suggestions based on MITRE gaps, automatic test generation, and quality & performance optimization. All suggestions require human approval." }}</p>
+      <p class="text-sm text-muted">
+        {{ i18n "aiPrinciplesDesc" | default "Rule suggestions based on MITRE gaps, automatic test generation, and
+        quality & performance optimization. All suggestions require human approval." }}
+      </p>
       <div class="flex flex-wrap gap-2 text-xs text-muted">
-        <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">{{ i18n "aiFeature2" | default "Human approval required" }}</span>
+        <span class="px-3 py-1.5 rounded-lg border border-stroke bg-base/60">
+          {{ i18n "aiFeature2" | default "Human approval required" }}
+        </span>
       </div>
     </div>
   </div>

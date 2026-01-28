@@ -1,19 +1,32 @@
 <section id="demo" class="px-6 py-14 md:py-20">
   <div class="max-w-6xl mx-auto space-y-6">
     <div class="flex flex-col gap-2">
-      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "demoLabel" | default "Demo scenario" }}</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "demoTitle" | default "Guardrails in action" }}</h2>
-      <p class="text-muted max-w-3xl">{{ i18n "demoDescription" | default "Shadow → cost guardrail → portability diff → canary → rollback." }}</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+        {{ i18n "demoLabel" | default "Demo scenario" }}
+      </p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">
+        {{ i18n "demoTitle" | default "Guardrails in action" }}
+      </h2>
+      <p class="text-muted max-w-3xl">
+        {{ i18n "demoDescription" | default "Shadow → cost guardrail → portability diff → canary → rollback." }}
+      </p>
     </div>
     <div class="grid lg:grid-cols-2 gap-6">
       <div class="rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-3">
-        <h3 class="font-semibold">{{ i18n "demoScenarioTitle" | default "Encoded PowerShell across Splunk + Sentinel" }}</h3>
+        <h3 class="font-semibold">
+          {{ i18n "demoScenarioTitle" | default "Encoded PowerShell across Splunk + Sentinel" }}
+        </h3>
         <ul class="list-disc list-inside text-sm text-muted space-y-2">
           <li>{{ i18n "demoStep1" | default "Shadow eval: 5 alerts/h, €12/d, 0.2% noise budget; latency 1.2s." }}</li>
           <li>{{ i18n "demoStep2" | default "Portability: SPL vs KQL diff highlighted; portability score 0.86." }}</li>
           <li>{{ i18n "demoStep3" | default "Approvals: impact summary auto-sent to Slack + Jira." }}</li>
-          <li>{{ i18n "demoStep4" | default "Canary: 12% blast radius; auto-rollback threshold at +0.5% noise budget." }}</li>
-          <li>{{ i18n "demoStep5" | default "Rollback: triggered on spike; rule returns to shadow; audit trail captured." }}</li>
+          <li>
+            {{ i18n "demoStep4" | default "Canary: 12% blast radius; auto-rollback threshold at +0.5% noise budget." }}
+          </li>
+          <li>
+            {{ i18n "demoStep5" | default "Rollback: triggered on spike; rule returns to shadow; audit trail captured."
+            }}
+          </li>
         </ul>
       </div>
       <div class="rounded-2xl border border-stroke bg-panel/80 p-5 shadow-soft space-y-4">

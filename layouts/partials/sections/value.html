@@ -1,34 +1,65 @@
 <section id="value" class="px-0 md:px-6 py-14 md:py-20 bg-panel/50 border-y border-stroke">
   <div class="max-w-6xl mx-auto px-6 md:px-0 space-y-6">
     <div class="flex flex-col gap-2">
-      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "valueLabel" | default "Why CraftedSignal" }}</p>
-      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "valueTitle" | default "SOC Health & Efficiency" }}</h2>
-      <p class="text-muted max-w-3xl">{{ i18n "valueDescription" | default "Software testing practices, applied to your SOC. Track detection quality, find problems before they hurt, and keep your rule library healthy." }}</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+        {{ i18n "valueLabel" | default "Why CraftedSignal" }}
+      </p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">
+        {{ i18n "valueTitle" | default "SOC Health & Efficiency" }}
+      </h2>
+      <p class="text-muted max-w-3xl">
+        {{ i18n "valueDescription" | default "Software testing practices, applied to your SOC. Track detection quality,
+        find problems before they hurt, and keep your rule library healthy." }}
+      </p>
     </div>
     <div class="grid md:grid-cols-3 gap-4">
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 shadow-soft">
-        <h3 class="font-semibold text-lg mb-2">{{ i18n "valueCard1Title" | default "Noise budgets & detection debt" }}</h3>
-        <p class="text-muted text-sm">{{ i18n "valueCard1Desc" | default "Enforce per-team noise budgets and TTRem SLAs. Auto-prioritize fixes by blast radius and MITRE gaps." }}</p>
+        <h3 class="font-semibold text-lg mb-2">
+          {{ i18n "valueCard1Title" | default "Noise budgets & detection debt" }}
+        </h3>
+        <p class="text-muted text-sm">
+          {{ i18n "valueCard1Desc" | default "Enforce per-team noise budgets and TTRem SLAs. Auto-prioritize fixes by
+          blast radius and MITRE gaps." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 shadow-soft">
-        <h3 class="font-semibold text-lg mb-2">{{ i18n "valueCard2Title" | default "Shadow eval with cost guardrails" }}</h3>
-        <p class="text-muted text-sm">{{ i18n "valueCard2Desc" | default "Dry-run rules on live streams with projected alert volume and ingestion cost. Block promotion if budgets break." }}</p>
+        <h3 class="font-semibold text-lg mb-2">
+          {{ i18n "valueCard2Title" | default "Shadow eval with cost guardrails" }}
+        </h3>
+        <p class="text-muted text-sm">
+          {{ i18n "valueCard2Desc" | default "Dry-run rules on live streams with projected alert volume and ingestion
+          cost. Block promotion if budgets break." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 shadow-soft">
         <h3 class="font-semibold text-lg mb-2">{{ i18n "valueCard3Title" | default "MITRE coverage analysis" }}</h3>
-        <p class="text-muted text-sm">{{ i18n "valueCard3Desc" | default "AI identifies gaps in your TTP coverage based on your environment and threat landscape." }}</p>
+        <p class="text-muted text-sm">
+          {{ i18n "valueCard3Desc" | default "AI identifies gaps in your TTP coverage based on your environment and
+          threat landscape." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 shadow-soft">
         <h3 class="font-semibold text-lg mb-2">{{ i18n "valueCard4Title" | default "Rule suggestions & tests" }}</h3>
-        <p class="text-muted text-sm">{{ i18n "valueCard4Desc" | default "AI generates rules and tests for coverage gaps. Review, modify, and deploy on your terms." }}</p>
+        <p class="text-muted text-sm">
+          {{ i18n "valueCard4Desc" | default "AI generates rules and tests for coverage gaps. Review, modify, and deploy
+          on your terms." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 shadow-soft">
-        <h3 class="font-semibold text-lg mb-2">{{ i18n "valueCard5Title" | default "Quality & performance optimization" }}</h3>
-        <p class="text-muted text-sm">{{ i18n "valueCard5Desc" | default "AI analyzes rules for quality issues and performance improvements. Better rules, less noise." }}</p>
+        <h3 class="font-semibold text-lg mb-2">
+          {{ i18n "valueCard5Title" | default "Quality & performance optimization" }}
+        </h3>
+        <p class="text-muted text-sm">
+          {{ i18n "valueCard5Desc" | default "AI analyzes rules for quality issues and performance improvements. Better
+          rules, less noise." }}
+        </p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 shadow-soft">
         <h3 class="font-semibold text-lg mb-2">{{ i18n "valueCard6Title" | default "SOC health metrics" }}</h3>
-        <p class="text-muted text-sm">{{ i18n "valueCard6Desc" | default "Track noisiness, confidence scores, dead rules, and problematic detections. Know your rule library's health." }}</p>
+        <p class="text-muted text-sm">
+          {{ i18n "valueCard6Desc" | default "Track noisiness, confidence scores, dead rules, and problematic
+          detections. Know your rule library's health." }}
+        </p>
       </div>
     </div>
   </div>
