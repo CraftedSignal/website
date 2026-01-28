@@ -4,8 +4,8 @@ title = 'CraftedSignal'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
 
-# Enable i18n
-enableMissingTranslationPlaceholders = true
+# Enable i18n - set to false so | default fallbacks work
+enableMissingTranslationPlaceholders = false
 
 [params]
   description = "Detection Engineering Control Plane"
