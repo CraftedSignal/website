@@ -1,13 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ .Language.Lang }}">
-  <head>
-    {{- partial "head.html" . -}}
-  </head>
-  <body class="min-h-screen text-text">
-    {{- partial "header.html" . -}}
-    <main>{{- block "main" . }}{{- end }}</main>
-    {{ $js := resources.Get "js/app.js" | js.Build (dict "minify" true "target" "es2020") | fingerprint }}
-    <script src="{{ $js.RelPermalink }}" defer></script>
-    {{- partial "footer.html" . -}}
-  </body>
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body class="min-h-screen text-text">
+  {{- partial "header.html" . -}}
+  <main>
+    {{- block "main" . }}{{- end }}
+  </main>
+  {{ $js := resources.Get "js/app.js" | js.Build (dict "minify" true "target" "es2020") | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{- partial "footer.html" . -}}
+</body>
 </html>

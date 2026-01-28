@@ -1,27 +1,10 @@
 <section class="px-0 md:px-6 py-14 md:py-20 bg-panel/60 border-t border-stroke">
   <div class="max-w-5xl mx-auto px-6 md:px-0 text-center space-y-4">
-    <h2 class="font-display text-3xl font-semibold">
-      {{ i18n "ctaTitle" | default "Ready to rollout efficiency to your SOC?" }}
-    </h2>
-    <p class="text-muted max-w-2xl mx-auto">
-      {{ i18n "ctaDescription" | default "Noise budgets, cost controls, data contracts, and rollback you can trust —
-      across your tech stack. We never own, but improve." }}
-    </p>
+    <h2 class="font-display text-3xl font-semibold">{{ i18n "ctaTitle" | default "Ready to rollout efficiency to your SOC?" }}</h2>
+    <p class="text-muted max-w-2xl mx-auto">{{ i18n "ctaDescription" | default "Noise budgets, cost controls, data contracts, and rollback you can trust — across your tech stack. We never own, but improve." }}</p>
     <div class="flex flex-wrap justify-center gap-3">
-      <a
-        class="inline-flex px-5 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition"
-        href="https://demo.craftedsignal.io/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {{ i18n "ctaTry" | default "Try it now" }}
-      </a>
-      <a
-        class="inline-flex px-5 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition"
-        href="{{ .Site.Params.docsURL }}"
-      >
-        {{ i18n "ctaDocs" | default "View the docs" }}
-      </a>
+      <a class="inline-flex px-5 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://demo.craftedsignal.io/" target="_blank" rel="noopener noreferrer">{{ i18n "ctaTry" | default "Try it now" }}</a>
+      <a class="inline-flex px-5 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="{{ .Site.Params.docsURL }}">{{ i18n "ctaDocs" | default "View the docs" }}</a>
     </div>
   </div>
 </section>
