@@ -218,7 +218,7 @@ The `master_secret` is the most critical configuration value. It is used to deri
 
 - **Session encryption** — PASETO tokens for browser sessions
 - **CSRF protection** — anti-forgery tokens
-- **Credential encryption** — AES-256 encryption of stored SIEM credentials, OIDC secrets, and webhook URLs
+- **Credential encryption** — derives a master credential key that wraps per-company tenant keys. Each company's SIEM credentials are encrypted with their own AES-256-GCM key. See [Security > Per-company encryption keys](/docs/security/#per-company-encryption-keys)
 - **Settings encryption** — sensitive platform settings
 
 If you lose or change the master secret, all encrypted data (SIEM credentials, SSO config) becomes unreadable and must be re-entered. Back it up securely.

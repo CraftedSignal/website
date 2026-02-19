@@ -20,7 +20,7 @@ CraftedSignal is a **control plane** — it manages rules, tests, approvals, and
 | Approval decisions | CraftedSignal |
 | Audit logs | CraftedSignal (exportable) |
 | User credentials | CraftedSignal (salted and hashed with Argon2id) |
-| SIEM credentials | CraftedSignal (encrypted at rest with AES-256) |
+| SIEM credentials | CraftedSignal (AES-256-GCM, per-company keys) |
 | Health metrics | CraftedSignal (derived from SIEM APIs, not raw logs) |
 
 Agents that connect to your SIEM are **outbound-only** — they initiate connections from your network to your SIEM. No inbound ports required.
@@ -29,9 +29,39 @@ Agents that connect to your SIEM are **outbound-only** — they initiate connect
 
 ## Encryption
 
-- **At rest**: All credentials and sensitive data encrypted with AES-256
+- **At rest**: All credentials and sensitive data encrypted with AES-256-GCM
 - **In transit**: TLS 1.2+ for all connections
-- **Per-company encryption keys**: Each company's SIEM credentials are wrapped with a dedicated encryption key derived from the master secret via HKDF-SHA256. One company's key cannot decrypt another company's credentials
+
+### Per-company encryption keys
+
+SIEM credentials are encrypted with **per-company (tenant) keys**, not the master secret directly. This ensures one company's key cannot decrypt another company's credentials.
+
+**Key hierarchy:**
+
+1. **Master secret** — configured in your deployment (`master_secret` in config). Never used directly for data encryption.
+2. **Master credential key** — derived from the master secret via HKDF-SHA256 with purpose `"credentials"`. Used only to wrap/unwrap tenant keys.
+3. **Tenant key** — a random 256-bit AES key, unique per company. Stored encrypted (wrapped) in the database using the master credential key. Used to encrypt and decrypt that company's SIEM credentials.
+
+```
+master_secret
+  └─ HKDF-SHA256 ("credentials") ──► master credential key
+                                        └─ AES-256-GCM wrap ──► tenant key (per company)
+                                                                   └─ AES-256-GCM ──► SIEM credentials
+```
+
+**How it works:**
+
+- When a company first connects a SIEM, a random tenant key is generated and stored (wrapped) alongside the company record
+- On encrypt/decrypt, the tenant key is unwrapped in memory, used, and discarded
+- Each encryption operation uses a unique random salt and nonce (PBKDF2 key derivation + AES-256-GCM)
+- If a company doesn't yet have a tenant key (e.g. after upgrading from an older version), one is generated lazily on first credential access
+
+**Tenant isolation guarantees:**
+
+- Compromising one company's wrapped key is useless without the master credential key
+- The master credential key is derived in memory and never persisted
+- Database access alone cannot decrypt any credentials
+- Rotating the master secret re-derives the master credential key — a migration path is provided to re-wrap all tenant keys
 
 ---
 
@@ -70,7 +100,7 @@ See [Roles & Permissions](/docs/roles-permissions/) for the full permission matr
 - **Input validation** — all API inputs are validated server-side. Rule queries are parsed and validated for syntax before storage
 - **Session management** — sessions use PASETO v2 tokens with encryption keys derived from the master secret via HKDF-SHA256. Sessions are server-side and revocable
 - **Password storage** — user passwords are salted and hashed with Argon2id (3 iterations, 64 MB memory, 4 threads)
-- **Credential encryption** — SIEM credentials, OIDC secrets, and webhook URLs are encrypted at rest with AES-256. Encryption keys are derived from your master secret, never stored directly
+- **Credential encryption** — SIEM credentials are encrypted at rest with AES-256-GCM using [per-company encryption keys](#per-company-encryption-keys). OIDC secrets and webhook URLs are encrypted with keys derived from the master secret
 - **Content Security Policy** — strict CSP headers restrict script sources, frame embedding, and resource loading
 
 ### Secure detection workflows

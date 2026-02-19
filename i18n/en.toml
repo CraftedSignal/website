@@ -82,7 +82,7 @@ other = "MSSP / MDR"
 # ──────────────────────────────────────────────
 
 [valueProp1Title]
-other = "Threat intel → tested rules"
+other = "Practical threat intelligence"
 
 [valueProp1Desc]
 other = "Get ready-to-use detections from our TI feed, generate with AI, or bring your own. Every rule comes with tests you can run live on your SIEM."

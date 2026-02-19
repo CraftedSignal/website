@@ -8,7 +8,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
-        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp1Title" | default "Threat intel → tested rules" }}</h3>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp1Title" | default "Practical threat intelligence" }}</h3>
         <p class="text-sm text-muted">{{ i18n "valueProp1Desc" | default "Get ready-to-use detections from our TI feed, generate with AI, or bring your own repo. Every rule comes with tests you can run live on your SIEM." }}</p>
         <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
       </a>
@@ -34,6 +34,42 @@
         </div>
         <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp3Title" | default "Approve with impact preview" }}</h3>
         <p class="text-sm text-muted">{{ i18n "valueProp3Desc" | default "See the impact of every rule change before it hits your team. Juniors submit, seniors approve. Rollback in one click. Every action logged." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 4: Multi-SIEM -->
+      <a href="/docs/platforms/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp4Title" | default "One rule, every SIEM" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp4Desc" | default "Author once, translate to Splunk, Sentinel, CrowdStrike, and Rapid7. Platform diffs show exactly what changes so reviewers approve with confidence." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 5: Safe Deployment -->
+      <a href="/docs/deployment/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp5Title" | default "Deploy safely, rollback instantly" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp5Desc" | default "Monitoring mode measures projected volume before alerting. Noise budgets block runaway rules. One-click rollback when things go wrong." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 6: Detections as Code -->
+      <a href="/docs/cli/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp6Title" | default "Detections as code" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp6Desc" | default "YAML rules in Git. Validate, test, and deploy with csctl or your CI/CD pipeline. Version history, diffs, and audit trail built in." }}</p>
         <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
       </a>
     </div>
