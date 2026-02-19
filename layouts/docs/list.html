@@ -88,6 +88,7 @@
       container.appendChild(empty);
     } else {
       matches.forEach(function (m) {
+        if (typeof m.url !== 'string' || m.url[0] !== '/') return;
         var link = document.createElement('a');
         link.href = m.url;
         link.className = 'block px-4 py-3 hover:bg-panel/80 transition border-b border-stroke last:border-0';
