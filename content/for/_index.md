@@ -1,5 +1,4 @@
 ---
 title: "Solutions"
+description: "See how CraftedSignal helps your role — from detection engineers to CISOs."
 ---
-
-CraftedSignal landing pages by persona/ICP.

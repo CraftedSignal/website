@@ -144,6 +144,6 @@ Portability scores indicate how well the rule translates. Scores below a thresho
 
 All SIEM credentials are:
 
-- Encrypted at rest with AES-256, key derived from master secret via HKDF-SHA256
+- Encrypted at rest with AES-256 using per-company encryption keys derived from the master secret via HKDF-SHA256
 - Rotatable without downtime
 - Never logged or exposed in API responses

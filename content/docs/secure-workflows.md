@@ -18,6 +18,7 @@ Rules are validated for syntax, schema compliance, and query correctness before 
 - **Offline validation** — `csctl validate` checks rules locally without network access
 - **Server-side validation** — the platform validates every rule on push, regardless of how it was submitted (CLI, API, or web UI)
 - **Atomic batches** — if any rule in a batch fails validation, the entire batch is rejected. No partial deployments
+- **Monitoring mode for new versions** — new or modified rules can deploy in monitoring mode first, executing against live data without generating alerts. Promote to active only after confirming real-world behavior
 
 ---
 

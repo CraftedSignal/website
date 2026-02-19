@@ -46,7 +46,7 @@
                   <div class="font-semibold text-text break-words">{{ i18n "rule2Name" | default "Webshell Uploads" }}</div>
                   <p class="text-xs text-muted break-words">{{ i18n "rule2Context" | default "Production · WAF + Apache/IIS" }}</p>
                 </div>
-                <span class="px-2 py-1 rounded-lg bg-accent2/10 text-xs text-accent2 font-semibold whitespace-nowrap flex-shrink-0">{{ i18n "attested" | default "Attested" }}</span>
+                <span class="px-2 py-1 rounded-lg bg-accent2/10 text-xs text-accent2 font-semibold whitespace-nowrap flex-shrink-0">{{ i18n "deployed" | default "Deployed" }}</span>
               </div>
               <div class="flex flex-wrap gap-2 text-xs">
                 <button data-rule-id="webshell-upload" class="px-3 py-1.5 rounded-lg border border-accent2/40 bg-accent2/10 text-text hover:scale-[1.01] transition">{{ i18n "load" | default "Load" }}</button>
@@ -81,7 +81,7 @@
           </div>
           <div class="flex items-center gap-2 flex-wrap">
             <span id="save-status" class="text-xs font-semibold px-3 py-1 rounded-lg border border-stroke bg-base/70 text-muted whitespace-nowrap">{{ i18n "draft" | default "Draft" }}</span>
-            <button id="save-rule" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-accent to-accent2 text-sm font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition whitespace-nowrap">{{ i18n "saveRule" | default "Save rule" }}</button>
+            <button id="save-rule" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white font-semibold text-sm shadow-soft hover:scale-[1.01] transition whitespace-nowrap">{{ i18n "saveRule" | default "Save rule" }}</button>
           </div>
         </div>
         <div class="rounded-xl border border-stroke bg-base/70 p-3 space-y-3">

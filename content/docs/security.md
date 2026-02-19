@@ -29,9 +29,9 @@ Agents that connect to your SIEM are **outbound-only** — they initiate connect
 
 ## Encryption
 
-- **At rest**: All credentials and sensitive data encrypted with AES-256 using your master secret
+- **At rest**: All credentials and sensitive data encrypted with AES-256
 - **In transit**: TLS 1.2+ for all connections
-- **Secrets**: SIEM credentials encrypted with AES-256, key derived from your master secret via HKDF-SHA256
+- **Per-company encryption keys**: Each company's SIEM credentials are wrapped with a dedicated encryption key derived from the master secret via HKDF-SHA256. One company's key cannot decrypt another company's credentials
 
 ---
 

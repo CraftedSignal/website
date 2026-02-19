@@ -1,6 +1,9 @@
 <section id="hero" class="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
   <div class="max-w-5xl mx-auto text-center space-y-6">
-    <!-- Outcome-first headline -->
+    <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+      {{ i18n "heroBanner" | default "Detection Engineering Control Plane" }}
+    </p>
+
     <h1 class="font-display text-4xl md:text-6xl font-semibold leading-tight">
       {{ i18n "heroNewTitle" | default "Cut alert noise 60%. Ship better detections 10x faster." }}
     </h1>
@@ -11,7 +14,7 @@
 
     <!-- Primary CTAs -->
     <div class="flex flex-wrap justify-center gap-4 pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
         {{ i18n "heroNewCtaTry" | default "Start free" }}
       </a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="#how-it-works">

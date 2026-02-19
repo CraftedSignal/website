@@ -19,12 +19,12 @@
     <nav class="hidden md:flex gap-4 text-sm text-muted flex-wrap">
       <a href="/#how-it-works" class="hover:text-text transition">{{ i18n "navHowItWorks" | default "How it works" }}</a>
       <a href="/for/" class="hover:text-text transition">{{ i18n "navSolutions" | default "Solutions" }}</a>
-      <a href="/#trust" class="hover:text-text transition">{{ i18n "navTrust" | default "Trust" }}</a>
+      <a href="/#trust" class="hover:text-text transition">{{ i18n "navTrust" | default "Security" }}</a>
       <a href="/docs/" class="hover:text-text transition">{{ i18n "navDocs" | default "Documentation" }}</a>
     </nav>
 
     <div class="ml-auto flex items-center gap-3">
-      <a class="inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">{{ i18n "navLogin" | default "Login" }}</a>
+      <a class="inline-flex px-4 py-2 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">{{ i18n "navLogin" | default "Login" }}</a>
       <a class="hidden sm:inline-flex px-4 py-2 rounded-xl border border-stroke text-sm font-semibold text-text hover:border-accent/60 transition" href="mailto:{{ .Site.Params.email }}">{{ i18n "navContact" | default "Contact" }}</a>
     </div>
   </div>
@@ -34,7 +34,7 @@
     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm">
       <a href="/#how-it-works" class="py-2 text-muted hover:text-text transition">{{ i18n "navHowItWorks" | default "How it works" }}</a>
       <a href="/for/" class="py-2 text-muted hover:text-text transition">{{ i18n "navSolutions" | default "Solutions" }}</a>
-      <a href="/#trust" class="py-2 text-muted hover:text-text transition">{{ i18n "navTrust" | default "Trust" }}</a>
+      <a href="/#trust" class="py-2 text-muted hover:text-text transition">{{ i18n "navTrust" | default "Security" }}</a>
       <a href="/docs/" class="py-2 text-muted hover:text-text transition">{{ i18n "navDocs" | default "Documentation" }}</a>
       <a href="mailto:{{ .Site.Params.email }}" class="py-2 text-muted hover:text-text transition">{{ i18n "navContact" | default "Contact" }}</a>
     </div>

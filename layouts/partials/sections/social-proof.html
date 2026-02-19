@@ -1,39 +1,66 @@
-<section id="social-proof" class="px-6 py-8 border-y border-stroke bg-panel/40">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex flex-wrap items-center justify-center gap-2">
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Generous free tier</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">SaaS or single binary</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Positive & Negative Rule Testing</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Splunk</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Sentinel</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">CrowdStrike</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">TI feed with rules</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">One-click rollback</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Impact preview</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">60% less noise</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Detections as code</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">AI-generated rules</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">No black-box AI</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Self-host AI via Ollama</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">MITRE coverage maps</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Approval workflows</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Immutable audit logs</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">SSO & Passkey MFA</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">RBAC built in</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">SOC2 aligned</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">NIS2 ready</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">AI Rule Autofix</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">CLI or web UI</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Noise ratio dashboards</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Compliance Mapping</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Team workload metrics</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Everything togglable</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Never trains on your data</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Standard rules included</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Bring your own repository</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Stale rules</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Rule review</span>
-      <span class="px-3 py-1.5 rounded-lg bg-black text-sm text-white/80">Dark & white theme</span>
+<section id="social-proof" class="py-8 border-y border-stroke bg-panel/40 overflow-hidden">
+  <div class="relative">
+    {{/* Fade edges */}}
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-panel/90 to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-panel/90 to-transparent z-10"></div>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        {{ $pills := slice
+          "Generous free tier"
+          "SaaS or single binary"
+          "Positive & Negative Rule Testing"
+          "Splunk"
+          "Sentinel"
+          "CrowdStrike"
+          "Rapid7"
+          "TI feed with rules"
+          "One-click rollback"
+          "Impact preview"
+          "60% less noise"
+          "Detections as code"
+          "AI-generated rules"
+          "No black-box AI"
+          "Self-host AI via Ollama"
+          "MITRE coverage maps"
+          "Approval workflows"
+          "Immutable audit logs"
+          "SSO & Passkey MFA"
+          "RBAC built in"
+          "SOC2 aligned"
+          "NIS2 ready"
+          "AI Rule Autofix"
+          "CLI or web UI"
+          "Noise ratio dashboards"
+          "Compliance Mapping"
+          "Team workload metrics"
+          "Everything togglable"
+          "Never trains on your data"
+          "Standard rules included"
+          "Bring your own repository"
+          "Stale rules"
+          "Rule review"
+          "Dark & white theme"
+        }}
+        {{/* Render twice for seamless loop */}}
+        {{ range $i := slice 0 1 }}
+          {{ range $pills }}
+            <span class="shrink-0 px-3 py-1.5 rounded-lg bg-black text-sm text-white/80 whitespace-nowrap">{{ . }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .marquee { overflow: hidden; }
+  .marquee-track {
+    display: flex;
+    gap: 0.5rem;
+    width: max-content;
+    animation: marquee 80s linear infinite;
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+</style>

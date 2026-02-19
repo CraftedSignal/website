@@ -9,7 +9,7 @@ other = "How it works"
 other = "Solutions"
 
 [navTrust]
-other = "Trust"
+other = "Security"
 
 [navDocs]
 other = "Documentation"
@@ -598,8 +598,8 @@ other = "live"
 [guardrails]
 other = "Guardrails"
 
-[attested]
-other = "Attested"
+[deployed]
+other = "Deployed"
 
 [portable]
 other = "Portable"

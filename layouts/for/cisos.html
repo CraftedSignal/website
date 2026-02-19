@@ -11,7 +11,7 @@
       {{ i18n "cisosDescription" | default "Immutable audit trails. Full visibility into AI suggestions. Every feature togglable. Deploy on your terms: SaaS or a single binary." }}
     </p>
     <div class="flex flex-wrap justify-center gap-4 pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=Governance%20briefing%20request&body=Share%20your%20sectors%2C%20platforms%2C%20and%20target%20timeline.">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=Governance%20briefing%20request&body=Share%20your%20sectors%2C%20platforms%2C%20and%20target%20timeline.">
         {{ i18n "forCtaDesignPartner" | default "Join design partners" }}
       </a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
@@ -106,40 +106,66 @@
   </div>
 </section>
 
-<!-- Whitepaper Download -->
-<section id="whitepaper" class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
-  <div class="max-w-4xl mx-auto">
-    <div class="rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/5 to-accent2/5 p-8 md:p-10">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="space-y-4">
-          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosWhitepaperLabel" | default "Free Download" }}</p>
-          <h2 class="font-display text-2xl font-semibold">{{ i18n "cisosWhitepaperTitle" | default "Detection Governance Whitepaper" }}</h2>
-          <p class="text-sm text-muted">{{ i18n "cisosWhitepaperDesc" | default "A framework for managing detection rules like critical infrastructure. Covers regulatory drivers (NIS2, SOC2), governance models, and implementation checklist." }}</p>
-          <ul class="text-sm text-muted space-y-1">
-            <li>• {{ i18n "cisosWhitepaperBullet1" | default "The detection debt problem (with industry stats)" }}</li>
-            <li>• {{ i18n "cisosWhitepaperBullet2" | default "Regulatory requirements and implications" }}</li>
-            <li>• {{ i18n "cisosWhitepaperBullet3" | default "Framework for detection governance" }}</li>
-            <li>• {{ i18n "cisosWhitepaperBullet4" | default "\"Is your program audit-ready?\" checklist" }}</li>
-          </ul>
-        </div>
+<!-- Governance Resources -->
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "cisosResourcesLabel" | default "Governance Resources" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosResourcesTitle" | default "Deep-dive into the security model" }}</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="/docs/security/" class="group rounded-2xl border border-stroke bg-base/70 p-5 space-y-2 hover:border-accent/40 transition">
+        <h3 class="font-semibold text-sm group-hover:text-accent transition">{{ i18n "cisosResource1Title" | default "Security & Compliance" }}</h3>
+        <p class="text-xs text-muted">{{ i18n "cisosResource1Desc" | default "Data boundaries, encryption, audit logging, SSO, and compliance posture (SOC2, NIS2, GDPR)." }}</p>
+      </a>
+      <a href="/docs/secure-workflows/" class="group rounded-2xl border border-stroke bg-base/70 p-5 space-y-2 hover:border-accent/40 transition">
+        <h3 class="font-semibold text-sm group-hover:text-accent transition">{{ i18n "cisosResource2Title" | default "Secure Workflows" }}</h3>
+        <p class="text-xs text-muted">{{ i18n "cisosResource2Desc" | default "Validation, testing, approval gates, monitoring mode, and rollback at every stage of the detection lifecycle." }}</p>
+      </a>
+      <a href="/docs/roles-permissions/" class="group rounded-2xl border border-stroke bg-base/70 p-5 space-y-2 hover:border-accent/40 transition">
+        <h3 class="font-semibold text-sm group-hover:text-accent transition">{{ i18n "cisosResource3Title" | default "Roles & Permissions" }}</h3>
+        <p class="text-xs text-muted">{{ i18n "cisosResource3Desc" | default "RBAC matrix with Admin, User, and Viewer roles. Separation of duties enforced by the platform." }}</p>
+      </a>
+      <a href="/docs/deployment/" class="group rounded-2xl border border-stroke bg-base/70 p-5 space-y-2 hover:border-accent/40 transition">
+        <h3 class="font-semibold text-sm group-hover:text-accent transition">{{ i18n "cisosResource4Title" | default "Deployment Guide" }}</h3>
+        <p class="text-xs text-muted">{{ i18n "cisosResource4Desc" | default "SaaS, self-hosted, and air-gapped options. Single binary, outbound-only agents, local AI." }}</p>
+      </a>
+    </div>
+  </div>
+</section>
 
-        <div class="space-y-4 flex flex-col items-center justify-center">
-          <a class="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition text-center" href="mailto:founders@craftedsignal.io?subject=Detection%20Governance%20Whitepaper%20Request&body=Please%20send%20me%20the%20Detection%20Governance%20whitepaper.%0A%0ACompany%3A%20%0ARole%3A%20">
-            {{ i18n "cisosWhitepaperCta" | default "Request whitepaper" }}
-          </a>
-          <p class="text-xs text-muted text-center">{{ i18n "cisosWhitepaperPrivacy" | default "We'll send the PDF directly to your inbox." }}</p>
-        </div>
+<!-- Deployment Options -->
+<section class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Deployment</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Deploy on your terms</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">SaaS</h3>
+        <p class="text-sm text-muted">Managed by CraftedSignal. Automatic updates, zero infrastructure overhead. Your logs never leave your SIEM — we manage rules and metadata only.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">Self-hosted</h3>
+        <p class="text-sm text-muted">Single binary, no external dependencies. SQLite built in, optional PostgreSQL. Run AI locally via Ollama. You control upgrades, backups, and availability.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">Air-gapped</h3>
+        <p class="text-sm text-muted">Full functionality with no internet access. AI via local Ollama, all features offline. Agents are outbound-only — no inbound ports required.</p>
       </div>
     </div>
   </div>
 </section>
+
+{{- partial "sections/for-footer.html" . -}}
 
 <!-- Final CTA -->
 <section class="px-6 py-14 md:py-20">
   <div class="max-w-3xl mx-auto text-center space-y-6">
     <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "cisosCtaTitle" | default "Ready to take control of your detection program?" }}</h2>
     <div class="flex flex-wrap justify-center gap-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:{{ .Site.Params.salesEmail }}">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="mailto:{{ .Site.Params.salesEmail }}">
         {{ i18n "cisosCtaContact" | default "Schedule a briefing" }}
       </a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">

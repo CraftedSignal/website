@@ -11,7 +11,7 @@
       Template once, roll out in waves, and keep every tenant in policy. Delegated admin and health signals per tenant keep you ahead of SLAs.
     </p>
     <div class="flex flex-wrap justify-center gap-4 pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=MSSP%20design%20partner&body=Describe%20your%20tenants%2C%20platforms%2C%20and%20target%20change%20window.">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=MSSP%20design%20partner&body=Describe%20your%20tenants%2C%20platforms%2C%20and%20target%20change%20window.">
         Join design partners
       </a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
@@ -76,33 +76,108 @@
   </div>
 </section>
 
+<!-- Tenant Health Dashboard -->
 <section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
-    <div class="space-y-4">
-      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Platforms</p>
-      <h3 class="font-display text-2xl font-semibold">Splunk, Sentinel, CrowdStrike, Rapid7—managed as a fleet.</h3>
-      <p class="text-sm text-muted">Translation diffs show per-platform changes so your customers see exactly what ships to their SIEM/XDR.</p>
-    </div>
-    <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
-      <div class="flex items-center justify-between">
-        <span class="text-sm text-muted">MSSP accelerator</span>
-        <span class="text-xs font-semibold px-2 py-1 rounded-lg bg-accent/10 text-accent">Included in pilot</span>
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Fleet visibility</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">Per-tenant health at a glance</h2>
+        <p class="text-muted">See noise ratios, coverage gaps, stale rules, and SLA status across your entire customer base. Drill into any tenant for detailed health metrics.</p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm">Per-tenant noise ratio and alert volume trending</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm">Drift detection across all tenants — catch out-of-band SIEM changes</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span class="text-sm">Rollback any tenant independently without affecting the fleet</span>
+          </li>
+        </ul>
       </div>
-      <ul class="space-y-2 text-sm text-text">
-        <li>• Standard rule pack + onboarding playbook</li>
-        <li>• Tenant baseline template with overrides</li>
-        <li>• Change window + rollback checklist</li>
-      </ul>
+
+      <div class="rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-semibold">Fleet Health</span>
+          <span class="px-2 py-1 rounded-lg bg-accent/10 text-accent text-xs font-semibold">42 tenants</span>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-muted">Acme Corp <span class="text-xs">(Splunk)</span></span>
+            <span class="text-green-400 font-semibold">Healthy</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-muted">FinServ Ltd <span class="text-xs">(Sentinel)</span></span>
+            <span class="text-yellow-400 font-semibold">1 noisy rule</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-muted">MedTech AG <span class="text-xs">(Splunk)</span></span>
+            <span class="text-green-400 font-semibold">Healthy</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-muted">EduNet <span class="text-xs">(CrowdStrike)</span></span>
+            <span class="text-red-400 font-semibold">Drift detected</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-3 pt-2">
+          <div class="rounded-xl border border-stroke bg-base/60 p-2 text-center">
+            <div class="text-xs text-muted">Avg noise</div>
+            <div class="text-sm font-bold text-accent">0.4%</div>
+          </div>
+          <div class="rounded-xl border border-stroke bg-base/60 p-2 text-center">
+            <div class="text-xs text-muted">Coverage</div>
+            <div class="text-sm font-bold text-accent2">68%</div>
+          </div>
+          <div class="rounded-xl border border-stroke bg-base/60 p-2 text-center">
+            <div class="text-xs text-muted">SLA met</div>
+            <div class="text-sm font-bold text-green-400">100%</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Platforms & Accelerator -->
+<section class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Platforms</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Splunk, Sentinel, CrowdStrike, Rapid7 — managed as a fleet</h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
+        <h3 class="font-semibold text-sm">Standard rule packs</h3>
+        <p class="text-xs text-muted">Pre-built detection templates for common threat scenarios. Customise per tenant or use as-is.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
+        <h3 class="font-semibold text-sm">Tenant overrides</h3>
+        <p class="text-xs text-muted">Scoped exceptions, custom thresholds, and per-tenant exclusion lists without forking the baseline.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
+        <h3 class="font-semibold text-sm">Translation diffs</h3>
+        <p class="text-xs text-muted">See exactly what ships to each tenant's SIEM. Platform-specific diffs show every change.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2">
+        <h3 class="font-semibold text-sm">Onboarding playbook</h3>
+        <p class="text-xs text-muted">Baseline template, change-window configuration, and rollback checklist included in your pilot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{- partial "sections/for-footer.html" . -}}
 
 <section class="px-6 py-14 md:py-20">
   <div class="max-w-3xl mx-auto text-center space-y-6">
     <h2 class="font-display text-2xl md:text-3xl font-semibold">Plan your next wave.</h2>
     <p class="text-muted">We'll map tenants into waves, set deployment guardrails, and run the first rollout together.</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=MSSP%20rollout%20planning&body=How%20many%20tenants%3F%20Which%20platforms%3F%20Target%20change%20window%3F">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=MSSP%20rollout%20planning&body=How%20many%20tenants%3F%20Which%20platforms%3F%20Target%20change%20window%3F">
         Plan a rollout
       </a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="{{ .Site.Params.docsURL }}">
