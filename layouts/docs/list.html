@@ -1,0 +1,132 @@
+{{ define "main" }}
+<section class="px-6 pt-24 pb-16 md:pt-32 md:pb-20">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center space-y-4 mb-8">
+      <h1 class="font-display text-4xl md:text-5xl font-semibold">Documentation</h1>
+      <p class="text-xl text-muted max-w-3xl mx-auto">Everything you need to install, configure, and run CraftedSignal.</p>
+    </div>
+
+    {{/* Search */}}
+    <div class="max-w-xl mx-auto mb-12">
+      <div class="relative">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input id="docs-search" type="text" placeholder="Search docs..." class="w-full pl-12 pr-4 py-3 rounded-xl border border-stroke bg-base/70 text-text placeholder:text-muted/60 focus:border-accent focus:outline-none transition" autocomplete="off" />
+      </div>
+      <div id="docs-search-results" class="mt-2 hidden rounded-xl border border-stroke bg-panel/95 backdrop-blur overflow-hidden"></div>
+    </div>
+
+    {{ $sections := dict
+      "Getting Started" (slice)
+      "Core Concepts" (slice)
+      "Features" (slice)
+      "Administration" (slice)
+      "Integrations" (slice)
+      "Security" (slice)
+    }}
+
+    {{/* Group pages by section param */}}
+    {{ $grouped := dict }}
+    {{ range .Pages.ByWeight }}
+      {{ $sec := .Params.section | default "Other" }}
+      {{ $existing := index $grouped $sec }}
+      {{ if $existing }}
+        {{ $grouped = merge $grouped (dict $sec ($existing | append .)) }}
+      {{ else }}
+        {{ $grouped = merge $grouped (dict $sec (slice .)) }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Render sections in order */}}
+    {{ $order := slice "Getting Started" "Core Concepts" "Features" "Administration" "Integrations" "Security" }}
+    <div class="space-y-10">
+      {{ range $sectionName := $order }}
+        {{ $pages := index $grouped $sectionName }}
+        {{ if $pages }}
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-[0.14em] text-accent mb-4">{{ $sectionName }}</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {{ range $pages }}
+            <a href="{{ .RelPermalink }}" class="group rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2 hover:border-accent/40 transition">
+              <h3 class="font-semibold group-hover:text-accent transition">{{ .Title }}</h3>
+              {{ with .Params.description }}
+              <p class="text-sm text-muted">{{ . }}</p>
+              {{ end }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* Search index as JSON data */}}
+{{ $pages := slice }}
+{{ range .Pages.ByWeight }}
+  {{ $headings := "" }}
+  {{ range .Fragments.Headings }}{{ $headings = printf "%s %s" $headings .Title }}{{ end }}
+  {{ $pages = $pages | append (dict "title" .Title "description" (.Params.description | default "") "section" (.Params.section | default "") "url" .RelPermalink "headings" $headings "content" (.Plain | truncate 2000)) }}
+{{ end }}
+<script id="docs-search-index" type="application/json">{{ $pages | jsonify | safeHTML }}</script>
+<script>
+(function () {
+  var raw = JSON.parse(document.getElementById('docs-search-index').textContent);
+  if (typeof raw === 'string') raw = JSON.parse(raw);
+  var index = Array.isArray(raw) ? raw : [];
+  var input = document.getElementById('docs-search');
+  var container = document.getElementById('docs-search-results');
+
+  function renderResults(matches, query) {
+    container.textContent = '';
+    if (!query) { container.classList.add('hidden'); return; }
+
+    if (matches.length === 0) {
+      var empty = document.createElement('div');
+      empty.className = 'px-4 py-3 text-sm text-muted';
+      empty.textContent = 'No results found.';
+      container.appendChild(empty);
+    } else {
+      matches.forEach(function (m) {
+        var link = document.createElement('a');
+        link.href = m.url;
+        link.className = 'block px-4 py-3 hover:bg-panel/80 transition border-b border-stroke last:border-0';
+        var title = document.createElement('div');
+        title.className = 'font-semibold text-sm';
+        title.textContent = m.title;
+        var desc = document.createElement('div');
+        desc.className = 'text-xs text-muted';
+        desc.textContent = m.description;
+        link.appendChild(title);
+        link.appendChild(desc);
+        container.appendChild(link);
+      });
+    }
+    container.classList.remove('hidden');
+  }
+
+  input.addEventListener('input', function () {
+    var q = this.value.toLowerCase().trim();
+    if (!q) { renderResults([], ''); return; }
+
+    var matches = index.filter(function (page) {
+      return page.title.toLowerCase().indexOf(q) !== -1
+        || page.description.toLowerCase().indexOf(q) !== -1
+        || (page.headings || '').toLowerCase().indexOf(q) !== -1
+        || page.content.toLowerCase().indexOf(q) !== -1;
+    });
+    renderResults(matches, q);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!input.contains(e.target) && !container.contains(e.target)) {
+      container.classList.add('hidden');
+    }
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { container.classList.add('hidden'); input.blur(); }
+  });
+})();
+</script>
+{{ end }}

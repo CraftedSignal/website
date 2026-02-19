@@ -6,7 +6,7 @@ public/
 resources/
 .hugo_build.lock
 hugo_stats.json
-docs/
+docs/plans/
 
 # Legacy build directories
 dist/

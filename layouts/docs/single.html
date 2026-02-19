@@ -1,0 +1,71 @@
+{{ define "main" }}
+<section class="px-6 pt-24 pb-16 md:pt-32 md:pb-20">
+  <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
+
+    {{/* Sidebar nav */}}
+    <nav class="lg:w-56 shrink-0">
+      <div class="lg:sticky lg:top-24 space-y-6">
+        <a href="/docs/" class="text-xs font-semibold uppercase tracking-[0.14em] text-accent hover:underline">&larr; All docs</a>
+
+        {{ $grouped := dict }}
+        {{ range .Parent.Pages.ByWeight }}
+          {{ $sec := .Params.section | default "Other" }}
+          {{ $existing := index $grouped $sec }}
+          {{ if $existing }}
+            {{ $grouped = merge $grouped (dict $sec ($existing | append .)) }}
+          {{ else }}
+            {{ $grouped = merge $grouped (dict $sec (slice .)) }}
+          {{ end }}
+        {{ end }}
+
+        {{ $order := slice "Getting Started" "Core Concepts" "Features" "Administration" "Integrations" "Security" }}
+        {{ range $sectionName := $order }}
+          {{ $pages := index $grouped $sectionName }}
+          {{ if $pages }}
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-muted mb-2">{{ $sectionName }}</p>
+            <ul class="space-y-1">
+              {{ range $pages }}
+              <li>
+                <a href="{{ .RelPermalink }}" class="block text-sm py-1 transition {{ if eq $.RelPermalink .RelPermalink }}text-accent font-semibold{{ else }}text-muted hover:text-text{{ end }}">
+                  {{ .Title }}
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </nav>
+
+    {{/* Content */}}
+    <article class="min-w-0 flex-1">
+      {{ with .Params.section }}
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent mb-2">{{ . }}</p>
+      {{ end }}
+      <h1 class="font-display text-3xl md:text-4xl font-semibold mb-2">{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="text-lg text-muted mb-8">{{ . }}</p>
+      {{ end }}
+
+      <div class="prose prose-invert max-w-none
+        prose-headings:font-display prose-headings:font-semibold
+        prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:border-t prose-h2:border-stroke prose-h2:pt-8
+        prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-muted prose-p:leading-relaxed
+        prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-text
+        prose-code:text-accent prose-code:bg-base/80 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+        prose-pre:!bg-[#0a0f1a] prose-pre:border prose-pre:border-stroke prose-pre:rounded-xl prose-pre:text-text/80
+        prose-table:text-sm
+        prose-th:text-left prose-th:text-muted prose-th:font-semibold prose-th:border-stroke
+        prose-td:border-stroke
+        prose-li:text-muted
+        prose-hr:hidden">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+</section>
+{{ end }}
