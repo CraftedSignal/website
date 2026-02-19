@@ -13,10 +13,11 @@ section: "Getting Started"
 
 ## Installation
 
-Download `csctl` from your CraftedSignal account under **Settings > Downloads**, or use the platform URL directly:
+Download the latest binary from [GitHub Releases](https://github.com/CraftedSignal/cli/releases):
 
 ```bash
 # macOS / Linux
+curl -fsSL https://github.com/CraftedSignal/cli/releases/latest/download/csctl-$(uname -s)-$(uname -m) -o csctl
 chmod +x csctl && mv csctl /usr/local/bin/
 ```
 

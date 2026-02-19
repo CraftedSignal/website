@@ -15,7 +15,7 @@ The free tier includes all core features: rule editing, testing, deployment, rol
 
 ### Self-hosted
 
-Download a single binary from your account and run it on your infrastructure. CraftedSignal has no external database dependencies — SQLite is used by default as a database on the filesystem.
+Download the single binary from [GitHub Releases](https://github.com/craftedsignal/releases) and run it on your infrastructure. CraftedSignal has no external database dependencies — SQLite is used by default as a database on the filesystem.
 
 **System requirements:**
 
