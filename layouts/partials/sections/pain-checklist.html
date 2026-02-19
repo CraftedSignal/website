@@ -180,15 +180,11 @@
         result.classList.remove('max-h-40');
       }
 
-      // Pick winner; loop order provides tie-break (engineer > soc > ciso)
-      let winner = null;
-      let maxCount = 0;
-      for (let p = 0; p < priority.length; p++) {
-        const persona = priority[p];
-        if (tally[persona] > maxCount) {
-          maxCount = tally[persona];
-          winner = persona;
-        }
+      // Pick winner only when one persona has a clear lead
+      var sorted = priority.slice().sort(function (a, b) { return tally[b] - tally[a]; });
+      var winner = null;
+      if (tally[sorted[0]] > 0 && tally[sorted[0]] > tally[sorted[1]]) {
+        winner = sorted[0];
       }
 
       if (winner && ctaMap[winner]) {
