@@ -1,6 +1,6 @@
 ---
 title: "Health & Analytics"
-description: "MITRE coverage, noise ratios, team workload, MttR, and ROI tracking."
+description: "MITRE coverage, noise ratios, team workload, MTTR, and ROI tracking."
 weight: 7
 section: "Core Concepts"
 ---
@@ -66,7 +66,7 @@ These metrics help SOC leaders balance workload and identify bottlenecks.
 
 | Metric | Description |
 |--------|-------------|
-| **MttR** | Mean time to respond to alerts |
+| **MTTR** | Mean time to respond to alerts |
 | **Query latency** | How long each rule takes to execute on the SIEM |
 | **Error rate** | Rules failing or timing out |
 | **Data quality** | Are required log sources flowing and complete? |

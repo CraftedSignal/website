@@ -110,7 +110,7 @@ Every change to a rule creates a new version. CraftedSignal tracks:
 - When and why
 - Approval status
 
-Versions are retained indefinitely for audit and rollback.
+Versions are retained up to a configurable limit (default: 5) for audit and rollback. See [Configuration](/docs/configuration/) to adjust `rules.max_version_history`.
 
 ---
 
@@ -150,3 +150,5 @@ cost:
 ```
 
 These expectations are validated during shadow evaluation and enforced as noise budgets during deployment.
+
+See [Health & Analytics](/docs/health-analytics/) for noise budget monitoring.

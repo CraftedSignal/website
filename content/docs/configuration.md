@@ -259,7 +259,7 @@ Controls user registration and email verification.
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
 | `auth.disable_registration` | `AUTH_DISABLE_REGISTRATION` | bool | `false` | Block new user registration entirely |
-| `auth.require_email_verification` | `AUTH_REQUIRE_EMAILVER` | bool | `false` | Require email verification before account activation |
+| `auth.require_email_verification` | `AUTH_REQUIRE_EMAIL_VERIFICATION` | bool | `false` | Require email verification before account activation |
 
 On self-hosted instances, the first user to register claims the instance and becomes the Admin. After claiming, registration locks automatically — additional users must be invited by an Admin. The `disable_registration` flag is an additional safeguard that can be set to `true` after initial setup if you want to explicitly block any registration path.
 
@@ -470,7 +470,7 @@ Controls application logging output.
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
-| `log.level` | `LOG_LEVEL` | string | `DEBUG` | Minimum log level: `DEBUG`, `INFO`, `WARN`, `ERROR` |
+| `log.level` | `LOG_LEVEL` | string | `INFO` | Minimum log level: `DEBUG`, `INFO`, `WARN`, `ERROR` |
 | `log.format` | `LOG_FORMAT` | string | `text` | Output format: `text` (human-readable) or `json` (structured, for log aggregation) |
 | `log.include_source` | `LOG_INCLUDE_SOURCE` | bool | `false` | Include source file and line number in log entries |
 | `log.file` | `LOG_FILE` | string | — | Write logs to file instead of stdout |

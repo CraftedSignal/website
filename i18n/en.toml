@@ -14,11 +14,6 @@ other = "Security"
 [navDocs]
 other = "Documentation"
 
-[navTry]
-other = "Try"
-
-[navTrySuffix]
-other = "for yourself"
 
 [navContact]
 other = "Contact"
@@ -27,20 +22,6 @@ other = "Contact"
 # ICP Pages
 # ──────────────────────────────────────────────
 
-[forDetectionEngineersTitle]
-other = "For Detection Engineers"
-
-[forSocLeadersTitle]
-other = "For SOC Leaders"
-
-[forCisosTitle]
-other = "For CISOs"
-
-[forRegulatedEUTitle]
-other = "For Regulated EU Orgs"
-
-[forMsspTitle]
-other = "For MSSPs & MDRs"
 
 [forCtaDesignPartner]
 other = "Join design partners"
@@ -48,8 +29,6 @@ other = "Join design partners"
 [forCtaDemo]
 other = "View the demo"
 
-[forFooterContact]
-other = "Talk to founders"
 
 # ──────────────────────────────────────────────
 # Meta / SEO
@@ -58,14 +37,6 @@ other = "Talk to founders"
 [tagline]
 other = "Detection Engineering Control Plane"
 
-[metaDescription]
-other = "Detection Engineering Control Plane. Turn threat intel into tested, deployed detection rules. Measure MITRE coverage, noise, and team workload. SaaS or a single binary."
-
-[ogTitle]
-other = "Detection Engineering Control Plane"
-
-[ogDescription]
-other = "Turn threat intelligence into ready-to-use detection rules. Test live on your SIEM. Approve with impact preview. Measure MITRE coverage, noise, and team workload."
 
 [schemaDescription]
 other = "Detection Engineering Control Plane for SOC teams. Generate, test, and deploy detection rules across Splunk, Sentinel, and CrowdStrike with TI feed, live testing, and approval workflows."
@@ -105,20 +76,6 @@ other = "MSSP / MDR"
 # Homepage – Social Proof (social-proof.html)
 # ──────────────────────────────────────────────
 
-[socialProofStatement]
-other = "Generous free tier"
-
-[socialProofIntegrations]
-other = "Works with"
-
-[socialProofCap1]
-other = "TI feed with rules"
-
-[socialProofCap2]
-other = "Live testing on your SIEM"
-
-[socialProofCap3]
-other = "One-click rollback"
 
 # ──────────────────────────────────────────────
 # Homepage – Value Props (value-props.html)
@@ -134,7 +91,7 @@ other = "Get ready-to-use detections from our TI feed, generate with AI, or brin
 other = "Measure and improve everything"
 
 [valueProp2Desc]
-other = "MITRE coverage, noise ratio, team workload, MttR. Get actionable suggestions to close gaps, fix noisy rules, and retire dead ones."
+other = "MITRE coverage, noise ratio, team workload, MTTR. Get actionable suggestions to close gaps, fix noisy rules, and retire dead ones."
 
 [valueProp3Title]
 other = "Approve with impact preview"
@@ -190,7 +147,7 @@ other = "Built for security teams who can't compromise"
 other = "AI on your terms"
 
 [trustNewCard1Desc]
-other = "AI assists but never auto-deploys. Disable it entirely if your policy requires it. We never train on you."
+other = "AI assists but never auto-deploys. Disable it entirely if your policy requires it. We never train on your data."
 
 [trustNewCard2Title]
 other = "Batteries included"
@@ -205,7 +162,7 @@ other = "SaaS or single binary"
 other = "Use as SaaS or download a single binary. Generous free tier to try everything before you commit."
 
 [trustNewCard4Title]
-other = "Everything togglable"
+other = "Everything toggleable"
 
 [trustNewCard4Desc]
 other = "Turn any feature on or off. The platform adapts to your security policy, not the other way around."
@@ -334,7 +291,7 @@ other = "See which techniques you detect and where gaps exist. Get actionable su
 other = "Noise ratio & quality reports"
 
 [socLeadersBenefit2Desc]
-other = "Measure signal-to-noise, team workload, MttR, and rule quality across your detection stack. Know exactly what needs fixing."
+other = "Measure signal-to-noise, team workload, MTTR, and rule quality across your detection stack. Know exactly what needs fixing."
 
 [socLeadersBenefit3Title]
 other = "Junior submit, senior approve"
@@ -349,7 +306,7 @@ other = "Reports & control"
 other = "Everything your SOC needs to measure and improve"
 
 [socLeadersReportBullet1]
-other = "Noise ratio, team workload, MITRE coverage, and MttR dashboards"
+other = "Noise ratio, team workload, MITRE coverage, and MTTR dashboards"
 
 [socLeadersReportBullet2]
 other = "Group rules flexibly to monitor and control by team, service, or environment"
@@ -423,7 +380,7 @@ other = "For CISOs & Compliance"
 other = "See everything. Control everything. No black-box AI."
 
 [cisosDescription]
-other = "Immutable audit trails. Full visibility into AI suggestions. Every feature togglable. Deploy on your terms: SaaS or a single binary."
+other = "Immutable audit trails. Full visibility into AI suggestions. Every feature toggleable. Deploy on your terms: SaaS or a single binary."
 
 [cisosComplianceLabel]
 other = "Compliance & Governance"
@@ -450,7 +407,7 @@ other = "Immutable audit logs"
 other = "Every change, every approval, every deployment. Exportable for auditors."
 
 [cisosCard4Title]
-other = "Everything togglable"
+other = "Everything toggleable"
 
 [cisosCard4Desc]
 other = "Every feature can be turned on or off. SSO, Passkey MFA, and RBAC included out of the box."
@@ -496,33 +453,6 @@ other = "Reject"
 
 [cisosAiExampleModify]
 other = "Modify"
-
-[cisosWhitepaperLabel]
-other = "Free Download"
-
-[cisosWhitepaperTitle]
-other = "Detection Governance Whitepaper"
-
-[cisosWhitepaperDesc]
-other = "A framework for managing detection rules like critical infrastructure. Covers regulatory drivers (NIS2, SOC2), governance models, and implementation checklist."
-
-[cisosWhitepaperBullet1]
-other = "The detection debt problem (with industry stats)"
-
-[cisosWhitepaperBullet2]
-other = "Regulatory requirements and implications"
-
-[cisosWhitepaperBullet3]
-other = "Framework for detection governance"
-
-[cisosWhitepaperBullet4]
-other = "\"Is your program audit-ready?\" checklist"
-
-[cisosWhitepaperCta]
-other = "Request whitepaper"
-
-[cisosWhitepaperPrivacy]
-other = "We'll send the PDF directly to your inbox."
 
 [cisosCtaTitle]
 other = "Ready to take control of your detection program?"

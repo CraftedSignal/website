@@ -29,7 +29,7 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ $pageTitle }}">
 <meta property="og:description" content="{{ $description }}">
-<meta property="og:image" content="{{ .Site.BaseURL }}og-image.png">
+<meta property="og:image" content="{{ .Site.BaseURL }}favicon.svg">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
 <!-- Twitter -->
@@ -37,7 +37,7 @@
 <meta name="twitter:url" content="{{ .Permalink }}">
 <meta name="twitter:title" content="{{ $pageTitle }}">
 <meta name="twitter:description" content="{{ $description }}">
-<meta name="twitter:image" content="{{ .Site.BaseURL }}og-image.png">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}favicon.svg">
 
 <!-- Security -->
 {{ $csp := "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'none'; base-uri 'self'" }}
@@ -84,7 +84,7 @@
   "@type": "Organization",
   "name": "{{ .Site.Title }}",
   "url": "{{ .Site.BaseURL }}",
-  "logo": "{{ .Site.BaseURL }}logo.svg",
+  "logo": "{{ .Site.BaseURL }}favicon.svg",
   "sameAs": [
     "{{ .Site.Params.githubURL }}"
   ],

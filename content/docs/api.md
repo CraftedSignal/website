@@ -161,7 +161,7 @@ Returns SNR, latency, error rate, noise budget consumption, and data quality sta
 GET /api/v1/health/dashboard
 ```
 
-Returns MITRE coverage, noise ratio, team workload, MttR, and detection value scores.
+Returns MITRE coverage, noise ratio, team workload, MTTR, and detection value scores.
 
 ### ROI
 

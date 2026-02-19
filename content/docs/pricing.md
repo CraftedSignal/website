@@ -26,27 +26,46 @@ The free tier includes all core features: rule editing, testing, deployment, rol
 
 For small teams scaling their detection program.
 
-- Higher limits on rules, SIEMs, users, and API requests
+| Limit | Value |
+|-------|-------|
+| Detection rules | 500 (250 enabled) |
+| SIEM connections | 3 |
+| API keys | 5 |
+| API requests/day | 50,000 |
+| Users | 10 |
+| Storage | 1 GB |
+
 - Priority support
 
 ### Enterprise
 
 For organizations with compliance and governance requirements.
 
+| Limit | Value |
+|-------|-------|
+| Detection rules | 2,000 (1,000 enabled) |
+| SIEM connections | 10 |
+| API keys | 25 |
+| API requests/day | 200,000 |
+| Users | 50 |
+| Storage | 10 GB |
+
 - SSO/OIDC integration
 - Advanced RBAC and approval workflows
 - Extended audit log retention
-- Data residency options
+- Data residency options (EU, US)
 - Dedicated support
 
 ### Unlimited
 
 For large teams and MSSPs.
 
-- No resource limits
+- No resource limits on rules, SIEMs, users, or API requests
 - Multi-tenant support
 - Custom integrations
 - SLA-backed support
+
+Contact [founders@craftedsignal.io](mailto:founders@craftedsignal.io) for Unlimited pricing.
 
 ---
 
@@ -55,7 +74,7 @@ For large teams and MSSPs.
 Self-hosted deployments use a license key:
 
 ```yaml
-# config.yml
+# config.yaml
 license_key: "1.eyJ..."
 ```
 

@@ -91,6 +91,8 @@ Configure rules to require approval before deployment. Reviewers see:
 
 Approvals are managed in the web UI with full audit trail.
 
+See [Roles & Permissions](/docs/roles-permissions/) for the approval permission matrix.
+
 ### Noise budgets
 
 Each rule can define expected alert volume. CraftedSignal tracks consumption and flags rules that exceed their budget for review or automatic pausing.

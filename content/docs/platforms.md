@@ -94,6 +94,10 @@ The API client needs Custom IOA and Host Group permissions.
 - Custom IOA rules
 - IOA rule groups
 
+### Query language
+
+Rules targeting CrowdStrike use Custom IOA rule groups, which are defined as pattern-based conditions rather than a query language. CraftedSignal maps rule logic to IOA patterns for deployment.
+
 ---
 
 ## Rapid7 InsightIDR

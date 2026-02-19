@@ -44,7 +44,18 @@ Confirm the rule does **not** trigger on legitimate activity:
 
 ### Enrichment tests
 
-Validate that lookups, threat lists, and field extractions work correctly with the rule logic.
+Validate that lookups, threat lists, and field extractions work correctly with the rule logic:
+
+```yaml
+  - name: "Threat list enrichment resolves known-bad IP"
+    type: enrichment
+    fixture:
+      src_ip: "203.0.113.50"
+    expect:
+      enrichment:
+        threat_list: "known_c2_ips"
+        matched: true
+```
 
 ---
 
@@ -80,6 +91,8 @@ Validate → Test → Approve → Deploy → Monitor
 ```
 
 If any stage fails, the pipeline stops and the rule is not promoted.
+
+See [CLI Reference](/docs/cli/) for CI/CD pipeline examples.
 
 ---
 

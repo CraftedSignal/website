@@ -56,7 +56,7 @@ csctl init
 | `CSCTL_TOKEN` | API token (recommended over config file) |
 | `CSCTL_INSECURE` | Skip TLS verification (`true`/`false`) |
 | `CSCTL_PATH` | Default detections path |
-| `CSCTL_PLATFORM` | Default platform (`splunk`, `sentinel`, `elastic`) |
+| `CSCTL_PLATFORM` | Default platform (`splunk`, `sentinel`, `crowdstrike`, `rapid7`) |
 
 ### Global flags
 
@@ -354,7 +354,7 @@ tests:
 | Field | Required | Description |
 |-------|----------|-------------|
 | `title` | Yes | Rule name |
-| `platform` | Yes | `splunk`, `sentinel`, or `elastic` |
+| `platform` | Yes | `splunk`, `sentinel`, `crowdstrike`, or `rapid7` |
 | `enabled` | Yes | Whether the rule is active |
 | `id` | No | UUID assigned on first push — leave empty for new rules |
 | `kind` | No | `scheduled` (default), `realtime`, or `correlation` |

@@ -74,13 +74,13 @@ AI-generated rules go through the same validation pipeline as human-written rule
 Run AI features entirely on your infrastructure using Ollama:
 
 ```yaml
-ollama:
+ai:
   enabled: true
-  url: "http://localhost:11434"
-  model: "llama3"
+  ollama_url: "http://localhost:11434"
+  ollama_model: "qwen2.5-coder:14b"
 ```
 
-When self-hosted, no data leaves your network. CraftedSignal never sends rule data to external AI services unless you explicitly configure it.
+When self-hosted, no data leaves your network. CraftedSignal never sends rule data to external AI services unless you explicitly configure it. See [Configuration](/docs/configuration/) for all AI settings.
 
 ---
 
@@ -89,7 +89,7 @@ When self-hosted, no data leaves your network. CraftedSignal never sends rule da
 If your security policy prohibits AI, disable it entirely:
 
 ```yaml
-ollama:
+ai:
   enabled: false
 ```
 

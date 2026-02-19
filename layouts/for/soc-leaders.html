@@ -11,11 +11,11 @@
       {{ i18n "socLeadersDescription" | default "MITRE coverage reports, noise ratio dashboards, and team workload metrics. Let juniors submit rule improvements while seniors retain control through approval workflows." }}
     </p>
     <div class="flex flex-wrap justify-center gap-4 pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
-        {{ i18n "heroNewCtaTry" | default "Start free" }}
-      </a>
-      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="mailto:founders@craftedsignal.io?subject=SOC%20leader%20design%20partner&body=Share%20your%20platforms%2C%20team%2C%20and%20top%203%20noisy%20rules.">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=SOC%20leader%20design%20partner&body=Share%20your%20platforms%2C%20team%2C%20and%20top%203%20noisy%20rules.">
         {{ i18n "forCtaDesignPartner" | default "Join design partners" }}
+      </a>
+      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke font-semibold text-text hover:border-accent/60 transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
+        {{ i18n "forCtaDemo" | default "View the demo" }}
       </a>
     </div>
   </div>
@@ -31,7 +31,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-4">
         <h3 class="font-display text-xl font-semibold">{{ i18n "socLeadersBenefit2Title" | default "Noise ratio & quality reports" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "socLeadersBenefit2Desc" | default "Measure signal-to-noise, team workload, MttR, and rule quality across your detection stack. Know exactly what needs fixing." }}</p>
+        <p class="text-sm text-muted">{{ i18n "socLeadersBenefit2Desc" | default "Measure signal-to-noise, team workload, MTTR, and rule quality across your detection stack. Know exactly what needs fixing." }}</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-4">
         <h3 class="font-display text-xl font-semibold">{{ i18n "socLeadersBenefit3Title" | default "Junior submit, senior approve" }}</h3>
@@ -50,25 +50,25 @@
         <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "socLeadersReportsTitle" | default "Everything your SOC needs to measure and improve" }}</h2>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "socLeadersReportBullet1" | default "Noise ratio, team workload, MITRE coverage, and MttR dashboards" }}</span>
+            <span class="text-sm">{{ i18n "socLeadersReportBullet1" | default "Noise ratio, team workload, MITRE coverage, and MTTR dashboards" }}</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
             <span class="text-sm">{{ i18n "socLeadersReportBullet2" | default "Group rules flexibly to monitor and control by team, service, or environment" }}</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
             <span class="text-sm">{{ i18n "socLeadersReportBullet3" | default "TI feed translates threats into actionable detections for your stack" }}</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
             <span class="text-sm">{{ i18n "socLeadersReportBullet4" | default "Rollback any rule in one click — impact preview before every deployment" }}</span>
@@ -95,7 +95,7 @@
             <div class="text-lg font-bold">Normal</div>
           </div>
           <div class="rounded-xl border border-stroke bg-base/60 p-3">
-            <div class="text-xs text-muted">MttR</div>
+            <div class="text-xs text-muted">MTTR</div>
             <div class="text-lg font-bold">4.2h</div>
           </div>
         </div>
@@ -120,19 +120,19 @@
         <!-- Inputs -->
         <div class="space-y-6">
           <div>
-            <label class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput1" | default "Number of detection rules" }}</label>
+            <label for="roi-rules" class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput1" | default "Number of detection rules" }}</label>
             <input type="number" id="roi-rules" value="500" min="1" class="w-full px-4 py-3 rounded-xl border border-stroke bg-base/70 text-text focus:border-accent focus:outline-none">
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput2" | default "Hours/week on false positive triage" }}</label>
+            <label for="roi-hours" class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput2" | default "Hours/week on false positive triage" }}</label>
             <input type="number" id="roi-hours" value="20" min="1" class="w-full px-4 py-3 rounded-xl border border-stroke bg-base/70 text-text focus:border-accent focus:outline-none">
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput3" | default "Average analyst hourly cost (€)" }}</label>
+            <label for="roi-cost" class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput3" | default "Average analyst hourly cost (€)" }}</label>
             <input type="number" id="roi-cost" value="75" min="1" class="w-full px-4 py-3 rounded-xl border border-stroke bg-base/70 text-text focus:border-accent focus:outline-none">
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput4" | default "Number of SIEM platforms" }}</label>
+            <label for="roi-siems" class="block text-sm font-medium mb-2">{{ i18n "roiCalcInput4" | default "Number of SIEM platforms" }}</label>
             <input type="number" id="roi-siems" value="2" min="1" max="10" class="w-full px-4 py-3 rounded-xl border border-stroke bg-base/70 text-text focus:border-accent focus:outline-none">
           </div>
         </div>
@@ -157,7 +157,7 @@
             </div>
           </div>
 
-          <a href="mailto:{{ .Site.Params.salesEmail }}?subject=ROI%20Discussion&body=I%20calculated%20potential%20savings%20and%20would%20like%20to%20discuss." class="block w-full px-6 py-3 rounded-xl bg-accent text-white font-semibold text-center shadow-soft hover:scale-[1.01] transition">
+          <a href="mailto:founders@craftedsignal.io?subject=ROI%20Discussion&body=I%20calculated%20potential%20savings%20and%20would%20like%20to%20discuss." class="block w-full px-6 py-3 rounded-xl bg-accent text-white font-semibold text-center shadow-soft hover:scale-[1.01] transition">
             {{ i18n "roiCalcCta" | default "Book a call to validate these numbers" }}
           </a>
         </div>
@@ -196,11 +196,11 @@
   <div class="max-w-3xl mx-auto text-center space-y-6">
     <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "socLeadersCtaTitle" | default "Ready to measure and improve your detection program?" }}</h2>
     <div class="flex flex-wrap justify-center gap-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
-        {{ i18n "socLeadersCtaTryFinal" | default "Start free" }}
-      </a>
-      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="mailto:{{ .Site.Params.salesEmail }}">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="mailto:founders@craftedsignal.io?subject=SOC%20leader%20design%20partner&body=Share%20your%20platforms%2C%20team%2C%20and%20top%203%20noisy%20rules.">
         {{ i18n "socLeadersCtaContact" | default "Talk to sales" }}
+      </a>
+      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke font-semibold text-text hover:border-accent/60 transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
+        {{ i18n "forCtaDemo" | default "View the demo" }}
       </a>
     </div>
   </div>
