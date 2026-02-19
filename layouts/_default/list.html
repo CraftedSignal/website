@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="mx-auto max-w-5xl px-6 py-14">
+  <header class="mb-8">
+    <h1 class="text-3xl font-semibold tracking-tight text-text">{{ .Title }}</h1>
+    {{ with .Content }}
+    <div class="mt-4 prose prose-invert max-w-none">
+      {{ . }}
+    </div>
+    {{ end }}
+  </header>
+
+  <div class="grid gap-3">
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}" class="block rounded-2xl border border-stroke/70 bg-panel/80 px-5 py-4 shadow-soft hover:bg-panel/95 transition">
+      <div class="text-base font-semibold text-text">{{ .Title }}</div>
+      {{ with .Params.description }}
+      <div class="mt-1 text-sm text-muted">{{ . }}</div>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+
+</section>
+{{ end }}

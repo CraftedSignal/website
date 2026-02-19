@@ -1,0 +1,203 @@
+<section id="pain-checklist" class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
+  <div class="max-w-4xl mx-auto space-y-10">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "painLabel" | default "Sound familiar?" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "painTitle" | default "Your SOC is full of detection debt and burning out." }}</h2>
+    </div>
+
+    <div id="pain-grid" role="group" aria-label="Detection engineering problems checklist" class="grid md:grid-cols-2 gap-3">
+      <!-- 1 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="soc,ciso">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem1" | default "Your ATT&CK coverage has gaps you can't quantify" }}</span>
+      </label>
+
+      <!-- 2 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="engineer">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem2" | default "Rules break silently after infrastructure changes" }}</span>
+      </label>
+
+      <!-- 3 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="soc">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem3" | default "Alert noise is drowning your analysts" }}</span>
+      </label>
+
+      <!-- 4 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="ciso">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem4" | default "No proof your detections actually fire when it matters" }}</span>
+      </label>
+
+      <!-- 5 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="engineer">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem5" | default "Translating threat intel into rules takes days, not minutes" }}</span>
+      </label>
+
+      <!-- 6 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="engineer">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem6" | default "Deploying untested rules has broken production before" }}</span>
+      </label>
+
+      <!-- 7 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="soc,engineer">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem7" | default "Your oldest rules are your blindest spots" }}</span>
+      </label>
+
+      <!-- 8 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="soc">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem8" | default "Juniors can't contribute without risking production" }}</span>
+      </label>
+
+      <!-- 9 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="ciso">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem9" | default "Compliance asks for evidence you can't easily produce" }}</span>
+      </label>
+
+      <!-- 10 -->
+      <label class="flex items-start gap-3 rounded-xl border border-stroke bg-base/70 p-4 cursor-pointer transition hover:border-accent/20" data-tags="soc">
+        <input type="checkbox" class="sr-only">
+        <span class="pain-check mt-0.5 flex-none w-5 h-5 rounded-md border-2 border-stroke bg-base/50 flex items-center justify-center transition">
+          <svg class="w-3 h-3 text-base opacity-0 transition" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </span>
+        <span class="text-sm text-text">{{ i18n "painItem10" | default "Signal-to-noise ratio is getting worse, not better" }}</span>
+      </label>
+    </div>
+
+    <div id="pain-result" class="text-center space-y-4 opacity-0 translate-y-2 transition-all duration-300 pointer-events-none max-h-0 overflow-hidden">
+      <p class="text-sm text-muted">
+        <span id="pain-count">0 of 10</span> — {{ i18n "painResultSuffix" | default "we solve all of them." }}
+      </p>
+      <a id="pain-cta" href="#value-props" class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition">
+        {{ i18n "painCtaDefault" | default "See how CraftedSignal helps →" }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const grid = document.getElementById('pain-grid');
+    if (!grid) return;
+    const result = document.getElementById('pain-result');
+    const countEl = document.getElementById('pain-count');
+    const ctaEl = document.getElementById('pain-cta');
+    const total = grid.querySelectorAll('input[type="checkbox"]').length;
+
+    const ctaMap = {
+      engineer: {
+        text: '{{ i18n "painCtaEngineer" | default "Start building better detections →" }}',
+        href: '/for/detection-engineers/'
+      },
+      soc: {
+        text: '{{ i18n "painCtaSoc" | default "See how to fix your SOC metrics →" }}',
+        href: '/for/soc-leaders/'
+      },
+      ciso: {
+        text: '{{ i18n "painCtaCiso" | default "Get audit-ready detection governance →" }}',
+        href: '/for/cisos/'
+      }
+    };
+
+    const defaultText = '{{ i18n "painCtaDefault" | default "See how CraftedSignal helps →" }}';
+    const priority = ['engineer', 'soc', 'ciso'];
+
+    grid.addEventListener('change', function () {
+      const labels = grid.querySelectorAll('label');
+      let checked = 0;
+      const tally = { engineer: 0, soc: 0, ciso: 0 };
+
+      for (let i = 0; i < labels.length; i++) {
+        const label = labels[i];
+        const cb = label.querySelector('input');
+        const indicator = label.querySelector('.pain-check');
+        const svg = indicator.querySelector('svg');
+
+        if (cb.checked) {
+          checked++;
+          label.classList.remove('border-stroke');
+          label.classList.add('border-accent/40', 'bg-accent/5');
+          indicator.classList.remove('border-stroke', 'bg-base/50');
+          indicator.classList.add('border-accent', 'bg-accent');
+          svg.classList.remove('opacity-0');
+
+          const tags = (label.getAttribute('data-tags') || '').split(',');
+          for (let t = 0; t < tags.length; t++) {
+            const tag = tags[t].trim();
+            if (tally.hasOwnProperty(tag)) {
+              tally[tag]++;
+            }
+          }
+        } else {
+          label.classList.add('border-stroke');
+          label.classList.remove('border-accent/40', 'bg-accent/5');
+          indicator.classList.add('border-stroke', 'bg-base/50');
+          indicator.classList.remove('border-accent', 'bg-accent');
+          svg.classList.add('opacity-0');
+        }
+      }
+
+      countEl.textContent = checked + ' of ' + total;
+
+      if (checked > 0) {
+        result.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none', 'max-h-0', 'overflow-hidden');
+        result.classList.add('max-h-40');
+      } else {
+        result.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none', 'max-h-0', 'overflow-hidden');
+        result.classList.remove('max-h-40');
+      }
+
+      // Pick winner; loop order provides tie-break (engineer > soc > ciso)
+      let winner = null;
+      let maxCount = 0;
+      for (let p = 0; p < priority.length; p++) {
+        const persona = priority[p];
+        if (tally[persona] > maxCount) {
+          maxCount = tally[persona];
+          winner = persona;
+        }
+      }
+
+      if (winner && ctaMap[winner]) {
+        ctaEl.textContent = ctaMap[winner].text;
+        ctaEl.href = ctaMap[winner].href;
+      } else {
+        ctaEl.textContent = defaultText;
+        ctaEl.href = '#value-props';
+      }
+    });
+  })();
+</script>

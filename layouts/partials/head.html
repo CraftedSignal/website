@@ -1,10 +1,24 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
 <!-- Primary Meta Tags -->
-<title>{{ .Site.Title }} – {{ i18n "tagline" | default .Site.Params.tagline }}</title>
-<meta name="title" content="{{ .Site.Title }} – {{ i18n "tagline" | default .Site.Params.tagline }}">
-<meta name="description" content="{{ i18n "metaDescription" | default .Site.Params.description }}">
+{{ $title := .Site.Title }}
+{{ $description := .Site.Params.description }}
+{{ $pageTitle := "" }}
+{{ if and .Title (not .IsHome) }}
+  {{ $pageTitle = printf "%s – %s" .Title .Site.Title }}
+{{ else }}
+  {{ $pageTitle = printf "%s – %s" .Site.Title (i18n "tagline" | default .Site.Params.tagline) }}
+{{ end }}
+{{ if and .Params.description (not .IsHome) }}
+  {{ $description = .Params.description }}
+{{ end }}
+<title>{{ $pageTitle }}</title>
+<meta name="title" content="{{ $pageTitle }}">
+<meta name="description" content="{{ $description }}">
 <meta name="keywords" content="SIEM, detection engineering, SOC, detection-as-code, MITRE ATT&CK, Splunk, Sentinel, CrowdStrike, security automation, noise budgets, rule portability">
 
 <!-- Canonical URL -->
@@ -13,17 +27,26 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ .Site.Title }} – {{ i18n "ogTitle" | default "SOC Control Plane" }}">
-<meta property="og:description" content="{{ i18n "ogDescription" | default "Detection-as-Code platform with noise budgets, cost controls, and guardrails for efficient SOC operations." }}">
-<meta property="og:image" content="{{ .Site.BaseURL }}assets/og-image.png">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}og-image.png">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="{{ .Permalink }}">
-<meta name="twitter:title" content="{{ .Site.Title }} – {{ i18n "ogTitle" | default "SOC Control Plane" }}">
-<meta name="twitter:description" content="{{ i18n "ogDescription" | default "Detection-as-Code platform with noise budgets, cost controls, and guardrails for efficient SOC operations." }}">
-<meta name="twitter:image" content="{{ .Site.BaseURL }}assets/twitter-card.png">
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}og-image.png">
+
+<!-- Security -->
+{{ $csp := "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'none'; base-uri 'self'" }}
+{{ if hugo.IsServer }}
+  {{ $csp = "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' ws://localhost:1313; form-action 'none'; base-uri 'self'" }}
+{{ end }}
+<meta http-equiv="Content-Security-Policy" content="{{ $csp }}">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 
 <!-- Robots -->
 <meta name="robots" content="index, follow">
@@ -49,7 +72,7 @@
     "MITRE ATT&CK Coverage",
     "Multi-SIEM Support (Splunk, Sentinel, CrowdStrike)",
     "Rule Portability with Semantic Drift Detection",
-    "Canary Deployments and Auto-Rollback",
+    "Monitoring Deployments and Auto-Rollback",
     "AI-Assisted Rule Tuning"
   ]
 }
@@ -61,7 +84,7 @@
   "@type": "Organization",
   "name": "{{ .Site.Title }}",
   "url": "{{ .Site.BaseURL }}",
-  "logo": "{{ .Site.BaseURL }}assets/logo.png",
+  "logo": "{{ .Site.BaseURL }}logo.svg",
   "sameAs": [
     "{{ .Site.Params.githubURL }}"
   ],
@@ -73,7 +96,7 @@
 }
 </script>
 
-{{ $css := resources.Get "css/main.css" | css.PostCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-{{ $hljs := resources.Get "css/hljs.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $hljs.RelPermalink }}" />
+{{ $css := resources.Get "css/main.css" | css.PostCSS | minify | fingerprint "sha384" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
+{{ $hljs := resources.Get "css/hljs.css" | minify | fingerprint "sha384" }}
+<link rel="stylesheet" href="{{ $hljs.RelPermalink }}" integrity="{{ $hljs.Data.Integrity }}" crossorigin="anonymous" />

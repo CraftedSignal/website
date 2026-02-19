@@ -1,18 +1,18 @@
-<section id="hero" class="px-6 py-16 md:py-24">
+<section id="hero" class="px-6 pt-32 pb-16 md:pt-40 md:pb-24">
   <div class="max-w-5xl mx-auto text-center space-y-6">
     <!-- Outcome-first headline -->
     <h1 class="font-display text-4xl md:text-6xl font-semibold leading-tight">
-      {{ i18n "heroNewTitle" | default "Cut alert noise 60%. Ship detections 10x faster." }}
+      {{ i18n "heroNewTitle" | default "Cut alert noise 60%. Ship better detections 10x faster." }}
     </h1>
 
     <p class="text-xl text-muted max-w-3xl mx-auto">
-      {{ i18n "heroNewDescription" | default "The detection engineering platform that brings CI/CD discipline to your security rules. Test before deploy. Rollback in seconds. Works across Splunk, Sentinel, and CrowdStrike." }}
+      {{ i18n "heroNewDescription" | default "Turn threat intelligence into ready-to-use detection rules. Test live on your SIEM. Approve with impact preview. Measure MITRE coverage, noise, and team workload. SaaS or a single binary." }}
     </p>
 
     <!-- Primary CTAs -->
     <div class="flex flex-wrap justify-center gap-4 pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://demo.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
-        {{ i18n "heroNewCtaTry" | default "Try the demo" }}
+      <a class="inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent2 text-base font-semibold text-base/90 shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
+        {{ i18n "heroNewCtaTry" | default "Start free" }}
       </a>
       <a class="inline-flex px-6 py-3 rounded-xl border border-stroke text-base font-semibold text-text hover:border-accent/60 transition" href="#how-it-works">
         {{ i18n "heroNewCtaHow" | default "See how it works" }}
@@ -31,6 +31,9 @@
         </a>
         <a href="/for/cisos/" class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition">
           {{ i18n "heroPersonaCiso" | default "CISO / Compliance" }}
+        </a>
+        <a href="/for/mssps/" class="px-5 py-3 rounded-xl border border-stroke bg-panel/60 text-sm font-semibold text-text hover:border-accent/60 hover:bg-panel transition">
+          {{ i18n "heroPersonaMssp" | default "MSSP / MDR" }}
         </a>
       </div>
     </div>

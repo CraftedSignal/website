@@ -8,12 +8,17 @@
     "build": "hugo --minify",
     "clean": "rm -rf public resources"
   },
-  "keywords": ["hugo", "tailwindcss", "detection-engineering"],
+  "keywords": [
+    "hugo",
+    "tailwindcss",
+    "detection-engineering"
+  ],
   "author": "CraftedSignal",
   "license": "UNLICENSED",
   "devDependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.10",
+    "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.20",
     "highlight.js": "^11.11.1",
     "postcss": "^8.5.0",

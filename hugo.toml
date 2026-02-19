@@ -11,8 +11,8 @@ enableMissingTranslationPlaceholders = false
   description = "Detection Engineering Control Plane"
   tagline = "Write rules once, deploy everywhere safely. Noise budgets, cost controls, and guardrails for Splunk, Sentinel, and CrowdStrike."
   email = "hello@craftedsignal.io"
-  salesEmail = "sales@craftedsignal.io"
-  docsURL = "https://docs.craftedsignal.io"
+  salesEmail = "hello@craftedsignal.io"
+  docsURL = "/docs/"
   githubURL = "https://github.com/craftedsignal"
 
 [languages]
