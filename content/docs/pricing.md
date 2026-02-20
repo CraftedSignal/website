@@ -1,6 +1,6 @@
 ---
 title: "Pricing & Limits"
-description: "Free tier, Professional, Enterprise, and Unlimited plans with feature comparison."
+description: "Compare CraftedSignal pricing tiers: Free, Professional, Enterprise, and Unlimited. See rule limits, SIEM connections, API quotas, and self-hosted licensing."
 weight: 14
 section: "Getting Started"
 ---

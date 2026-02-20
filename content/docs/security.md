@@ -1,6 +1,6 @@
 ---
 title: "Security & Compliance"
-description: "Data boundaries, audit logs, encryption, SSO, and compliance posture (SOC2, NIS2, GDPR)."
+description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA, and compliance with SOC 2, NIS2, and GDPR."
 weight: 13
 section: "Security"
 ---

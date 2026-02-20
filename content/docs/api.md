@@ -1,6 +1,6 @@
 ---
 title: "API Reference"
-description: "REST API for CI/CD integration, rule management, approvals, and health metrics."
+description: "CraftedSignal REST API reference for CI/CD integration: lint, test, deploy, rollback, approval workflows, health metrics, and rate limits by pricing tier."
 weight: 11
 section: "Integrations"
 ---

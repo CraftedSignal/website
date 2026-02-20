@@ -46,11 +46,14 @@ enableMissingTranslationPlaceholders = false
   minifyOutput = true
 
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "RSS"]
+
+enableRobotsTXT = true
 
 [sitemap]
   changeFreq = "weekly"
   priority = 0.5
+  filename = "sitemap.xml"
 
 [privacy]
   [privacy.disqus]

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="px-6 py-32 md:py-48">
+  <div class="max-w-2xl mx-auto text-center space-y-6">
+    <h1 class="font-display text-8xl md:text-9xl font-semibold text-accent">404</h1>
+
+    <h2 class="font-display text-2xl md:text-3xl font-semibold">Page not found</h2>
+
+    <p class="text-lg text-muted max-w-lg mx-auto">
+      The page you're looking for doesn't exist or has been moved.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 pt-4">
+      <a
+        href="/"
+        class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition"
+      >
+        Go to Homepage
+      </a>
+      <a
+        href="/docs/"
+        class="inline-flex px-6 py-3 rounded-xl border border-stroke font-semibold text-text hover:border-accent/60 transition"
+      >
+        Read the Docs
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,6 +1,6 @@
 ---
 title: "Rules"
-description: "The rule model, rule sources, lifecycle states, and how detections are structured."
+description: "How detection rules are structured in CraftedSignal: metadata, MITRE ATT&CK mapping, multi-platform implementations, lifecycle states, versioning, and dependencies."
 weight: 4
 section: "Core Concepts"
 ---

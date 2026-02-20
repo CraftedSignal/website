@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-description: "Complete YAML configuration reference for self-hosted CraftedSignal deployments."
+description: "Complete YAML configuration reference for CraftedSignal covering HTTP, storage, security, Temporal, AI, email, logging, and production hardening options."
 weight: 2
 section: "Getting Started"
 ---

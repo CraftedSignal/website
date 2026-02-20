@@ -1,6 +1,6 @@
 ---
 title: "Platform Guides"
-description: "Connect and deploy to Splunk, Microsoft Sentinel, CrowdStrike, and Rapid7 InsightIDR."
+description: "Platform integration guides for Splunk (SPL), Microsoft Sentinel (KQL), CrowdStrike (IOA), and Rapid7 InsightIDR (LEQL) with setup, credentials, and multi-SIEM deployment."
 weight: 12
 section: "Integrations"
 ---

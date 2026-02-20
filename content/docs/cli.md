@@ -1,6 +1,6 @@
 ---
 title: "CLI Reference"
-description: "Complete reference for csctl — the CraftedSignal command-line interface for detection-as-code workflows."
+description: "Full reference for csctl, the CraftedSignal CLI. Covers commands for init, validate, push, pull, sync, diff, library management, and CI/CD integration."
 weight: 3
 section: "Getting Started"
 ---

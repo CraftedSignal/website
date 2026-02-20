@@ -1,6 +1,6 @@
 ---
 title: "Health & Analytics"
-description: "MITRE coverage, noise ratios, team workload, MTTR, and ROI tracking."
+description: "Monitor detection health with MITRE ATT&CK coverage heatmaps, noise budgets, signal-to-noise ratios, team workload metrics, MTTR, and ROI tracking dashboards."
 weight: 7
 section: "Core Concepts"
 ---

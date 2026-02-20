@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-description: "Sign up for CraftedSignal, connect your first SIEM, and deploy a detection rule in minutes."
+description: "Install CraftedSignal (SaaS or self-hosted), connect your SIEM, import or create detection rules, and deploy your first rule in minutes with csctl."
 weight: 1
 section: "Getting Started"
 ---

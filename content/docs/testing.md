@@ -1,6 +1,6 @@
 ---
 title: "Testing"
-description: "Positive and negative tests, live SIEM testing, validation, and CI/CD pipelines."
+description: "Test detection rules with positive, negative, and enrichment tests run against your live SIEM. Covers validation, CI/CD pipelines, and continuous monitoring."
 weight: 5
 section: "Core Concepts"
 ---

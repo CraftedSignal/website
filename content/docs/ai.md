@@ -1,6 +1,6 @@
 ---
 title: "AI Assistance"
-description: "AI-powered rule generation and analysis — optional, transparent, and always human-approved."
+description: "AI-assisted detection engineering: rule generation, translation linting, health insights, and autofix. Self-hosted via Ollama with full data privacy and human approval."
 weight: 8
 section: "Features"
 ---

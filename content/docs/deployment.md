@@ -1,6 +1,6 @@
 ---
 title: "Deployment & Rollback"
-description: "Deploy rules safely with approvals, monitoring deployments, dry-run previews, and rollback."
+description: "Deploy detection rules to Splunk, Sentinel, CrowdStrike, and Rapid7 with approval workflows, dry-run previews, atomic rollback, and drift detection."
 weight: 6
 section: "Core Concepts"
 ---

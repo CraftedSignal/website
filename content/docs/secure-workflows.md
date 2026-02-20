@@ -1,6 +1,6 @@
 ---
 title: "Secure Detection Workflows"
-description: "How CraftedSignal enforces validation, testing, approval, and rollback at every stage of the detection lifecycle."
+description: "Secure detection workflows with mandatory validation, automated SIEM testing, approval gates, atomic rollback, drift detection, and breakglass emergency procedures."
 weight: 9
 section: "Features"
 ---

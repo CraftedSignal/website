@@ -1,6 +1,6 @@
 ---
 title: "Roles & Permissions"
-description: "RBAC model with separation of duties — Admin, User, and Viewer roles."
+description: "Role-based access control with Admin, User, and Viewer roles. Covers separation of duties, permission matrix, SSO/OIDC, passkey MFA, and instance claiming."
 weight: 10
 section: "Administration"
 ---
