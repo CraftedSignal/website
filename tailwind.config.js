@@ -16,7 +16,7 @@ module.exports = {
         base: '#070b12',
         panel: '#0e1421',
         stroke: 'rgba(255,255,255,0.08)',
-        accent: '#5ab0ff',
+        accent: '#3d8ed4',
         accent2: '#7ed0c0',
         muted: '#9baac0',
         text: '#e4eaf5',

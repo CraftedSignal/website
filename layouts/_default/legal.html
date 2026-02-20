@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="px-6 pt-24 pb-16 md:pt-32 md:pb-20">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="font-display text-3xl md:text-4xl font-semibold mb-8">{{ .Title }}</h1>
+    <div class="prose prose-invert prose-sm max-w-none
+      prose-headings:font-display prose-headings:font-semibold
+      prose-h2:text-lg prose-h2:mt-10 prose-h2:mb-4
+      prose-h3:text-base prose-h3:mt-6 prose-h3:mb-3
+      prose-p:text-muted prose-p:leading-relaxed
+      prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-text
+      prose-table:text-sm
+      prose-th:text-left prose-th:text-text prose-th:font-semibold
+      prose-td:text-muted
+      prose-li:text-muted
+      prose-hr:border-stroke">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

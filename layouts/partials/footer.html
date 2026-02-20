@@ -1,5 +1,67 @@
-<footer class="px-6 py-8 text-center text-sm text-muted border-t border-stroke bg-base">
-  {{ .Site.Title }} — {{ i18n "footerTagline" | default "Detection Engineering Control Plane" }}.
-  <br/>
-  {{ i18n "footerSlogan" | default "Detection engineering, done right." }}
+<footer class="px-6 pt-16 pb-10 border-t border-stroke bg-base">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col lg:flex-row lg:justify-between gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="space-y-3 lg:max-w-xs">
+        <a href="{{ .Site.Home.RelPermalink }}" class="font-display text-lg font-semibold">
+          <span class="text-accent">crafted</span><span class="text-text">signal</span>
+        </a>
+        <p class="text-sm text-muted">{{ i18n "footerTagline" | default "Detection Engineering Control Plane" }}</p>
+      </div>
+
+      <!-- Link columns -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-16">
+        <!-- Platform -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-semibold uppercase tracking-[0.14em] text-text">Platform</h4>
+          <nav class="flex flex-col gap-2 text-sm text-muted">
+            <a href="https://app.craftedsignal.io/auth/login" class="hover:text-text transition">Login</a>
+            <a href="https://app.craftedsignal.io/auth/register" class="hover:text-text transition">Register</a>
+            <a href="https://app.craftedsignal.io/auth/forgot-password" class="hover:text-text transition">Forgot Password</a>
+          </nav>
+        </div>
+
+
+        <!-- Product -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-semibold uppercase tracking-[0.14em] text-text">Product</h4>
+          <nav class="flex flex-col gap-2 text-sm text-muted">
+            <a href="/#how-it-works" class="hover:text-text transition">How it works</a>
+            <a href="/for/" class="hover:text-text transition">Solutions</a>
+            <a href="/docs/pricing/" class="hover:text-text transition">Pricing</a>
+          </nav>
+        </div>
+
+        <!-- Resources -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-semibold uppercase tracking-[0.14em] text-text">Resources</h4>
+          <nav class="flex flex-col gap-2 text-sm text-muted">
+            <a href="/docs/" class="hover:text-text transition">Documentation</a>
+            <a href="/docs/getting-started/" class="hover:text-text transition">Getting started</a>
+            <a href="/docs/cli/" class="hover:text-text transition">CLI reference</a>
+          </nav>
+        </div>
+
+        <!-- Company -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-semibold uppercase tracking-[0.14em] text-text">Company</h4>
+          <nav class="flex flex-col gap-2 text-sm text-muted">
+            <a href="mailto:{{ .Site.Params.email }}" class="hover:text-text transition">Contact</a>
+            {{ with .Site.Params.githubURL }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="hover:text-text transition">GitHub</a>{{ end }}
+            <a href="/docs/security/" class="hover:text-text transition">Security</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-stroke text-xs text-muted">
+      <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+      <nav class="flex gap-4">
+        <a href="/terms/" class="hover:text-text transition">Terms of Service</a>
+        <a href="/privacy/" class="hover:text-text transition">Privacy Policy</a>
+      </nav>
+    </div>
+  </div>
 </footer>
