@@ -39,7 +39,7 @@ other = "Detection Engineering Control Plane"
 
 
 [schemaDescription]
-other = "Detection Engineering Control Plane for SOC teams. Generate, test, and deploy detection rules across Splunk, Sentinel, and CrowdStrike with TI feed, live testing, and approval workflows."
+other = "Detection Engineering Control Plane for SOC teams. Write in Sigma or native SIEM languages, auto-compile to Splunk, Sentinel, CrowdStrike, and Rapid7. Live testing, feature toggles, and approval workflows."
 
 # ──────────────────────────────────────────────
 # Homepage – Hero (hero-new.html)
