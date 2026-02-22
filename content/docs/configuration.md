@@ -412,6 +412,25 @@ Controls rule versioning and review lifecycle.
 
 ---
 
+### Feature toggles
+
+Admins control platform capabilities from **Settings > Features**. Each toggle sets the company-wide default. Engineers can override specific toggles per-rule when allowed by the admin.
+
+| Key | Env var | Type | Default | Per-rule override | Description |
+|-----|---------|------|---------|-------------------|-------------|
+| `features.ai_assist` | `FEATURES_AI_ASSIST` | bool | `true` | No | Enable AI rule generation, suggestions, and autofix |
+| `features.sigma_compilation` | `FEATURES_SIGMA_COMPILATION` | bool | `true` | Yes | Auto-compile Sigma rules to connected SIEMs |
+| `features.auto_deploy` | `FEATURES_AUTO_DEPLOY` | bool | `false` | Yes | Deploy rules automatically after tests pass and approval is granted |
+| `features.threat_feed` | `FEATURES_THREAT_FEED` | bool | `true` | No | Sync and display threat intelligence feed |
+| `features.notifications` | `FEATURES_NOTIFICATIONS` | bool | `true` | No | Send email and Slack notifications for deployments, health, and drift |
+| `features.rule_language_override` | `FEATURES_RULE_LANGUAGE_OVERRIDE` | bool | `true` | — | Allow engineers to write individual rules in a native SIEM language instead of Sigma |
+
+When `sigma_compilation` is enabled, rules authored in Sigma are auto-compiled to all connected SIEMs. When `rule_language_override` is enabled, engineers can choose to write individual rules in a native SIEM language instead of Sigma.
+
+Toggle changes are recorded in the audit log with the admin who made the change.
+
+---
+
 ### Testing
 
 | Key | Env var | Type | Default | Description |
