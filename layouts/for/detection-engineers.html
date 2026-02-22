@@ -193,13 +193,13 @@
   <div class="max-w-6xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-10 items-center">
       <div class="space-y-6">
-        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Multi-platform</p>
-        <h2 class="font-display text-2xl md:text-3xl font-semibold">One rule, deployed to every SIEM</h2>
-        <p class="text-muted">Write a detection once and deploy to Splunk, Sentinel, CrowdStrike, and Rapid7. CraftedSignal maintains platform-specific translations and shows diffs so you know exactly what ships.</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Sigma compilation</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">Write Sigma, compile to any SIEM</h2>
+        <p class="text-muted">Author detections in Sigma and auto-compile to Splunk SPL, Sentinel KQL, CrowdStrike IOA, and Rapid7 LEQL. Or write directly in your SIEM's native language — per-rule language choice means you're never locked in.</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span class="text-sm">Translation diffs before every deployment — review exactly what changes per platform</span>
+            <span class="text-sm">Sigma-to-SIEM compilation with translation diffs — review exactly what ships per platform</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -220,7 +220,7 @@
           <span class="ml-2 text-xs text-muted font-mono">csctl diff</span>
         </div>
         <pre class="p-4 text-sm font-mono text-text overflow-x-auto"><code class="text-accent">$</code> csctl diff
-<code class="text-white font-semibold">webshell-upload-detection</code>
+<code class="text-white font-semibold">webshell-upload-detection</code> <code class="text-muted">source: sigma</code>
 
 <code class="text-muted">  splunk (SPL):</code>
 <code class="text-green-400">  + | where uri_path LIKE "%/uploads/%.php"</code>
