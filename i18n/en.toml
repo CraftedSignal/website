@@ -49,7 +49,7 @@ other = "Detection Engineering Control Plane for SOC teams. Generate, test, and 
 other = "Cut alert noise 60%. Ship better detections 10x faster."
 
 [heroNewDescription]
-other = "Turn threat intelligence into ready-to-use detection rules. Test live on your SIEM. Approve with impact preview. Measure MITRE coverage, noise, and team workload. SaaS or a single binary."
+other = "Write detections in Sigma or your SIEM's native language — auto-compile to Splunk, Sentinel, CrowdStrike, and Rapid7. Import existing rules, test live, and measure coverage. SaaS or a single binary."
 
 [heroNewCtaTry]
 other = "Start free"
