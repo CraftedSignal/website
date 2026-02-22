@@ -168,10 +168,10 @@ other = "SaaS or single binary"
 other = "Use as SaaS or download a single binary. Generous free tier to try everything before you commit."
 
 [trustNewCard4Title]
-other = "Everything toggleable"
+other = "Feature toggles"
 
 [trustNewCard4Desc]
-other = "Turn any feature on or off. The platform adapts to your security policy, not the other way around."
+other = "Control every capability from the admin page. Override per-rule when teams need flexibility. The platform adapts to your security policy, not the other way around."
 
 # ──────────────────────────────────────────────
 # Homepage – CTA (cta-new.html)
@@ -419,10 +419,10 @@ other = "Immutable audit logs"
 other = "Every change, every approval, every deployment. Exportable for auditors."
 
 [cisosCard4Title]
-other = "Everything toggleable"
+other = "Feature toggles"
 
 [cisosCard4Desc]
-other = "Every feature can be turned on or off. SSO, Passkey MFA, and RBAC included out of the box."
+other = "Control every capability from the company admin page — AI assist, auto-deploy, Sigma compilation, notifications. Override per-rule when teams need flexibility. SSO, Passkey MFA, and RBAC included."
 
 [cisosAiLabel]
 other = "AI Governance"
