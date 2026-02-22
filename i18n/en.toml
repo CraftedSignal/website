@@ -24,10 +24,10 @@ other = "Contact"
 
 
 [forCtaDesignPartner]
-other = "Join design partners"
+other = "Get started"
 
 [forCtaDemo]
-other = "View the demo"
+other = "Try it free"
 
 
 # ──────────────────────────────────────────────
@@ -470,10 +470,10 @@ other = "Modify"
 other = "Ready to take control of your detection program?"
 
 [cisosCtaContact]
-other = "Schedule a briefing"
+other = "Get started"
 
 [cisosCtaTryFinal]
-other = "Try the demo"
+other = "Try it free"
 
 # ──────────────────────────────────────────────
 # Rules section (used by Detection Engineers page)
