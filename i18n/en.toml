@@ -221,13 +221,13 @@ other = "For Detection Engineers"
 other = "Generate, test, and deploy detections as code"
 
 [engineersDescription]
-other = "Get rules from our TI feed, generate with AI, or write your own. Test live on your SIEM. Deploy with approval and rollback. Full audit trail, so you see exactly what's happening."
+other = "Write in Sigma, your SIEM's native language, or let AI generate rules for you. Import existing rules — auto-converted to Sigma for portability. Test live, deploy with approval, and roll back in one click."
 
 [engineersSourcesLabel]
 other = "Rule sources"
 
 [engineersSourcesTitle]
-other = "Three ways to get detection rules"
+other = "Four ways to get detection rules"
 
 [engineersSource1Title]
 other = "Threat intelligence feed"
@@ -246,6 +246,12 @@ other = "Your own repository"
 
 [engineersSource3Desc]
 other = "Bring your existing rules, use our standard rules repository, or start from scratch. Everything is detections as code."
+
+[engineersSource4Title]
+other = "Import & convert"
+
+[engineersSource4Desc]
+other = "Import existing rules from your SIEM. They're auto-converted to Sigma so they become portable across platforms — or keep them in their native language with a per-rule toggle."
 
 [engineersTestLabel]
 other = "Live testing"

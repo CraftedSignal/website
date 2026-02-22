@@ -41,7 +41,7 @@
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-4">
         <h3 class="font-display text-xl font-semibold">{{ i18n "engineersSource1Title" | default "Threat intelligence feed" }}</h3>
         <p class="text-sm text-muted">{{ i18n "engineersSource1Desc" | default "Ready-to-use detections for trending and novel threats. Applicability filtering shows what's relevant to your environment." }}</p>
@@ -53,6 +53,10 @@
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-4">
         <h3 class="font-display text-xl font-semibold">{{ i18n "engineersSource3Title" | default "Your own repository" }}</h3>
         <p class="text-sm text-muted">{{ i18n "engineersSource3Desc" | default "Bring your existing rules, use our standard rules repository, or start from scratch. Everything is detections as code." }}</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-4">
+        <h3 class="font-display text-xl font-semibold">{{ i18n "engineersSource4Title" | default "Import & convert" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "engineersSource4Desc" | default "Import existing rules from your SIEM. They're auto-converted to Sigma so they become portable across platforms — or keep them in their native language with a per-rule toggle." }}</p>
       </div>
     </div>
   </div>
