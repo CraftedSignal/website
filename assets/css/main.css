@@ -68,6 +68,29 @@ body {
   color: #e4eaf5;
 }
 
+/* Styled scrollbars — thin, dark, matching panel theme */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 170, 192, 0.2) transparent;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(155, 170, 192, 0.2);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 170, 192, 0.35);
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
