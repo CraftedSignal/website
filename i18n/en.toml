@@ -99,6 +99,12 @@ other = "Approve with impact preview"
 [valueProp3Desc]
 other = "See the impact of every rule change before it hits your team. Juniors submit, seniors approve. Rollback in one click. Every action logged."
 
+[valueProp4Title]
+other = "Write Sigma, deploy everywhere"
+
+[valueProp4Desc]
+other = "Author in Sigma and auto-compile to Splunk, Sentinel, CrowdStrike, and Rapid7. Import native rules and convert to Sigma for portability — or keep writing in your SIEM's own language."
+
 [valuePropLearnMore]
 other = "Learn more →"
 
@@ -116,7 +122,7 @@ other = "Three steps to better detections"
 other = "Connect & import"
 
 [howItWorksStep1Desc]
-other = "Connect your SIEM, import existing rules, or start from our standard rules repository and TI feed."
+other = "Connect your SIEM and import existing rules — they're auto-converted to Sigma for portability. Or start from our TI feed and standard rules repo."
 
 [howItWorksStep2Title]
 other = "Generate & test"
