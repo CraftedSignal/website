@@ -144,10 +144,8 @@ tags:
     };
 
     const syncHighlight = () => {
-      highlighted.textContent = editor.value || '';
-      if (hljs?.highlightElement) {
-        hljs.highlightElement(highlighted);
-      }
+      const result = hljs.highlight(editor.value || '', { language: 'yaml' });
+      highlighted.innerHTML = result.value;
       if (highlightWrapper) {
         highlightWrapper.scrollTop = editor.scrollTop;
         highlightWrapper.scrollLeft = editor.scrollLeft;
