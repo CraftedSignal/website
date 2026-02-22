@@ -62,6 +62,22 @@ Translation diffs show exactly what differs per platform so reviewers can approv
 
 ---
 
+## Rule formats
+
+CraftedSignal supports three ways to author detection logic:
+
+| Format | Description |
+|--------|-------------|
+| **Sigma** | Open standard for detection rules. Write once, auto-compile to any supported SIEM. |
+| **Native** | Write directly in your SIEM's query language (SPL, KQL, LEQL, IOA patterns). |
+| **Mixed** | Use Sigma by default with per-rule overrides to native when you need platform-specific features. |
+
+The format is controlled per-rule. Admins set the company default under **Settings > Rules > Default format**, and engineers can override it on individual rules.
+
+When importing existing native SIEM rules, CraftedSignal auto-converts them to Sigma. The original native query is preserved for reference.
+
+---
+
 ## Rule sources
 
 ### Threat intelligence feed
@@ -76,7 +92,7 @@ Use the web UI to describe what you want to detect. AI generates the rule, tests
 
 ### Your own repository
 
-Import your existing rules, use our standard rules repository, or start from scratch. Everything is detections as code — YAML files in a Git repo.
+Import your existing rules — native SIEM rules are auto-converted to Sigma for cross-platform portability. Use our standard rules repository, or start from scratch. Everything is detections as code — YAML files in a Git repo.
 
 ---
 
