@@ -9,6 +9,19 @@ section: "Integrations"
 
 CraftedSignal supports deploying detection rules to multiple SIEMs from a single source of truth.
 
+CraftedSignal includes a built-in Sigma compiler. Author rules in Sigma and auto-compile to any connected SIEM:
+
+```
+Sigma rule → Splunk SPL
+           → Sentinel KQL
+           → CrowdStrike IOA
+           → Rapid7 LEQL
+```
+
+The compiler handles field mapping, log source resolution, and platform-specific syntax. Compilation diffs show exactly what each SIEM receives so reviewers approve with confidence.
+
+Portability scores flag rules that use Sigma features unsupported on a target platform.
+
 ---
 
 ## Splunk
@@ -134,7 +147,7 @@ having(count > 10)
 
 ## Multi-platform rules
 
-Write a single rule and deploy to multiple SIEMs. CraftedSignal maintains platform-specific implementations and shows diffs:
+Write a single rule in Sigma and auto-compile to every connected SIEM. Or write in your SIEM's native language — the choice is per-rule. CraftedSignal shows compilation diffs so you know exactly what ships:
 
 ```bash
 csctl diff -token YOUR_TOKEN
