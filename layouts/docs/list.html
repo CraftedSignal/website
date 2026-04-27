@@ -19,6 +19,7 @@
       "Getting Started" (slice)
       "Core Concepts" (slice)
       "Features" (slice)
+      "Operations" (slice)
       "Administration" (slice)
       "Integrations" (slice)
       "Security" (slice)
@@ -37,7 +38,7 @@
     {{ end }}
 
     {{/* Render sections in order */}}
-    {{ $order := slice "Getting Started" "Core Concepts" "Features" "Administration" "Integrations" "Security" }}
+    {{ $order := slice "Getting Started" "Core Concepts" "Features" "Operations" "Administration" "Integrations" "Security" }}
     <div class="space-y-10">
       {{ range $sectionName := $order }}
         {{ $pages := index $grouped $sectionName }}

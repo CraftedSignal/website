@@ -1,0 +1,75 @@
+{{/* Screenshot gallery — a tour of the product flow, in the same order the
+     "How it works" cascade presents the concepts. Each card uses a plain
+     <img> with a lazy-load attr. When the screenshot file is missing the
+     browser hides the broken image; caption still reads fine. */}}
+<section id="screenshots" class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-10">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "screenshotsLabel" | default "Some visual examples" }}</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "screenshotsTitle" | default "See the platform in action" }}</h2>
+      <p class="text-sm text-muted max-w-2xl mx-auto">{{ i18n "screenshotsLede" | default "Every screen below is real product. No mockups, no composited dashboards. This is what a SOC team uses on a Monday morning." }}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden group hover:border-accent/40 transition">
+        <img src="/screenshots/dashboard.png" alt="Risk-driven dashboard with exposure, silently broken rules, and top uncovered techniques" loading="lazy" class="w-full aspect-[16/10] object-cover object-top bg-base/60 group-hover:scale-[1.01] transition-transform">
+        <figcaption class="p-5 space-y-1">
+          <p class="text-xs font-mono text-red-400">01 · Risk</p>
+          <h3 class="font-display text-base font-semibold text-text">One screen answers "are we covered?"</h3>
+          <p class="text-sm text-muted">Exposure %, silently broken rules, SIEM health, and the top uncovered techniques with one-click Hunt / Rules actions.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden group hover:border-accent/40 transition">
+        <img src="/screenshots/coverage-depth.png" alt="Per-technique × per-layer coverage heatmap" loading="lazy" class="w-full aspect-[16/10] object-cover object-top bg-base/60 group-hover:scale-[1.01] transition-transform">
+        <figcaption class="p-5 space-y-1">
+          <p class="text-xs font-mono text-purple-400">02 · Threat</p>
+          <h3 class="font-display text-base font-semibold text-text">Coverage depth, not just presence</h3>
+          <p class="text-sm text-muted">Per-technique × per-layer heatmap (endpoint / network / identity / cloud / email). See where defense-in-depth is real and where it is paper-thin.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden group hover:border-accent/40 transition">
+        <img src="/screenshots/hunt-triage.png" alt="Hunt clusters with TP/FP verdicts and promote-to-rule" loading="lazy" class="w-full aspect-[16/10] object-cover object-top bg-base/60 group-hover:scale-[1.01] transition-transform">
+        <figcaption class="p-5 space-y-1">
+          <p class="text-xs font-mono text-accent">03 · Hunt</p>
+          <h3 class="font-display text-base font-semibold text-text">Cluster, verdict, promote</h3>
+          <p class="text-sm text-muted">Hits grouped into clusters. One verdict covers dozens of rows. A promising query lands as a tested Sigma rule in a single click.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden group hover:border-accent/40 transition">
+        <img src="/screenshots/rule-editor.png" alt="Sigma rule editor with live translation to multiple SIEMs" loading="lazy" class="w-full aspect-[16/10] object-cover object-top bg-base/60 group-hover:scale-[1.01] transition-transform">
+        <figcaption class="p-5 space-y-1">
+          <p class="text-xs font-mono text-accent2">04 · Rule</p>
+          <h3 class="font-display text-base font-semibold text-text">Write Sigma to every SIEM at once</h3>
+          <p class="text-sm text-muted">The rule editor compiles on every keystroke. Splunk SPL, Sentinel KQL, CrowdStrike FQL, Rapid7 LEQL — all visible side-by-side with unmapped-field warnings.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden group hover:border-accent/40 transition">
+        <img src="/screenshots/approval-diff.png" alt="Approval detail with query diff, projected impact, and critical-rule policy" loading="lazy" class="w-full aspect-[16/10] object-cover object-top bg-base/60 group-hover:scale-[1.01] transition-transform">
+        <figcaption class="p-5 space-y-1">
+          <p class="text-xs font-mono text-accent2">04 · Rule</p>
+          <h3 class="font-display text-base font-semibold text-text">Approve with full context</h3>
+          <p class="text-sm text-muted">Before/after query diff. Projected alert volume. Critical-severity policy reminders. Comments are mandatory on rejection.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden group hover:border-accent/40 transition">
+        <img src="/screenshots/silently-broken.png" alt="Silently broken rules queue with worst-offender group tag" loading="lazy" class="w-full aspect-[16/10] object-cover object-top bg-base/60 group-hover:scale-[1.01] transition-transform">
+        <figcaption class="p-5 space-y-1">
+          <p class="text-xs font-mono text-green-400">05 · Coverage</p>
+          <h3 class="font-display text-base font-semibold text-text">Catch the rules that stopped firing</h3>
+          <p class="text-sm text-muted">A dedicated queue for rules deployed and active but producing zero triggers. Grouped by owning team so the right person hears about it first.</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="text-center pt-4">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
+        {{ i18n "screenshotsCta" | default "Try it yourself →" }}
+      </a>
+    </div>
+  </div>
+</section>

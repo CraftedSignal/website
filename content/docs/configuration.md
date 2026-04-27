@@ -210,6 +210,29 @@ storage:
     dsn: "postgres://user:pass@host:5432/dbname?sslmode=require"
 ```
 
+#### Cloud SQL IAM authentication
+
+For Google Cloud SQL deployments, CraftedSignal can authenticate via IAM rather than a long-lived password. Tokens refresh per connection and the dialer uses private IP automatically.
+
+```yaml
+storage:
+  driver: postgres
+  properties:
+    iam_auth: "true"
+    instance_connection_name: "my-project:europe-west1:craftedsignal-db"
+    user: "craftedsignal-sa@my-project.iam.gserviceaccount.com"
+    dbname: "craftedsignal"
+```
+
+Setup checklist:
+
+1. Create a Cloud SQL instance with private IP enabled (no public IP).
+2. Grant the `cloudsql.client` role to the service account on the instance.
+3. Run the platform with that identity (Workload Identity, GCE service account, or Application Default Credentials).
+4. Set `iam_auth: "true"` and provide the `instance_connection_name` (`project:region:instance`) and the service account email as `user`. No password.
+
+Connection pool settings (`max_open_conns`, `max_idle_conns`, `conn_max_idle_time`) work the same way as standard Postgres. The IAM connection has a 60-second connect timeout to allow for token refresh on cold starts.
+
 ---
 
 ### Security
@@ -499,6 +522,28 @@ Controls application logging output.
 For production, use `json` format and pipe to your log aggregation system. For development, use `text` for readability.
 
 When `log.file` is set, logs are written to the file **instead of** stdout. To write to both, use a tool like `tee` or configure your process manager to capture stdout.
+
+---
+
+### Observability
+
+CraftedSignal emits OpenTelemetry trace spans for HTTP requests and Temporal workflows. Spans propagate across boundaries via W3C Trace Context, so a request that fans into a deployment workflow shows up as a single trace in your collector.
+
+Enabling Cloud Trace requires only the GCP project ID:
+
+```bash
+export GOOGLE_CLOUD_PROJECT=my-project
+```
+
+When `GOOGLE_CLOUD_PROJECT` is set, the platform initializes a Cloud Trace exporter on startup and ships spans to the project. Sampling defaults to 10% of root spans (children inherit the parent decision). When the variable is unset, tracing is silently disabled — useful for development or for tenants that don't run on GCP.
+
+What's traced today:
+
+- HTTP requests via stdlib `net/http` instrumentation.
+- Temporal workflows and activities via the OpenTelemetry interceptor.
+- Database queries (DEBUG-only, opt-in via the postgres driver).
+
+Spans flush on shutdown with a 5-second timeout. Failures during exporter init are logged as warnings and don't block startup.
 
 ---
 

@@ -124,6 +124,21 @@ Export ROI reports for stakeholders and budget discussions.
 
 ---
 
+## AI usage and quality
+
+Owners get a dedicated **AI Quality** screen at `/dashboard/ai-quality` that surfaces every LLM call the platform made on the tenant's behalf. For each call you can see:
+
+- The activity that triggered it (`actor_adjudication`, `hunt_outcome_summary`, `novel_chain_extraction`, `campaign_close_summary`, `digest_narrative`).
+- The model and the input/output/cached token counts.
+- The cost estimate (best-effort; $0 for self-hosted models that don't expose cost).
+- The prompt and the response, for spot-checking decisions.
+
+Aggregate views show per-activity volume, cost over time, and the trailing-30-day spend per company. Useful for budget reviews, model swaps, and catching prompt regressions early.
+
+The same data backs cost analytics on multi-tenant deployments — see [AI Assistance](/docs/ai/) for the activity catalog and the off-switch.
+
+---
+
 ## Flexible grouping
 
 Group rules by any dimension to monitor and control:

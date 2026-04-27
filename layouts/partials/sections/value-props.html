@@ -1,27 +1,27 @@
 <section id="value-props" class="px-6 py-14 md:py-20">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Card 1: Generate & Test -->
-      <a href="/for/detection-engineers/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
-        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      <!-- Card 1: Risk-first detection engineering -->
+      <a href="/for/cisos/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
         </div>
-        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp1Title" | default "Practical threat intelligence" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "valueProp1Desc" | default "Get ready-to-use detections from our TI feed, generate with AI, or bring your own repo. Every rule comes with tests you can run live on your SIEM." }}</p>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp1Title" | default "Start with risk, not alerts" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp1Desc" | default "Model business services and attack paths. Every MITRE technique gets weighted for your exposure. No more detections for threats you do not face, and no more blind spots for the ones you do." }}</p>
         <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
       </a>
 
-      <!-- Card 2: Measure & Improve -->
+      <!-- Card 2: Silently broken surfaced -->
       <a href="/for/soc-leaders/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
         <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
           <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
           </svg>
         </div>
-        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp2Title" | default "Measure and improve everything" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "valueProp2Desc" | default "MITRE coverage, noise ratio, team workload, MTTR. Get actionable suggestions to close gaps, fix noisy rules, and retire dead ones." }}</p>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp2Title" | default "Catch silently broken rules" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp2Desc" | default "Industry data says only 5% of deployed detections actually work. We surface the dead ones the day they stop firing, plus noise, drift, failing tests, and missing mappings, in a single queue." }}</p>
         <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
       </a>
 
@@ -45,7 +45,7 @@
           </svg>
         </div>
         <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp4Title" | default "Write Sigma, deploy everywhere" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "valueProp4Desc" | default "Author in Sigma and auto-compile to Splunk, Sentinel, CrowdStrike, and Rapid7. Import native rules and convert to Sigma for portability — or keep writing in your SIEM's own language." }}</p>
+        <p class="text-sm text-muted">{{ i18n "valueProp4Desc" | default "Author in Sigma and convert to Splunk, Sentinel, CrowdStrike, and Rapid7. Import native rules and translate to Sigma for portability, or keep writing in your SIEM's own language." }}</p>
         <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
       </a>
 
@@ -68,8 +68,117 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
         </div>
-        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp6Title" | default "Detections as code" }}</h3>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp6Title" | default "Detections as Code" }}</h3>
         <p class="text-sm text-muted">{{ i18n "valueProp6Desc" | default "YAML rules in Git. Validate, test, and deploy with csctl or your CI/CD pipeline. Version history, diffs, and audit trail built in." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 7: Hunt → promote -->
+      <a href="/for/detection-engineers/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp7Title" | default "Hunt, verdict, promote" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp7Desc" | default "Launch hypothesis-driven hunts against live SIEMs. Cluster results, verdict them in batch, and promote winning queries to tested Sigma rules in one click." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 8: Live testing -->
+      <a href="/docs/testing/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp8Title" | default "Test live on your SIEM" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp8Desc" | default "Generate positive and negative test cases with AI, push them to your SIEM, and prove the rule fires (or doesn't) on real data, before a single alert reaches the analyst." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 9: AI you can unplug -->
+      <a href="/for/cisos/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp9Title" | default "AI you can unplug" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp9Desc" | default "Self-host Ollama or point at any OpenAI-compatible endpoint. Disable AI entirely if policy requires it. Every suggestion is logged, reviewable, and non-destructive by default." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 10: Threat intel that adopts itself -->
+      <a href="/docs/threat-feed/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp10Title" | default "Threat intel that adopts itself" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp10Desc" | default "Receive signed threat briefs with Sigma rules, IOCs, and ATT&CK context. Relevance-scored against your industry. Adopt as rules, convert to hunts, or mark for monitoring, one click each." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 11: Drift detection -->
+      <a href="/docs/drift/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp11Title" | default "Catch drift before auditors do" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp11Desc" | default "Every deployed rule is re-hashed on a schedule. Any out-of-band change in the SIEM gets flagged, diffed, and queued for review. Separation of duties, proven automatically." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 12: Feedback loop -->
+      <a href="/for/soc-leaders/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp12Title" | default "Analyst feedback closes the loop" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp12Desc" | default "SOC analysts verdict alerts TP / FP / noise in the same UI. AI triages the feedback into concrete recommendations, tune this rule, retire that one, hunt this gap, ranked by impact." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 15: Noise budgets -->
+      <a href="/docs/noise-budgets/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17l6-6 4 4 8-8m0 0v6m0-6H13" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp15Title" | default "Noise budgets, enforced" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp15Desc" | default "Set a daily alert budget per team, per service, or per rule. Deploys that would blow the budget get held for review. Monitoring mode runs new rules silently until the volume proves out." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 14: Git backups -->
+      <a href="/docs/git-backup/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp14Title" | default "Git-native backups" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp14Desc" | default "Every rule, every version, every test, pushed to your Git repo on a schedule. Restore from any point in history, audit offline, or migrate environments without touching the SIEM." }}</p>
+        <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
+      </a>
+
+      <!-- Card 13: Deploy anywhere -->
+      <a href="/docs/deployment/" class="group rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4 hover:border-accent/40 transition">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold">{{ i18n "valueProp13Title" | default "SaaS, self-hosted, or air-gapped" }}</h3>
+        <p class="text-sm text-muted">{{ i18n "valueProp13Desc" | default "One Go binary with an embedded Temporal, or fully managed SaaS. Regulated teams can run it air-gapped with outbound blocked. White-label branding for MSSPs and enterprise." }}</p>
         <span class="text-sm text-accent group-hover:underline">{{ i18n "valuePropLearnMore" | default "Learn more →" }}</span>
       </a>
     </div>

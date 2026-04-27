@@ -1,6 +1,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {{- range where .Site.AllPages "Kind" "ne" "taxonomy" }}
+  {{- range hugo.Sites }}
+  {{- range where .Pages "Kind" "ne" "taxonomy" }}
   {{- if not (eq .Kind "term") }}
   <url>
     <loc>{{ .Permalink }}</loc>
@@ -10,6 +11,7 @@
     <changefreq>weekly</changefreq>
     <priority>{{ if .IsHome }}1.0{{ else if .IsSection }}0.8{{ else }}0.6{{ end }}</priority>
   </url>
+  {{- end }}
   {{- end }}
   {{- end }}
 </urlset>

@@ -3,6 +3,7 @@ languageCode = 'en'
 title = 'CraftedSignal'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
 
 # Enable i18n - set to false so | default fallbacks work
 enableMissingTranslationPlaceholders = false
@@ -47,8 +48,6 @@ enableMissingTranslationPlaceholders = false
 
 [outputs]
   home = ["HTML", "RSS"]
-
-enableRobotsTXT = true
 
 [sitemap]
   changeFreq = "weekly"

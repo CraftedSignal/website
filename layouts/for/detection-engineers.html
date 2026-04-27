@@ -56,7 +56,7 @@
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-4">
         <h3 class="font-display text-xl font-semibold">{{ i18n "engineersSource4Title" | default "Import & convert" }}</h3>
-        <p class="text-sm text-muted">{{ i18n "engineersSource4Desc" | default "Import existing rules from your SIEM. They're auto-converted to Sigma so they become portable across platforms — or keep them in their native language with a per-rule toggle." }}</p>
+        <p class="text-sm text-muted">{{ i18n "engineersSource4Desc" | default "Import existing rules from your SIEM. They're auto-converted to Sigma so they become portable across platforms, or keep them in their native language with a per-rule toggle." }}</p>
       </div>
     </div>
   </div>
@@ -69,7 +69,7 @@
       <div class="space-y-6">
         <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "engineersTestLabel" | default "Live testing" }}</p>
         <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "engineersTestTitle" | default "Test detections on your actual SIEM" }}</h2>
-        <p class="text-muted">{{ i18n "engineersTestDesc" | default "Define or generate tests, then run them live against your SIEM — in code with the CLI or in the web UI. See results before any rule reaches production." }}</p>
+        <p class="text-muted">{{ i18n "engineersTestDesc" | default "Define or generate tests, then run them live against your SIEM, in code with the CLI or in the web UI. See results before any rule reaches production." }}</p>
 
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
@@ -82,7 +82,7 @@
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "engineersTestBullet2" | default "Run tests from the CLI or web UI — your workflow, your choice" }}</span>
+            <span class="text-sm">{{ i18n "engineersTestBullet2" | default "Run tests from the CLI or web UI, your workflow, your choice" }}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@
 <code class="text-green-400">+ webshell-upload-detection (new)</code>
 <code class="text-yellow-400">~ lateral-movement-smb (modified)</code>
 
-<code class="text-muted"># Push and deploy — tests run automatically</code>
+<code class="text-muted"># Push and deploy, tests run automatically</code>
 <code class="text-accent">$</code> csctl push -deploy -m "Add webshell detection"
 <code class="text-green-400">✓ 4/4 tests passed</code>
 <code class="text-green-400">✓ Deployed to splunk · rollback available</code></pre>
@@ -146,7 +146,7 @@
           <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
         </div>
         <h3 class="font-semibold text-sm">Approve</h3>
-        <p class="text-xs text-muted">Peer review with impact preview — projected alerts, noise, and cost delta</p>
+        <p class="text-xs text-muted">Peer review with impact preview, projected alerts, noise, and cost delta</p>
       </div>
       <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-2 text-center">
         <div class="w-10 h-10 mx-auto rounded-xl bg-accent/10 flex items-center justify-center">
@@ -160,7 +160,7 @@
           <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
         </div>
         <h3 class="font-semibold text-sm">Monitor</h3>
-        <p class="text-xs text-muted">Track noise ratio, alert volume, and health — rollback in one click if needed</p>
+        <p class="text-xs text-muted">Track noise ratio, alert volume, and health, rollback in one click if needed</p>
       </div>
     </div>
 
@@ -195,11 +195,11 @@
       <div class="space-y-6">
         <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Sigma compilation</p>
         <h2 class="font-display text-2xl md:text-3xl font-semibold">Write Sigma, compile to any SIEM</h2>
-        <p class="text-muted">Author detections in Sigma and auto-compile to Splunk SPL, Sentinel KQL, CrowdStrike IOA, and Rapid7 LEQL. Or write directly in your SIEM's native language — per-rule language choice means you're never locked in.</p>
+        <p class="text-muted">Author detections in Sigma and auto-compile to Splunk SPL, Sentinel KQL, CrowdStrike IOA, and Rapid7 LEQL. Or write directly in your SIEM's native language, per-rule language choice means you're never locked in.</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            <span class="text-sm">Sigma-to-SIEM compilation with translation diffs — review exactly what ships per platform</span>
+            <span class="text-sm">Sigma-to-SIEM compilation with translation diffs, review exactly what ships per platform</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
