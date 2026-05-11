@@ -36,6 +36,16 @@ mitre:
 
 This mapping powers coverage reports and gap analysis.
 
+### D3FEND defensive coverage
+
+Every rule with an ATT&CK mapping also gets **D3FEND defensive categories** derived automatically. The platform looks up each technique in an embedded ATT&CK → D3FEND mapping and computes which of the five defensive categories (Detect, Harden, Isolate, Deceive, Evict) the rule contributes to.
+
+D3FEND categories appear as color-coded badges on the rules list and can be used to filter rules by defensive goal (e.g., `?dfend_category=Harden`). On the rule edit page, the **Defensive Coverage** panel shows the derived categories. An **Override** toggle lets you supply D3FEND technique IDs manually when the auto-mapping doesn't match the rule's actual defensive intent.
+
+See [D3FEND Defensive Coverage](/docs/dfend/) for the full reference.
+
+---
+
 ### Platform implementations
 
 A single rule can have implementations for multiple SIEMs:

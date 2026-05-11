@@ -57,7 +57,11 @@ Scores ≥75 (or any watchlist match flagged critical) trigger a **risk candidat
 
 1. **Review** — narrative, affected vendors/products/OS, MITRE coverage of the brief, and the suggested rules.
 2. **Adopt** a rule in one click: creates a detection in your library linked back to the brief.
-3. **Hunt the IOCs** using auto-generated queries against your connected SIEMs.
+3. **Hunt the IOCs** — the brief page generates platform-specific queries from the brief's IOC list. A **Create hunt** button turns the generated query into a new hunt immediately. The hunt is pre-populated with:
+   - Title: `"IOC Hunt: <brief title>"`.
+   - MITRE tactics and techniques pulled from the brief's TTP list.
+   - A backlink to the source brief so you can navigate between the hunt and the brief in both directions.
+   - One hunt query carrying the generated IOC query string, marked with source `ioc_generated`.
 4. **Watchlist** the brief for periodic re-check if it isn't actionable right now.
 5. **Dismiss** with a reason — the relevance model learns from the dismissal.
 

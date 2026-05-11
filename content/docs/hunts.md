@@ -126,6 +126,16 @@ When the hunt isn't anchored to a risk but matches one or more global attack pat
 
 The "What we're hunting for" strip below the header summarizes whichever metadata the hunt has: protected business function, backing services, risk path, matched paths, MITRE techniques. The strip is hidden when there's nothing to show.
 
+### D3FEND target badge
+
+When a hunt is seeded by a [D3FEND gap signal](/docs/dfend/) — that is, the hunt proposer identified a technique with incomplete defensive coverage — the header shows a **D3FEND target** badge naming the defensive category the hunt is expected to close (e.g., `Harden`). The badge propagates from the gap signal through the hypothesis to the hunt record, so it is visible throughout the hunt lifecycle.
+
+Hunts created manually or from risks do not show a D3FEND target badge unless the proposer specifically seeded them from a gap signal.
+
+### Brief backlink
+
+When a hunt was created from a threat brief — either via the IOC query flow on the brief page or by the feed-to-risk bridge — the hunt record carries a `brief_id` backlink. The "What we're hunting for" strip renders a link back to the originating brief so analysts can navigate between the threat intelligence and the investigation without leaving the hunt page.
+
 ---
 
 ## AI assist
