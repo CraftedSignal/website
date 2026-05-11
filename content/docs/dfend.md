@@ -1,98 +1,112 @@
 ---
 title: "D3FEND Defensive Coverage"
-description: "CraftedSignal maps every detection rule to MITRE D3FEND defensive categories automatically, showing where you Detect, Harden, Isolate, Deceive, and Evict threats — and where the hunt proposer can help close gaps."
+description: "MITRE D3FEND integration: how CraftedSignal maps your active detections to defensive techniques across the Detect, Harden, Isolate, Deceive, and Evict categories — and how gaps feed the hunt proposer."
 weight: 9
-section: "Features"
+section: "Core Concepts"
 ---
 
 ## Overview
 
-[MITRE D3FEND](https://d3fend.mitre.org) is the defensive counterpart to ATT&CK. Where ATT&CK describes what attackers do, D3FEND describes what defenders can do about it. The platform maintains a static ATT&CK→D3FEND mapping and uses it to automatically classify every detection rule into one or more of five top-level defensive categories.
+MITRE D3FEND is a knowledge graph of defensive cybersecurity techniques. Where ATT&CK catalogs what attackers do, D3FEND maps what defenders can do about it. CraftedSignal uses a static ATT&CK → D3FEND mapping to automatically classify your active detection rules by their defensive posture — without requiring any extra configuration.
 
-| Category | What it covers |
-|----------|----------------|
-| **Detect** | Identify attacker activity in progress |
-| **Harden** | Reduce the attack surface before an attack occurs |
-| **Isolate** | Limit blast radius and lateral movement |
-| **Deceive** | Lure or mislead an attacker |
-| **Evict** | Remove an attacker who has already gained a foothold |
-
-No manual tagging is required. When a rule carries MITRE ATT&CK technique IDs the platform derives the applicable D3FEND techniques and rolls them up to these categories automatically.
+Every rule that maps to at least one ATT&CK technique gets D3FEND categories derived automatically. The categories propagate through the platform: rule listings, attack-path step rows, hunt detail pages, and the dedicated posture report at `/coverage/posture/dfend`.
 
 ---
 
-## Auto-derivation and override
+## Categories
 
-When a rule is created or its ATT&CK techniques change, `DeriveDFend()` runs and stores the derived D3FEND technique IDs. The **Defensive coverage (D3FEND)** section on the rule edit page shows those techniques as read-only chips alongside a **Lock** button.
+D3FEND organizes defensive techniques into five top-level categories:
 
-| Mode | Behavior |
-|------|----------|
-| Auto (default) | D3FEND techniques are re-derived whenever ATT&CK techniques change. |
-| Override (locked) | A freeform text field accepts custom D3FEND technique IDs. Auto-derivation is suspended until unlocked. |
+| Category | Meaning | Example techniques |
+|----------|---------|-------------------|
+| **Detect** | Identify attacker activity through analysis | Process Spawn Analysis, Credential Analysis, Network Traffic Analysis |
+| **Harden** | Reduce the attack surface or raise the cost of exploitation | Application Hardening, Credential Hardening, Backup Verification |
+| **Isolate** | Segment or contain a threat | Network Isolation, Process Isolation |
+| **Deceive** | Misdirect or delay attackers | Honey Token, Decoy User Credential |
+| **Evict** | Remove attacker presence or access | Account Locking, Process Termination |
 
-Use override when a rule's defensive intent doesn't match the static mapping — for example, a deception honeypot rule mapped to an ATT&CK technique that the mapping doesn't associate with the **Deceive** category.
-
----
-
-## Rules list
-
-The `/dashboard/rules` list shows D3FEND category badges on each row. A `dfend_category` query parameter filters to rules contributing to a single category, and combines with all other active filters (search, group, tag, platform, status):
-
-```
-/dashboard/rules?dfend_category=Harden
-```
+A rule contributing to, say, `T1078 Valid Accounts` will be mapped to Detect (Credential Analysis, User Behavior Analysis), Harden (Credential Hardening), and Deceive (Decoy User Credential). Multiple categories per rule are normal.
 
 ---
 
-## Attack-path step badges
+## How mapping works
 
-On the Risk Ops Board's attack-path view, each step row shows a D3FEND badge:
+The mapping is static and ships with the platform binary. When a rule is created, updated, deployed, or removed, `DeriveDFend()` recomputes the rule's D3FEND technique IDs from its ATT&CK technique list. The result is stored in `det_dfend_techniques` alongside the rule and does not require network access or an AI call.
 
-- **Green ✓** — at least one active rule contributes the recommended D3FEND category for this step's ATT&CK technique.
-- **Amber !** — the mapping recommends this category but no rule covers it. A **Suggest Hunt** button next to the amber badge creates a hunt proposal pre-seeded with the gap technique and the missing D3FEND category as the `DFendTarget`.
+The computation:
+
+1. For each ATT&CK technique on the rule, look up the D3FEND techniques in the embedded mapping.
+2. Deduplicate across all techniques on the rule.
+3. Persist the derived list; the top-level categories (`det_dfend_categories`) are derived from the technique IDs.
+
+Sub-techniques fall back to their parent (e.g., `T1059.001` maps via `T1059`). Techniques not in the mapping produce no D3FEND output — the rule still works, it just won't appear in category coverage.
 
 ---
 
-## Hunt D3FEND target
+## Override
 
-Hunts that originate from a D3FEND gap proposal carry a **D3F: \<Category\>** badge in the hunt detail header. The badge records which defensive category the hunt is intended to address, so analysts know whether a hunt is building Detect coverage, Harden coverage, or something else. The `DFendTarget` field carries through to the promoted detection.
+The mapping is automatic by default. On the rule edit page, the **Defensive Coverage** section lets you switch to manual mode:
+
+- **Unlocked** (default): D3FEND techniques derive automatically from the rule's ATT&CK techniques. The badge shows the computed categories.
+- **Locked** (override): You supply the D3FEND technique IDs directly. Automatic derivation is suppressed for that rule. Use this when the static mapping doesn't reflect the rule's actual defensive goal — for example, a detection that implements a Deceive technique not yet in the mapping.
+
+The lock state persists across rule edits. Unlocking reverts to auto-derivation on the next save.
+
+---
+
+## Where D3FEND appears
+
+### Rules list
+
+Each rule row on `/dashboard/rules` shows the D3FEND categories it contributes to as color-coded badges:
+
+| Badge color | Category |
+|-------------|----------|
+| Blue | Detect |
+| Orange | Harden |
+| Purple | Isolate |
+| Yellow | Deceive |
+| Red | Evict |
+
+Filter the list to a single category using the `dfend_category` query parameter (e.g., `?dfend_category=Harden`). The filter is preserved across pagination and sort changes.
+
+### Attack-path step rows
+
+Each step on a company attack path shows coverage and gap badges derived from the rules linked to that step:
+
+- A **covered** badge appears when at least one active rule addresses the step's technique with a D3FEND category.
+- A **gap** badge appears for categories that the D3FEND mapping says *should* cover the technique but no active rule does.
+- A **Suggest Hunt** button appears next to gap badges — clicking it pre-fills a hunt proposal for that technique and defensive category.
+
+### Hunt detail
+
+When a hunt is seeded by a D3FEND gap signal (via the hunt proposer), the detail header shows a **D3FEND target** badge identifying which defensive category the hunt is expected to close. This badge propagates from the hypothesis through to the promoted rule.
 
 ---
 
 ## Posture page
 
-`/coverage/posture/dfend` shows a horizontal bar per top-level category across all your active rules.
+`/coverage/posture/dfend` shows a horizontal bar for each of the five categories:
 
-| Column | Meaning |
-|--------|---------|
-| Rule count | Rules contributing to this defensive category |
-| Techniques | ATT&CK techniques covered by those rules that map to this category |
-| % | Techniques in this category ÷ total covered techniques across all rules |
+- **Rule count** — how many of your active rules contribute to that category.
+- **Technique coverage** — the share of your company's covered ATT&CK techniques that have at least one rule addressing this category (technique count ÷ total covered techniques × 100%).
+- A quick-add link when a category has zero coverage.
 
-The denominator is the union of techniques on your enabled rules — not the full ATT&CK matrix — so the percentages reflect your actual detection estate. A category with zero rules shows a direct link to create a rule.
+Coverage is computed from active rules only. Disabled, paused, killed, and draft rules do not contribute. Percentages reflect coverage of *your actively-detected techniques*, not the full ATT&CK matrix.
 
 ---
 
-## Hunt proposals from gaps
+## D3FEND gaps and the hunt proposer
 
-The hunt proposer includes a `dfend_gap` signal source. For each ATT&CK technique that has at least one active rule but is missing a D3FEND category the static mapping recommends, the proposer emits a gap signal. These appear in `/dashboard/hunts` alongside risk-anchored and ideal-posture proposals.
+The hunt proposer's **IdealPostureSource** emits `dfend_gap` signals for techniques where your existing coverage is partial — for example, where a technique has Detect coverage but no Harden coverage. Each signal becomes a hunt proposal in the **Suggested Hunts** list, labeled with the gap category.
 
-Gap signals are capped at three per technique to avoid flooding the queue when a technique has many defensive recommendations.
-
----
-
-## Routes
-
-| Route | Purpose |
-|-------|---------|
-| `GET /coverage/posture/dfend` | Defensive posture panel by D3FEND category |
-| `GET /dashboard/rules?dfend_category=<cat>` | Filter rules to a single D3FEND category |
+Up to three gap signals are emitted per technique per proposer run to avoid flooding the proposal queue. Gap proposals are ranked alongside other signal types and respect the hunt proposer's overall priority ordering.
 
 ---
 
 ## Related
 
-- [Detection Rules](/docs/rules/) — where D3FEND coverage is stored and overridden per rule.
-- [Risks](/docs/risks/) — attack-path step rows show D3FEND coverage/gap badges.
-- [Hunts](/docs/hunts/) — hunt proposals include D3FEND gap signals; promoted hunts carry a D3FEND target.
-- [Threat Model](/docs/threat-model/) — the attack paths and steps that drive coverage badges.
+- [Detection Rules](/docs/rules/) — where ATT&CK technique mappings and the D3FEND override live.
+- [Threat Hunting](/docs/hunts/) — how gap signals become hunt proposals.
+- [Risks](/docs/risks/) — attack-path steps that show D3FEND coverage badges.
+- [Health & Analytics](/docs/health-analytics/) — broader coverage metrics.

@@ -98,24 +98,26 @@ There is no UI today for promoting unverified actors to verified, or for editing
 
 ### Actor detail page
 
-Each actor has a dedicated page at `/actors/{id}`. It aggregates all entities linked to that actor across the platform into four panels:
+Each catalog entry has a dedicated page at `/dashboard/actors/{id}`. The page shows:
 
-| Panel | Contents |
-|-------|----------|
-| **Briefs** | Threat briefs that mention this actor, most recent first |
-| **Attack paths** | Company attack paths representing this actor's TTPs |
-| **Hunts** | Hunts — active or completed — investigating this actor's techniques |
-| **Detections** | Rules authored to catch this actor's behavior |
+- **Header** — canonical name, motivation, origin country, first-seen year, and MITRE group ID (when present).
+- **Coverage summary strip** — counts of briefs, attack paths, hunts, and detection rules linked to the actor.
+- **Threat Briefs** — every brief that named this actor, each linking to the brief detail page.
+- **Attack Paths** — company attack paths associated with the actor's TTPs.
+- **Hunts** — hunts investigating this actor's activity.
+- **Detection Rules** — rules tagged to this actor.
 
-Empty panels are hidden. The page is the fastest way to answer "what do we know about this group and what have we done about it?" — every entity that shares the actor ID is one click away.
+The page is read-only. Linkages are built automatically by the feed-to-risk bridge and the actor edge tables; there is no manual edit flow.
 
-### Inline surfaces
+### Other surfaces
 
-Actors also appear contextually throughout the platform:
+Actors also surface in context without navigating to the detail page:
 
-- **Threat brief detail** — the actor name renders next to the brief title; a hover reveals the canonical entry.
+- **Threat brief detail** — the actor name renders next to the brief title; clicking it navigates to the actor detail page.
 - **Risk drawer** — the lifecycle timeline cites the actor when a brief-driven candidate created the risk.
 - **Hunt overview** — the "What we're hunting for" strip lists matched actors when global attack paths overlap with the hunt.
+
+The pivots between briefs, risks, hunts, and detections via shared actor IDs are what make the catalog valuable. The detail page is the central pivot point for analyst-driven actor research.
 
 ---
 
