@@ -36,6 +36,14 @@ mitre:
 
 This mapping powers coverage reports and gap analysis.
 
+### D3FEND defensive coverage
+
+Each rule also carries a set of [MITRE D3FEND](https://d3fend.mitre.org) technique IDs derived automatically from its ATT&CK techniques. D3FEND rolls up to five top-level defensive categories — Detect, Harden, Isolate, Deceive, Evict — so you can see not just *what* a rule catches but *what defensive goal* it serves.
+
+The **Defensive coverage (D3FEND)** section on the rule edit page shows the derived technique IDs as read-only chips. A **Lock** button enables override mode, where you can supply custom D3FEND technique IDs. **Unlock** re-enables auto-derivation. The rules list carries per-row D3FEND category badges and a `dfend_category` filter.
+
+See [D3FEND Defensive Coverage](/docs/dfend/) for the full model, posture page, and hunt-proposal integration.
+
 ### Platform implementations
 
 A single rule can have implementations for multiple SIEMs:
@@ -168,3 +176,18 @@ cost:
 These expectations are validated during shadow evaluation and enforced as noise budgets during deployment.
 
 See [Health & Analytics](/docs/health-analytics/) for noise budget monitoring.
+
+---
+
+## Promotion quality
+
+Rules promoted from hunt queries accumulate a **rolling precision** score (TP ÷ (TP + FP)) as analysts verdict alerts. Two thresholds drive automated action:
+
+| Threshold | What happens |
+|-----------|--------------|
+| Precision < 60%, ≥10 verdicts | Rule appears on the dashboard's **Low-precision promoted rules** quality card. Advisory only — no state change. |
+| Precision < 40%, ≥10 verdicts | Platform automatically returns the linked risk to `hunting`. A fresh hunt is created so the detection can be revised. |
+
+The 40% threshold fires via the same `ScheduleRehunt` path as the 90-day scheduled re-hunt. The hunt detail page for the resulting hunt references the source promotion outcome so analysts have context for why the re-hunt was triggered.
+
+See [Risks](/docs/risks/#re-hunt) for the re-hunt lifecycle.

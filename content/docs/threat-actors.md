@@ -96,13 +96,26 @@ There is no UI today for promoting unverified actors to verified, or for editing
 
 ## Where you see actors
 
-The catalog itself doesn't have a dedicated browse page yet. Actors surface where they're useful:
+### Actor detail page
+
+Each actor has a dedicated page at `/actors/{id}`. It aggregates all entities linked to that actor across the platform into four panels:
+
+| Panel | Contents |
+|-------|----------|
+| **Briefs** | Threat briefs that mention this actor, most recent first |
+| **Attack paths** | Company attack paths representing this actor's TTPs |
+| **Hunts** | Hunts — active or completed — investigating this actor's techniques |
+| **Detections** | Rules authored to catch this actor's behavior |
+
+Empty panels are hidden. The page is the fastest way to answer "what do we know about this group and what have we done about it?" — every entity that shares the actor ID is one click away.
+
+### Inline surfaces
+
+Actors also appear contextually throughout the platform:
 
 - **Threat brief detail** — the actor name renders next to the brief title; a hover reveals the canonical entry.
 - **Risk drawer** — the lifecycle timeline cites the actor when a brief-driven candidate created the risk.
 - **Hunt overview** — the "What we're hunting for" strip lists matched actors when global attack paths overlap with the hunt.
-
-The pivots between briefs, risks, hunts, and detections via shared actor IDs are what make the catalog valuable. Even without a dedicated UI, the linkage is there in the database and in cross-page context.
 
 ---
 

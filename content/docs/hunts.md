@@ -126,13 +126,15 @@ When the hunt isn't anchored to a risk but matches one or more global attack pat
 
 The "What we're hunting for" strip below the header summarizes whichever metadata the hunt has: protected business function, backing services, risk path, matched paths, MITRE techniques. The strip is hidden when there's nothing to show.
 
+When a hunt originates from a [D3FEND gap proposal](/docs/dfend/#hunt-proposals-from-gaps), a **D3F: \<Category\>** badge appears in the header strip. The badge records which defensive category the hunt is intended to address — Detect, Harden, Isolate, Deceive, or Evict — and carries through to the promoted detection.
+
 ---
 
 ## AI assist
 
 - **Query generation** from a free-text threat description, safe across the SIEMs the hunt targets.
 - **Query refinement** after a run: analyzes the hits and suggests tightening keywords or field conditions to cut noise.
-- **Hunt proposals** are generated on a schedule from accepted risks, uncovered-technique gaps, and newly published threat briefs. Risk-anchored proposals are sorted by the underlying risk's priority — see [Risks](/docs/risks/) for the ranking model.
+- **Hunt proposals** are generated on a schedule from four sources: accepted risks, uncovered ideal-posture techniques, D3FEND gap signals (ATT&CK techniques covered by a rule but missing a recommended defensive category), and newly published threat briefs. Risk-anchored proposals are sorted by the underlying risk's priority — see [Risks](/docs/risks/) for the ranking model. D3FEND gap proposals carry a `DFendTarget` indicating which defensive category to address — see [D3FEND Defensive Coverage](/docs/dfend/).
 
 Both query helpers can be disabled per-hunt with the Edit tab's AI toggles, or globally via the [AI configuration](/docs/configuration/).
 
@@ -142,6 +144,7 @@ Both query helpers can be disabled per-hunt with the Edit tab's AI toggles, or g
 
 - [Risks](/docs/risks/) — accepted risks anchor hunts and feed the proposer.
 - [Detection Rules](/docs/rules/) — the destination for a promising hunt query.
+- [D3FEND Defensive Coverage](/docs/dfend/) — D3FEND gap signals feed proposals; hunts carry a D3FEND target.
 - [Threat Feed](/docs/threat-feed/) — briefs that seed new hunts.
 - [Testing](/docs/testing/) — tests that accompany a promoted rule.
 - [Platforms](/docs/platforms/) — Sigma compilation per-SIEM.
