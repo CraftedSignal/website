@@ -34,22 +34,22 @@
         <p class="text-xs text-muted">{{ i18n "howItWorksHuntDesc" | default "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep only what fires on real adversary behavior, discard the noise." }}</p>
       </div>
 
-      <!-- Step 4: Rule -->
+      <!-- Step 4: Test -->
       <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
         <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-accent2/10 text-accent2 border border-accent2/20 text-[10px] font-mono">04 · Rule</span>
+          <span class="px-2 py-0.5 rounded-md bg-accent2/10 text-accent2 border border-accent2/20 text-[10px] font-mono">04 · Test</span>
         </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksRuleTitle" | default "Promote with confidence" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksRuleDesc" | default "Turn a winning hunt into a Sigma rule with tests, compile to every SIEM dialect, and deploy through impact preview + approval gates." }}</p>
+        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksRuleTitle" | default "Prove it before you ship" }}</h3>
+        <p class="text-xs text-muted">{{ i18n "howItWorksRuleDesc" | default "Generate positive and negative test cases and run them live against every SIEM dialect. Keep only the rules that fire on real data, nothing promotes until it passes." }}</p>
       </div>
 
-      <!-- Step 5: Coverage -->
+      <!-- Step 5: Monitor -->
       <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
         <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 border border-green-500/20 text-[10px] font-mono">05 · Coverage</span>
+          <span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 border border-green-500/20 text-[10px] font-mono">05 · Monitor</span>
         </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksCoverageTitle" | default "Prove, monitor, retire" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksCoverageDesc" | default "Watch health and noise in real time. Catch silently broken rules the day they die. Feed results back into risk, the loop closes." }}</p>
+        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksCoverageTitle" | default "Deploy, watch, retire" }}</h3>
+        <p class="text-xs text-muted">{{ i18n "howItWorksCoverageDesc" | default "Ship through impact preview and approval gates, then watch health and noise in real time. Catch silently broken rules the day they die and feed results back into risk. The loop closes." }}</p>
       </div>
     </div>
 

@@ -143,16 +143,16 @@ other = "Prove the hypothesis"
 other = "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep only what fires on real adversary behavior, and discard the noise."
 
 [howItWorksRuleTitle]
-other = "Promote with confidence"
+other = "Prove it before you ship"
 
 [howItWorksRuleDesc]
-other = "Turn a winning hunt into a Sigma rule with tests, compile to every SIEM dialect, and deploy through impact preview + approval gates."
+other = "Generate positive and negative test cases and run them live against every SIEM dialect. Keep only the rules that fire on real data, nothing promotes until it passes."
 
 [howItWorksCoverageTitle]
-other = "Prove, monitor, retire"
+other = "Deploy, watch, retire"
 
 [howItWorksCoverageDesc]
-other = "Watch health and noise in real time. Catch silently broken rules the day they die. Feed results back into risk, and the loop closes."
+other = "Ship through impact preview and approval gates, then watch health and noise in real time. Catch silently broken rules the day they die and feed results back into risk. The loop closes."
 
 # Legacy keys retained for pages still using them.
 [howItWorksStep1Title]
