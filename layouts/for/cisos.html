@@ -71,7 +71,7 @@
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            <span class="text-sm">{{ i18n "cisosAiBullet2" | default "Self-host AI via Ollama.your data never leaves your infrastructure" }}</span>
+            <span class="text-sm">{{ i18n "cisosAiBullet2" | default "Self-host AI via Ollama so your data never leaves your infrastructure" }}</span>
           </li>
           <li class="flex items-start gap-3">
             <svg aria-hidden="true" class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,10 @@
 
       <div class="rounded-2xl border border-stroke bg-panel/60 p-6 space-y-4">
         <div class="flex items-center justify-between">
-          <span class="text-sm font-semibold">{{ i18n "cisosAiExampleTitle" | default "AI Suggestion Review" }}</span>
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-semibold">{{ i18n "cisosAiExampleTitle" | default "AI Suggestion Review" }}</span>
+            <span class="px-1.5 py-0.5 rounded bg-base/60 border border-stroke text-muted text-[10px] font-semibold uppercase tracking-wide">Example</span>
+          </div>
           <span class="px-2 py-1 rounded-lg bg-yellow-500/10 text-yellow-500 text-xs font-semibold">{{ i18n "cisosAiExampleStatus" | default "Pending Approval" }}</span>
         </div>
         <div class="rounded-xl border border-stroke bg-base/60 p-4 space-y-2">

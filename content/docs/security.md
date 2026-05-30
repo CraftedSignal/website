@@ -1,8 +1,8 @@
 ---
-title: "Security & Compliance"
-description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA, and compliance with SOC 2, NIS2, and GDPR."
+title: "Security"
+description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA, and supply-chain security."
 weight: 13
-section: "Security"
+section: "Information"
 ---
 
 ## Overview
@@ -120,31 +120,7 @@ CraftedSignal enforces security at every stage of the detection lifecycle — va
 
 ## Compliance
 
-### SOC 2 Type II
-
-CraftedSignal is designed with SOC 2 controls built in:
-
-- Change management (approval workflows, separation of duties)
-- Access control (RBAC, SSO, MFA, audit logging)
-- Monitoring (health dashboards, alerting, drift detection)
-
-### NIS2
-
-For organizations subject to NIS2:
-
-- Detection governance framework with evidence generation
-- Incident response support through detection audit trails
-- Configurable retention and reporting for regulatory requirements
-
-### GDPR
-
-CraftedSignal processes rules and metadata (as a data processor). No customer PII or log data is ingested.
-
-- Data minimization by design
-- Purpose limitation (detection management only)
-- Right to erasure supported
-- Data residency options (EU, US)
-- DPIA and RoPA templates available
+CraftedSignal helps you meet NIS2, DORA, GDPR, and SOC 2 obligations, and is built to recognized standards itself, including readiness for the EU Cyber Resilience Act. See the dedicated [Compliance](/docs/compliance/) page for the full breakdown.
 
 ---
 

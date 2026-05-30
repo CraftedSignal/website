@@ -6,7 +6,7 @@
 other = "How it works"
 
 [navSolutions]
-other = "Solutions"
+other = "Solution"
 
 [navTrust]
 other = "Security"
@@ -382,7 +382,7 @@ other = "Rollback any rule in one click with impact preview before every deploym
 other = "SOC Health Dashboard"
 
 [socLeadersDashBadge]
-other = "Live"
+other = "Example"
 
 [socLeadersCtaTitle]
 other = "Ready to measure and improve your detection program?"
