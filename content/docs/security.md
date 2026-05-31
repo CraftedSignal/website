@@ -120,7 +120,7 @@ CraftedSignal enforces security at every stage of the detection lifecycle — va
 
 ## Compliance
 
-CraftedSignal helps you meet NIS2, DORA, GDPR, and SOC 2 obligations, and is built to recognized standards itself, including readiness for the EU Cyber Resilience Act. See the dedicated [Compliance](/docs/compliance/) page for the full breakdown.
+CraftedSignal helps you meet NIS2, DORA, GDPR, and SOC 2 obligations, and is built to recognized standards itself, including readiness for the EU Cyber Resilience Act. See the [Trust](/trust/) page for the full breakdown.
 
 ---
 

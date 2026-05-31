@@ -9,7 +9,7 @@ other = "How it works"
 other = "Solution"
 
 [navTrust]
-other = "Security"
+other = "Trust"
 
 [navDocs]
 other = "Documentation"
@@ -123,6 +123,12 @@ other = "From business risk to proven detection"
 
 [howItWorksLede]
 other = "Most detection tools start with a rule. We start with the risk the rule is supposed to protect, and we do not stop until coverage is proven, measured, and safe to retire."
+
+[howItWorksConnectTitle]
+other = "Connect your SIEMs"
+
+[howItWorksConnectDesc]
+other = "Plug CraftedSignal into the tools you already run: Splunk, Sentinel, CrowdStrike, and Rapid7. Outbound-only agents, your logs never leave your SIEM."
 
 [howItWorksRiskTitle]
 other = "Model the business"

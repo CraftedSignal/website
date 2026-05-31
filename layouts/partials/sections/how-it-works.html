@@ -3,60 +3,154 @@
     <div class="text-center space-y-4">
       <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ i18n "howItWorksLabel" | default "How it works" }}</p>
       <h2 class="font-display text-2xl md:text-3xl font-semibold">{{ i18n "howItWorksTitle" | default "From business risk to proven detection" }}</h2>
-      <p class="text-sm text-muted max-w-2xl mx-auto">{{ i18n "howItWorksLede" | default "Most detection tools start with a rule. We start with the risk the rule is supposed to protect, and we do not stop until coverage is proven, measured, and safe to retire." }}</p>
+      <p class="text-sm text-muted max-w-2xl mx-auto">{{ i18n "howItWorksLede" | default "Connect the SIEMs you already run, then we take you from business risk to a detection that is proven, measured, and safe to retire." }}</p>
     </div>
 
-    <div class="grid md:grid-cols-5 gap-6">
-      <!-- Step 1: Risk -->
-      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
-        <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-red-500/10 text-red-400 border border-red-500/20 text-[10px] font-mono">01 · Risk</span>
-        </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksRiskTitle" | default "Model the business" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksRiskDesc" | default "Declare your services, crown-jewel data, and attack paths. Industry profile and threat briefs weight every technique by actual risk to you." }}</p>
+    {{/* Auto-advancing stage explainer. Progressive enhancement: with no JS, every stage card shows stacked. JS spotlights one at a time, with clickable flow chips + dots, autoplay paused on hover and disabled under prefers-reduced-motion. */}}
+    <div data-hiw class="space-y-8">
+      {{/* Flow chips */}}
+      <div class="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-2 font-mono text-[11px] sm:text-xs">
+        <button type="button" data-chip="0" aria-label="Show the Connect stage" class="px-2 py-1 rounded-md border transition hover:text-text text-accent bg-accent/10 border-accent/50">Connect</button>
+        <span class="text-muted/40" aria-hidden="true">&rarr;</span>
+        <button type="button" data-chip="1" aria-label="Show the Risk stage" class="px-2 py-1 rounded-md border transition hover:text-text text-muted border-stroke">Risk</button>
+        <span class="text-muted/40" aria-hidden="true">&rarr;</span>
+        <button type="button" data-chip="2" aria-label="Show the Threat stage" class="px-2 py-1 rounded-md border transition hover:text-text text-muted border-stroke">Threat</button>
+        <span class="text-muted/40" aria-hidden="true">&rarr;</span>
+        <button type="button" data-chip="3" aria-label="Show the Hunt stage" class="px-2 py-1 rounded-md border transition hover:text-text text-muted border-stroke">Hunt</button>
+        <span class="text-muted/40" aria-hidden="true">&rarr;</span>
+        <button type="button" data-chip="4" aria-label="Show the Test stage" class="px-2 py-1 rounded-md border transition hover:text-text text-muted border-stroke">Test</button>
+        <span class="text-muted/40" aria-hidden="true">&rarr;</span>
+        <button type="button" data-chip="5" aria-label="Show the Monitor stage" class="px-2 py-1 rounded-md border transition hover:text-text text-muted border-stroke">Monitor</button>
       </div>
 
-      <!-- Step 2: Threat -->
-      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
-        <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[10px] font-mono">02 · Threat</span>
+      {{/* Stage cards (one spotlighted at a time) */}}
+      <div class="relative min-h-[230px] sm:min-h-[200px]">
+        {{/* 01 Connect */}}
+        <div data-stage="0" class="rounded-2xl border border-stroke bg-panel/60 p-6 md:p-8 max-w-2xl mx-auto">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl border border-sky-500/20 bg-sky-500/10 text-sky-400 flex items-center justify-center">
+              <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 010 5.656l-3 3a4 4 0 01-5.656-5.656l1.5-1.5M10.172 13.828a4 4 0 010-5.656l3-3a4 4 0 015.656 5.656l-1.5 1.5"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="inline-block px-2 py-0.5 rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 text-[10px] font-mono">01 &middot; Connect</span>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-text">{{ i18n "howItWorksConnectTitle" | default "Connect your SIEMs" }}</h3>
+              <p class="text-sm text-muted">{{ i18n "howItWorksConnectDesc" | default "Plug CraftedSignal into the tools you already run: Splunk, Sentinel, CrowdStrike, and Rapid7. Outbound-only agents, your logs never leave your SIEM." }}</p>
+            </div>
+          </div>
         </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksThreatTitle" | default "Map the gaps" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksThreatDesc" | default "Every MITRE ATT&CK technique on your attack paths gets scored for exposure. See exactly which uncovered techniques matter, ranked by weight." }}</p>
-      </div>
-
-      <!-- Step 3: Hunt -->
-      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
-        <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-accent/10 text-accent border border-accent/20 text-[10px] font-mono">03 · Hunt</span>
+        {{/* 02 Risk */}}
+        <div data-stage="1" class="rounded-2xl border border-stroke bg-panel/60 p-6 md:p-8 max-w-2xl mx-auto">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl border border-red-500/20 bg-red-500/10 text-red-400 flex items-center justify-center">
+              <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="inline-block px-2 py-0.5 rounded-md bg-red-500/10 text-red-400 border border-red-500/20 text-[10px] font-mono">02 &middot; Risk</span>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-text">{{ i18n "howItWorksRiskTitle" | default "Model the business" }}</h3>
+              <p class="text-sm text-muted">{{ i18n "howItWorksRiskDesc" | default "Declare your services, crown-jewel data, and attack paths. Industry profile and threat briefs weight every technique by actual risk to you." }}</p>
+            </div>
+          </div>
         </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksHuntTitle" | default "Prove the hypothesis" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksHuntDesc" | default "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep only what fires on real adversary behavior, discard the noise." }}</p>
-      </div>
-
-      <!-- Step 4: Test -->
-      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
-        <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-accent2/10 text-accent2 border border-accent2/20 text-[10px] font-mono">04 · Test</span>
+        {{/* 03 Threat */}}
+        <div data-stage="2" class="rounded-2xl border border-stroke bg-panel/60 p-6 md:p-8 max-w-2xl mx-auto">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl border border-purple-500/20 bg-purple-500/10 text-purple-400 flex items-center justify-center">
+              <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5m16.5 0V6A2.25 2.25 0 0018 3.75h-1.5m0 16.5H18A2.25 2.25 0 0020.25 18v-1.5M3.75 16.5V18A2.25 2.25 0 006 20.25h1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="inline-block px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[10px] font-mono">03 &middot; Threat</span>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-text">{{ i18n "howItWorksThreatTitle" | default "Map the gaps" }}</h3>
+              <p class="text-sm text-muted">{{ i18n "howItWorksThreatDesc" | default "Every MITRE ATT&CK technique on your attack paths gets scored for exposure. See exactly which uncovered techniques matter, ranked by weight." }}</p>
+            </div>
+          </div>
         </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksRuleTitle" | default "Prove it before you ship" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksRuleDesc" | default "Generate positive and negative test cases and run them live against every SIEM dialect. Keep only the rules that fire on real data, nothing promotes until it passes." }}</p>
-      </div>
-
-      <!-- Step 5: Monitor -->
-      <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-3">
-        <div class="flex items-center gap-2">
-          <span class="px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 border border-green-500/20 text-[10px] font-mono">05 · Monitor</span>
+        {{/* 04 Hunt */}}
+        <div data-stage="3" class="rounded-2xl border border-stroke bg-panel/60 p-6 md:p-8 max-w-2xl mx-auto">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl border border-accent/20 bg-accent/10 text-accent flex items-center justify-center">
+              <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="inline-block px-2 py-0.5 rounded-md bg-accent/10 text-accent border border-accent/20 text-[10px] font-mono">04 &middot; Hunt</span>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-text">{{ i18n "howItWorksHuntTitle" | default "Prove the hypothesis" }}</h3>
+              <p class="text-sm text-muted">{{ i18n "howItWorksHuntDesc" | default "Launch a hunt against your live SIEMs. Cluster hits. Verdict them. Keep only what fires on real adversary behavior, discard the noise." }}</p>
+            </div>
+          </div>
         </div>
-        <h3 class="font-display text-base font-semibold text-text">{{ i18n "howItWorksCoverageTitle" | default "Deploy, watch, retire" }}</h3>
-        <p class="text-xs text-muted">{{ i18n "howItWorksCoverageDesc" | default "Ship through impact preview and approval gates, then watch health and noise in real time. Catch silently broken rules the day they die and feed results back into risk. The loop closes." }}</p>
+        {{/* 05 Test */}}
+        <div data-stage="4" class="rounded-2xl border border-stroke bg-panel/60 p-6 md:p-8 max-w-2xl mx-auto">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl border border-accent2/20 bg-accent2/10 text-accent2 flex items-center justify-center">
+              <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="inline-block px-2 py-0.5 rounded-md bg-accent2/10 text-accent2 border border-accent2/20 text-[10px] font-mono">05 &middot; Test</span>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-text">{{ i18n "howItWorksRuleTitle" | default "Prove it before you ship" }}</h3>
+              <p class="text-sm text-muted">{{ i18n "howItWorksRuleDesc" | default "Generate positive and negative test cases and run them live against every SIEM dialect. Keep only the rules that fire on real data, nothing promotes until it passes." }}</p>
+            </div>
+          </div>
+        </div>
+        {{/* 06 Monitor */}}
+        <div data-stage="5" class="rounded-2xl border border-stroke bg-panel/60 p-6 md:p-8 max-w-2xl mx-auto">
+          <div class="flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl border border-green-500/20 bg-green-500/10 text-green-400 flex items-center justify-center">
+              <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+            </div>
+            <div class="space-y-2">
+              <span class="inline-block px-2 py-0.5 rounded-md bg-green-500/10 text-green-400 border border-green-500/20 text-[10px] font-mono">06 &middot; Monitor</span>
+              <h3 class="font-display text-lg md:text-xl font-semibold text-text">{{ i18n "howItWorksCoverageTitle" | default "Deploy, watch, retire" }}</h3>
+              <p class="text-sm text-muted">{{ i18n "howItWorksCoverageDesc" | default "Ship through impact preview and approval gates, then watch health and noise in real time. Catch silently broken rules the day they die and feed results back into risk. The loop closes." }}</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="text-center pt-4">
-      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="https://app.craftedsignal.io/" target="_blank" rel="noopener noreferrer">
-        {{ i18n "howItWorksCta" | default "Start free →" }}
-      </a>
     </div>
   </div>
 </section>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-hiw]');
+  if (!root) return;
+  var cards = Array.prototype.slice.call(root.querySelectorAll('[data-stage]'));
+  var dots  = Array.prototype.slice.call(root.querySelectorAll('[data-dot]'));
+  var chips = Array.prototype.slice.call(root.querySelectorAll('[data-chip]'));
+  var n = cards.length;
+  if (n < 1) return;
+  var i = 0, timer = null;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function render() {
+    cards.forEach(function (c, k) { c.classList.toggle('hidden', k !== i); });
+    dots.forEach(function (d, k) {
+      var on = k === i;
+      d.classList.toggle('w-6', on);
+      d.classList.toggle('bg-accent', on);
+      d.classList.toggle('border-accent', on);
+      d.classList.toggle('w-2.5', !on);
+      d.classList.toggle('border-stroke', !on);
+    });
+    chips.forEach(function (ch, k) {
+      var on = k === i;
+      ch.classList.toggle('text-accent', on);
+      ch.classList.toggle('bg-accent/10', on);
+      ch.classList.toggle('border-accent/50', on);
+      ch.classList.toggle('text-muted', !on);
+      ch.classList.toggle('border-stroke', !on);
+    });
+  }
+  function go(idx) { i = ((idx % n) + n) % n; render(); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function start() { if (reduce || n < 2) return; stop(); timer = setInterval(function () { go(i + 1); }, 4500); }
+
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); stop(); start(); }); });
+  chips.forEach(function (ch, k) { ch.addEventListener('click', function () { go(k); stop(); start(); }); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  render();
+  start();
+})();
+</script>

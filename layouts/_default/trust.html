@@ -1,0 +1,226 @@
+{{ define "main" }}
+<section class="px-6 py-16 md:py-24">
+  <div class="max-w-5xl mx-auto space-y-6 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Trust</div>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">Your data stays yours.<br>Every control stays visible.</h1>
+    <p class="text-xl text-muted max-w-3xl mx-auto">CraftedSignal is a control plane for detections, not a data lake. Your logs never leave your SIEM, every credential is encrypted with per-tenant keys, and every action is logged. Run it as SaaS, self-hosted, or fully air-gapped.</p>
+    <div class="flex flex-wrap justify-center gap-4 pt-4">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="/docs/security/">Read the security model</a>
+      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke font-semibold text-text hover:border-accent/60 transition" href="#compliance">How we help your compliance</a>
+    </div>
+  </div>
+</section>
+
+<!-- Data boundaries -->
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Data boundaries</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">We manage rules, not your logs</h2>
+      <p class="text-sm text-muted max-w-2xl mx-auto">CraftedSignal stores detection rules, tests, approvals, and metadata. Your telemetry stays in the SIEM you already run.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+        </div>
+        <h3 class="font-semibold">Your logs stay in your SIEM</h3>
+        <p class="text-sm text-muted">We store rules, tests, approvals, and metadata, never your log data or telemetry. Health metrics are derived from SIEM APIs, not raw logs.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </div>
+        <h3 class="font-semibold">Outbound-only agents</h3>
+        <p class="text-sm text-muted">Agents initiate connections from your network to your SIEM. No inbound ports to open, nothing listening on your perimeter.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="font-semibold">Never trained on your data</h3>
+        <p class="text-sm text-muted">AI assists and suggests, it never auto-deploys and never trains on your data. Disable it entirely, or run it locally via Ollama.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Security architecture -->
+<section class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Security architecture</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Secure by default</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+        </div>
+        <h3 class="font-semibold">Encryption everywhere</h3>
+        <p class="text-sm text-muted">AES-256-GCM at rest with per-company keys, TLS 1.2+ in transit. One tenant's key cannot decrypt another's.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-semibold">Immutable audit trail</h3>
+        <p class="text-sm text-muted">Every rule change, approval, deployment, and rollback is logged and exportable to your SIEM or GRC system.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
+        </div>
+        <h3 class="font-semibold">SSO + passkey MFA</h3>
+        <p class="text-sm text-muted">OIDC providers (Okta, Azure AD, Google Workspace) with WebAuthn/FIDO2 passkeys or IdP-managed MFA. No shared secrets.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg aria-hidden="true" class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+        </div>
+        <h3 class="font-semibold">RBAC + separation of duties</h3>
+        <p class="text-sm text-muted">Admin, User, and Viewer roles. Authoring and approval are separated and enforced by the platform.</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="/docs/security/" class="text-sm font-semibold text-accent hover:underline">Read the full security model &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Standards & supply chain -->
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-y border-stroke">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Standards</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Built to recognized standards</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">SOC 2 Type II</h3>
+        <p class="text-sm text-muted">Designed with SOC 2 controls built in: change management, access control, and monitoring across the detection lifecycle.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">EU Cyber Resilience Act</h3>
+        <p class="text-sm text-muted">The self-hosted and air-gapped builds are products with digital elements, so the CRA applies. We are building for CRA readiness, SBOM, signed artifacts, secure defaults, ahead of the 2026 reporting and 2027 secure-by-design deadlines.</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="#compliance" class="text-sm font-semibold text-accent hover:underline">How we help you meet NIS2, DORA, and GDPR &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- How it's built -->
+<section class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">How it's built</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Engineered to be trusted</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Single binary</h3>
+        <p class="text-sm text-muted">One self-contained binary with no external runtime dependencies. A small attack surface that is simple to audit, deploy, and air-gap.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Memory-safe by design</h3>
+        <p class="text-sm text-muted">Built in a memory-safe language, eliminating whole classes of vulnerabilities such as buffer overflows and use-after-free.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Security tested every release</h3>
+        <p class="text-sm text-muted">Static analysis (SAST), dynamic analysis (DAST), and AI-assisted security review run in CI on every change before it ships.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Hardened CI/CD supply chain</h3>
+        <p class="text-sm text-muted">Signed binaries and container images, an SBOM published per release, and automated dependency and vulnerability scanning enforced in the pipeline.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Regular updates, included</h3>
+        <p class="text-sm text-muted">Continuous security and feature updates at no extra cost, across the supported lifetime, on SaaS and self-hosted alike.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">No phone-home telemetry</h3>
+        <p class="text-sm text-muted">CraftedSignal does not send usage telemetry off your network. It runs fully offline, including fully air-gapped.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Hardened by default</h3>
+        <p class="text-sm text-muted">CSRF protection, a strict Content-Security-Policy, per-IP rate limiting, and server-side input validation on every endpoint.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">No lock-in</h3>
+        <p class="text-sm text-muted">Detections are authored in portable Sigma and exportable at any time. Bring your own git repository for backup and full history.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-5 space-y-3">
+        <h3 class="font-semibold">Attested content</h3>
+        <p class="text-sm text-muted">Rules from the threat feed carry provenance and attestation metadata, so you can verify exactly what you deploy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Helping you comply -->
+<section id="compliance" class="px-6 py-14 md:py-20 border-y border-stroke">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Compliance</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Helping you stay compliant</h2>
+      <p class="text-sm text-muted max-w-2xl mx-auto">Detection governance, audit trails, and exportable evidence to meet the regulations your organization is subject to.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">NIS2</h3>
+        <p class="text-sm text-muted">A detection governance framework with evidence generation, incident-response support through audit trails, and configurable retention and reporting.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">DORA</h3>
+        <p class="text-sm text-muted">ICT change and incident audit trails for operational-resilience reporting, detection testing evidence, and records for your ICT third-party risk register.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">GDPR</h3>
+        <p class="text-sm text-muted">We process rules and metadata as a data processor, never your logs or PII. Data minimization by design, EU or US residency, DPIA and RoPA templates available.</p>
+      </div>
+    </div>
+    <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-2">
+      <h3 class="font-semibold">SOC 2 evidence and exports</h3>
+      <p class="text-sm text-muted">Change management, access control, and monitoring controls map to the SOC 2 trust criteria your auditors assess. Every rule change, approval, deployment, and rollback is logged immutably and exportable to your SIEM or GRC in CSV/JSON.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Deployment & residency -->
+<section class="px-6 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="text-center space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Deployment &amp; residency</p>
+      <h2 class="font-display text-2xl md:text-3xl font-semibold">Deploy on your terms</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">SaaS</h3>
+        <p class="text-sm text-muted">Managed by CraftedSignal with EU or US data residency. Automatic updates, zero infrastructure overhead. Your logs never leave your SIEM.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">Self-hosted</h3>
+        <p class="text-sm text-muted">A single binary with no external dependencies, SQLite built in or optional PostgreSQL. You control upgrades, backups, and availability.</p>
+      </div>
+      <div class="rounded-2xl border border-stroke bg-base/70 p-6 space-y-3">
+        <h3 class="font-semibold">Air-gapped</h3>
+        <p class="text-sm text-muted">Full functionality with no internet access. AI runs locally via Ollama. Agents are outbound-only, no inbound ports required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="px-6 py-14 md:py-20 bg-panel/40 border-t border-stroke">
+  <div class="max-w-3xl mx-auto text-center space-y-6">
+    <h2 class="font-display text-2xl md:text-3xl font-semibold">Questions about our security posture?</h2>
+    <p class="text-muted">Read the technical detail, or send your security and procurement questions straight to us.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a class="inline-flex px-6 py-3 rounded-xl bg-accent text-white font-semibold shadow-soft hover:scale-[1.01] transition" href="/docs/security/">Read the security docs</a>
+      <a class="inline-flex px-6 py-3 rounded-xl border border-stroke font-semibold text-text hover:border-accent/60 transition" href="mailto:{{ .Site.Params.email }}">Contact us</a>
+    </div>
+  </div>
+</section>
+{{ end }}
