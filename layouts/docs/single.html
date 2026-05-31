@@ -18,7 +18,7 @@
           {{ end }}
         {{ end }}
 
-        {{ $order := slice "Getting Started" "Core Concepts" "Features" "Operations" "Administration" "Integrations" "Information" }}
+        {{ $order := slice "Getting Started" "Core Concepts" "Features" "Operations" "Administration" "Integrations" "Security" }}
         {{ range $sectionName := $order }}
           {{ $pages := index $grouped $sectionName }}
           {{ if $pages }}

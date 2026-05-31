@@ -2,7 +2,7 @@
 title: "Security"
 description: "CraftedSignal security architecture: data boundaries, AES-256 encryption with per-tenant keys, audit logging, SSO/MFA, and supply-chain security."
 weight: 13
-section: "Information"
+section: "Security"
 ---
 
 ## Overview
