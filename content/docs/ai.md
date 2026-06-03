@@ -62,7 +62,7 @@ Every AI call is logged with model, input/output token counts, cached-token coun
 - `campaign_close_summary` — campaign-level wrap-up.
 - `digest_narrative` — feed digest copy.
 
-The log table is queryable per-company per-time-window for cost analytics and audit. Surfaces in the **AI Quality** screen for owners (`/dashboard/ai-quality`), where you can see per-activity volume, cost, and the prompt → response history for spot-checking the model.
+The log table is queryable per-company per-time-window for cost analytics and audit. Surfaces in the **AI Quality** screen for owners (`/ai-quality`), where you can see per-activity volume, cost, and the prompt → response history for spot-checking the model.
 
 Cost is best-effort: providers that don't return native cost data (e.g., self-hosted Ollama) record token counts and a $0 estimate. Token counts are always recorded.
 

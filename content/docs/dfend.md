@@ -58,7 +58,7 @@ The lock state persists across rule edits. Unlocking reverts to auto-derivation 
 
 ### Rules list
 
-Each rule row on `/dashboard/rules` shows the D3FEND categories it contributes to as color-coded badges:
+Each rule row on `/rules` shows the D3FEND categories it contributes to as color-coded badges:
 
 | Badge color | Category |
 |-------------|----------|

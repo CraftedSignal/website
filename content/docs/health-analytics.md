@@ -126,7 +126,7 @@ Export ROI reports for stakeholders and budget discussions.
 
 ## AI usage and quality
 
-Owners get a dedicated **AI Quality** screen at `/dashboard/ai-quality` that surfaces every LLM call the platform made on the tenant's behalf. For each call you can see:
+Owners get a dedicated **AI Quality** screen at `/ai-quality` that surfaces every LLM call the platform made on the tenant's behalf. For each call you can see:
 
 - The activity that triggered it (`actor_adjudication`, `hunt_outcome_summary`, `novel_chain_extraction`, `campaign_close_summary`, `digest_narrative`).
 - The model and the input/output/cached token counts.
