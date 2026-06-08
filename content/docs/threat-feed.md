@@ -1,6 +1,6 @@
 ---
 title: "Threat Feed"
-description: "Curated threat briefs with Sigma rules, IOCs, MITRE mappings, and affected vendor/product/OS metadata. Briefs are scored against your context, surface as risk candidates, and can be adopted, hunted, watchlisted, or dismissed per-tenant."
+description: "Curated threat briefs with Sigma rules, IOCs, MITRE mappings, and affected vendor/product/OS metadata. Briefs are scored against your context, related to your modeled risks, and can be adopted, hunted, watchlisted, or dismissed per-tenant."
 weight: 8
 section: "Core Concepts"
 ---
@@ -49,7 +49,7 @@ Every brief gets a **relevance score** (0–100) per company. The score blends:
 - Threat actor overlap with actors already pinned to your hunts or detections.
 - Watchlist matches — keywords or asset names you've explicitly flagged.
 
-Scores ≥75 (or any watchlist match flagged critical) trigger a **risk candidate** — the brief is queued in [Risks → Candidates](/docs/risks/#candidates) for analyst review. Lower-scored briefs still surface in the feed, just not as candidates.
+A brief's MITRE techniques are matched against your accepted attack paths: overlapping paths show as **related risks** and unmatched techniques as **coverage gaps** you can model in one step. See [Risks → Threat-feed relevance](/docs/risks/#threat-feed-relevance). A high score (≥75, or a critical watchlist match) raises a brief's priority in the feed and the exposure views; it never creates a risk on its own.
 
 ---
 
@@ -71,19 +71,19 @@ Adoption decisions are per-tenant. The same brief can be adopted by one company 
 
 ## Per-brief dismiss
 
-The dismiss button at `/dashboard/threat-feed/<slug>` records a per-company acknowledgement: the brief still exists in the feed, but it disappears from your active queue and your dashboard's *Unactioned briefs* counter. Re-open the brief any time to **un-dismiss** — the acknowledgement is reset and the brief flows back into triage.
+The dismiss button at `/threat-feed/<slug>` records a per-company acknowledgement: the brief still exists in the feed, but it disappears from your active queue and your dashboard's *Unactioned briefs* counter. Re-open the brief any time to **un-dismiss** — the acknowledgement is reset and the brief flows back into triage.
 
-Dismissals are tenant-scoped. A SaaS instance with multiple companies tracks one dismissal record per (company, brief) pair. The bridge that converts briefs to risk candidates does not re-create candidates for already-dismissed briefs unless the relevance score crosses the threshold again on re-scoring.
+Dismissals are tenant-scoped. A SaaS instance with multiple companies tracks one dismissal record per (company, brief) pair.
 
 ---
 
 ## The dashboard's intelligence tab
 
-The Intelligence tab on `/dashboard` is the operations view of the feed. Cards include:
+The Intelligence tab on the dashboard is the operations view of the feed. Cards include:
 
 - **Actively exploited** — briefs flagged as KEV (CISA Known Exploited Vulnerabilities).
 - **Unactioned briefs (30d)** — relevance ≥75 that haven't been adopted, hunted, watchlisted, or dismissed.
-- **TI-sourced open risks** — risks that originated from a feed candidate and are still open.
+- **TI-related open risks** — open risks that share techniques with recent high-relevance briefs.
 - **IOCs in scope** and **watchlist hits**.
 - **Recently exploited software** — the last five briefs naming KEV CVEs, with threat actor and CVSS chips.
 - **Recent high/critical CVEs** — distinct CVE IDs (CVSS ≥7) from the last 30 days, linking back to the originating brief.
@@ -104,7 +104,7 @@ See [Air-gapped Mode](/docs/airgapped/) for the full constraint envelope.
 ## Related
 
 - [Threat Model](/docs/threat-model/) — briefs re-weight your risk score.
-- [Risks](/docs/risks/) — high-relevance briefs surface as risk candidates here.
+- [Risks](/docs/risks/) — where briefs relate to your modeled risks.
 - [Threat Actors](/docs/threat-actors/) — how brief actor strings are normalized into the catalog.
 - [Hunts](/docs/hunts/) — IOC queries seed new hunts.
 - [Rules](/docs/rules/) — adopt a brief's detection into your library.

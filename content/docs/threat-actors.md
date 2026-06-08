@@ -98,7 +98,7 @@ There is no UI today for promoting unverified actors to verified, or for editing
 
 ### Actor detail page
 
-Each catalog entry has a dedicated page at `/dashboard/actors/{id}`. The page shows:
+Each catalog entry has a dedicated page at `/actors/{id}`. The page shows:
 
 - **Header** — canonical name, motivation, origin country, first-seen year, and MITRE group ID (when present).
 - **Coverage summary strip** — counts of briefs, attack paths, hunts, and detection rules linked to the actor.
@@ -114,7 +114,7 @@ The page is read-only. Linkages are built automatically by the feed-to-risk brid
 Actors also surface in context without navigating to the detail page:
 
 - **Threat brief detail** — the actor name renders next to the brief title; clicking it navigates to the actor detail page.
-- **Risk drawer** — the lifecycle timeline cites the actor when a brief-driven candidate created the risk.
+- **Risk drawer** — the lifecycle timeline cites the actor when the risk's attack path was enriched from a brief that names one.
 - **Hunt overview** — the "What we're hunting for" strip lists matched actors when global attack paths overlap with the hunt.
 
 The pivots between briefs, risks, hunts, and detections via shared actor IDs are what make the catalog valuable. The detail page is the central pivot point for analyst-driven actor research.
@@ -136,5 +136,5 @@ This is the design point for air-gapped or AI-restricted deployments. See [Air-g
 ## Related
 
 - [Threat Feed](/docs/threat-feed/) — where actor names enter the system.
-- [Risks](/docs/risks/) — what the bridge produces from those actors.
+- [Risks](/docs/risks/) — the risks that actor-linked briefs relate to.
 - [AI Assistance](/docs/ai/) — how to enable or disable the adjudication LLM.
