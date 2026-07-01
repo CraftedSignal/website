@@ -65,5 +65,11 @@ enableMissingTranslationPlaceholders = false
     disable = true
   [privacy.vimeo]
     disable = true
+
   [privacy.youtube]
     disable = true
+
+[security]
+  [security.node]
+    [security.node.permissions]
+      disable = true
