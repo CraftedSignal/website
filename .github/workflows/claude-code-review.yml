@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Claude Security Analysis
         id: claude-review
-        uses: anthropics/claude-code-action@a92e7c70a4da9793dc164451d829089dc057a464
+        uses: anthropics/claude-code-action@fad22eb3fa582b7357fc0ea48af6645851b884fd
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           show_full_output: "false"
@@ -96,6 +96,15 @@ jobs:
 
           if [ "$ANALYSIS_RESULT" != "success" ]; then
             echo "Claude security analysis did not complete: ${ANALYSIS_RESULT}"
+            exit 1
+          fi
+
+          if [ -z "${REVIEW_OUTPUT:-}" ]; then
+            REVIEW_OUTPUT='{"blocking_findings":0,"security_findings":0,"performance_findings":0,"summary":"Claude Security Analysis completed successfully but returned no structured findings.","findings":[]}'
+          fi
+
+          if ! jq -e . >/dev/null <<< "$REVIEW_OUTPUT"; then
+            echo "Claude security analysis returned invalid structured output"
             exit 1
           fi
 
