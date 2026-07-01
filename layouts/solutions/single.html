@@ -1,0 +1,103 @@
+{{ define "main" }}
+{{ $siblings := .Parent.Pages.ByWeight }}
+
+<section class="px-6 pt-20 pb-14 md:pt-28 md:pb-20">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-[14rem_minmax(0,1fr)] gap-10">
+    <aside class="lg:pt-2">
+      <nav class="lg:sticky lg:top-24 space-y-6">
+        <a href="/solutions/" class="text-xs font-semibold uppercase tracking-[0.14em] text-accent hover:underline">&lt;- All solutions</a>
+        <div class="space-y-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-muted">Feature sets</p>
+          <ul class="space-y-1">
+            {{ range $siblings }}
+            <li>
+              <a href="{{ .RelPermalink }}" class="block rounded-lg px-3 py-2 text-sm transition {{ if eq $.RelPermalink .RelPermalink }}bg-accent/10 text-accent font-semibold{{ else }}text-muted hover:bg-panel/70 hover:text-text{{ end }}">
+                <span class="font-mono text-[11px]">{{ .Params.stage }}</span>
+                <span class="ml-2">{{ .Title }}</span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <article class="min-w-0">
+      <header class="grid lg:grid-cols-[1fr_0.9fr] gap-8 items-center border-b border-stroke pb-10">
+        <div class="space-y-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{{ .Params.stage }} · {{ .Params.eyebrow }}</p>
+          <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">{{ .Title }}</h1>
+          <p class="text-xl text-muted">{{ .Description }}</p>
+          {{ with .Params.quick_points }}
+          <ul class="grid sm:grid-cols-2 gap-2 pt-2">
+            {{ range . }}
+            <li class="rounded-xl border border-stroke bg-panel/60 px-3 py-2 text-sm text-muted">{{ . }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+
+        {{ with .Params.hero_image }}
+        <figure class="rounded-2xl border border-stroke bg-panel/60 overflow-hidden shadow-soft">
+          <img src="{{ . }}" alt="{{ $.Params.hero_alt | default $.Title }}" class="w-full aspect-[16/10] object-cover object-top bg-base/60" loading="eager">
+        </figure>
+        {{ end }}
+      </header>
+
+      {{ with .Params.outcomes }}
+      <section class="py-10 border-b border-stroke">
+        <div class="grid md:grid-cols-3 gap-4">
+          {{ range . }}
+          <div class="rounded-2xl border border-stroke bg-panel/60 p-5 space-y-2">
+            <p class="font-mono text-xs text-accent">{{ .label }}</p>
+            <h2 class="font-display text-lg font-semibold text-text">{{ .title }}</h2>
+            <p class="text-sm text-muted">{{ .body }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <div class="prose prose-invert max-w-none prose-headings:font-display prose-headings:tracking-normal prose-p:text-muted prose-li:text-muted prose-a:text-accent prose-strong:text-text py-10">
+        {{ .Content }}
+      </div>
+
+      {{ with .Params.docs }}
+      <section class="border-t border-stroke py-10">
+        <div class="space-y-3 mb-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Related docs</p>
+          <h2 class="font-display text-2xl font-semibold">Go deeper in the technical docs.</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          {{ range . }}
+          <a href="{{ .url }}" class="group rounded-2xl border border-stroke bg-panel/60 p-4 hover:border-accent/40 transition">
+            <h3 class="font-semibold text-text group-hover:text-accent transition">{{ .title }}</h3>
+            <p class="mt-1 text-sm text-muted">{{ .description }}</p>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <section class="border-t border-stroke py-10">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-5">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Next feature sets</p>
+            <h2 class="font-display text-2xl font-semibold">Follow the loop.</h2>
+          </div>
+          <a href="/solutions/" class="text-sm font-semibold text-accent hover:underline">View all solutions</a>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-3">
+          {{ range first 3 (where $siblings "RelPermalink" "!=" .RelPermalink) }}
+          <a href="{{ .RelPermalink }}" class="rounded-2xl border border-stroke bg-base/70 p-4 hover:border-accent/40 transition">
+            <p class="font-mono text-xs text-accent">{{ .Params.stage }}</p>
+            <h3 class="mt-2 font-semibold text-text">{{ .Title }}</h3>
+            <p class="mt-1 text-xs text-muted">{{ .Params.nav_summary | default .Description }}</p>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+    </article>
+  </div>
+</section>
+{{ end }}
