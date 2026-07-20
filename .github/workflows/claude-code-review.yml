@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Claude Security Analysis
         id: claude-review
-        uses: anthropics/claude-code-action@fad22eb3fa582b7357fc0ea48af6645851b884fd
+        uses: anthropics/claude-code-action@af0559ee4f514d1ef21826982bed13f7edc3c35e
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           show_full_output: "false"
