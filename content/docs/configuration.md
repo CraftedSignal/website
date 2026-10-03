@@ -381,12 +381,22 @@ All emails are sent asynchronously via Temporal workflows with automatic retries
 
 CraftedSignal's generation features use LLMs for rule generation, runbook and playbook drafts, analysis, test case creation and Backlog summaries. The engine connects to any OpenAI-compatible API endpoint — typically a local [Ollama](https://ollama.ai) instance for on-prem deployments.
 
+Supported shared providers are generic OpenAI-compatible endpoints, OpenAI API, Azure OpenAI / Microsoft Foundry, Anthropic Claude, and GitHub Models. Microsoft 365 Copilot is not supported as shared backend because it depends on delegated Microsoft 365 and Graph context.
+
+CraftedSignal SaaS defaults to Vertex AI in Google Cloud, in the same Google Cloud location as the application workloads. Prompts and responses are not used for model training.
+
+Production SaaS rejects private, loopback, link-local, and metadata-style AI provider URLs to prevent SSRF. Self-hosted and air-gapped deployments can still use private/internal model endpoints.
+
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
 | `ai.enabled` | `AI_ENABLED` | bool | `false` | Enable AI features |
-| `ai.ollama_url` | `AI_OLLAMA_URL` | string | `http://localhost:11434` | Ollama or OpenAI-compatible API endpoint |
-| `ai.ollama_model` | `AI_OLLAMA_MODEL` | string | `qwen2.5-coder:14b` | Primary model for code-heavy tasks (rule generation, fixing broken rules) |
-| `ai.ollama_test_gen_model` | `AI_OLLAMA_TEST_GEN_MODEL` | string | Same as primary | Model specifically for test case and response-step generation |
+| `ai.provider` | `AI_PROVIDER` | string | `openai` | Provider: `openai`, `openai_api`, `chatgpt`, `azure_openai`, `microsoft`, `anthropic`, `claude`, or `github` |
+| `ai.url` | `AI_URL` | string | `http://localhost:11434` for `openai` | Provider base URL. Required for custom OpenAI-compatible and Azure OpenAI providers; optional for OpenAI API, Anthropic, and GitHub defaults |
+| `ai.model` | `AI_MODEL` | string | `qwen3:14b` for `openai` | Primary model or Azure deployment name |
+| `ai.test_gen_model` | `AI_TEST_GEN_MODEL` | string | Same as primary | Reasoning/language model when no secondary provider is configured |
+| `ai.ollama_url` | `AI_OLLAMA_URL` | string | — | Legacy alias for `ai.url` |
+| `ai.ollama_model` | `AI_OLLAMA_MODEL` | string | — | Legacy alias for `ai.model` |
+| `ai.ollama_test_gen_model` | `AI_OLLAMA_TEST_GEN_MODEL` | string | — | Legacy alias for `ai.test_gen_model` |
 | `ai.api_key` | `AI_API_KEY` | string | — | API key (required for non-Ollama endpoints) |
 | `ai.max_tokens` | `AI_MAX_TOKENS` | int | `16384` | Max output tokens per request |
 | `ai.timeout_seconds` | `AI_TIMEOUT_SECONDS` | int | `1200` | Request timeout in seconds (20 minutes default — large models can be slow) |
@@ -395,7 +405,7 @@ CraftedSignal's generation features use LLMs for rule generation, runbook and pl
 
 #### Dual-model routing
 
-You can configure a secondary LLM provider for language-oriented tasks, letting the primary model focus on code generation:
+You can configure a secondary LLM provider for reasoning and language tasks, letting the primary model focus on query and rule authoring:
 
 | Key | Env var | Type | Default | Description |
 |-----|---------|------|---------|-------------|
@@ -406,8 +416,8 @@ You can configure a secondary LLM provider for language-oriented tasks, letting 
 
 When configured, tasks are routed automatically:
 
-- **Primary model** — rule generation (code-heavy, needs a strong code model)
-- **Secondary model** — test generation, runbook and playbook drafts, rule analysis, Backlog summaries, feedback triage, overlap analysis
+- **Primary model** — rule generation, Sigma/query rewrite, fixing broken rules and unknown task labels
+- **Secondary model** — test generation, runbook and playbook drafts, rule analysis, response guidance, field mapping, threat-model suggestions, Backlog summaries and feedback triage
 
 This lets you use a powerful but expensive code model (e.g., `qwen2.5-coder:14b` on GPU) for generation while routing language tasks to a faster, cheaper model (e.g., Llama 3 on Groq or Together AI).
 

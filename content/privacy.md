@@ -48,7 +48,7 @@ This Privacy Policy describes how CraftedSignal ("we", "us", "our") collects, us
 
 **We never train AI models on your data.** AI features (rule generation, autofix, analysis) process your input in real-time and do not retain it for training.
 
-When using CraftedSignal-hosted AI, your prompts are sent to our inference endpoint and discarded after the response is generated.
+When using CraftedSignal SaaS AI, prompts and responses are processed through Vertex AI in Google Cloud, in the same Google Cloud location as the CraftedSignal workloads. They are not used for model training and are discarded after the response is generated.
 
 When using self-hosted AI via Ollama, all AI processing happens on your infrastructure. No data leaves your network.
 

@@ -84,7 +84,7 @@ Or via environment variable:
 export LICENSE_KEY="1.eyJ..."
 ```
 
-License keys are signed tokens that encode your tier and limits. Quotas are enforced at the API level — they cannot be bypassed.
+License keys are signed tokens that encode your tier and limits. Quotas are enforced at the API level — they cannot be bypassed. License keys can also carry feature entitlements for **Admin > Features**; see [License Feature Toggles](/docs/license-feature-toggles/).
 
 ---
 

@@ -110,18 +110,48 @@ AI-generated rules go through the same validation pipeline as human-written rule
 
 ---
 
-## Self-hosted AI
+## Provider options
 
-Run AI features entirely on your infrastructure using Ollama:
+CraftedSignal uses one shared platform-level AI provider configuration today. Per-company bring-your-own-AI routing is not configured yet.
+
+CraftedSignal SaaS defaults to Vertex AI in Google Cloud. The AI workload runs in the same Google Cloud location as the CraftedSignal application workloads. Prompts and responses are not used for model training.
+
+Supported provider values:
+
+| Provider | Use for |
+| --- | --- |
+| `openai` | Generic OpenAI-compatible endpoints, including Ollama and compatible hosted gateways |
+| `openai_api`, `chatgpt` | OpenAI public API |
+| `azure_openai`, `microsoft` | Azure OpenAI / Microsoft Foundry OpenAI-compatible endpoints |
+| `anthropic`, `claude` | Anthropic Claude via Messages API |
+| `github` | Existing GitHub Models compatibility |
+
+Microsoft 365 Copilot is not supported as shared AI backend. Copilot depends on Microsoft 365 and Graph delegated context, so it would be separate per-tenant connector if supported later.
+
+Run AI features entirely on your infrastructure using Ollama or another internal OpenAI-compatible endpoint:
 
 ```yaml
 ai:
   enabled: true
-  ollama_url: "http://localhost:11434"
-  ollama_model: "qwen2.5-coder:14b"
+  provider: openai
+  url: "http://localhost:11434"
+  model: "qwen2.5-coder:14b"
+  test_gen_model: "qwen3:14b"
 ```
 
-When self-hosted, no data leaves your network. CraftedSignal never sends rule data to external AI services unless you explicitly configure it. See [Configuration](/docs/configuration/) for all AI settings.
+For hosted providers, configure provider, model, and API key:
+
+```yaml
+ai:
+  enabled: true
+  provider: anthropic
+  model: "claude-sonnet-4-5"
+  api_key: "${ANTHROPIC_API_KEY}"
+```
+
+Primary model handles query and rule authoring: rule generation, Sigma/query rewrite, and fixing broken rules. `test_gen_model` or secondary provider handles reasoning and language tasks: rule analysis, test cases, summaries, response guidance, field mapping, threat-model suggestions, ideal posture planning, and feedback triage.
+
+When self-hosted, no data leaves your network. CraftedSignal never sends rule data to external AI services unless you explicitly configure it. Production SaaS rejects private, loopback, link-local, and metadata-style AI provider URLs to prevent SSRF. See [Configuration](/docs/configuration/) for all AI settings.
 
 ---
 
