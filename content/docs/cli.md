@@ -272,7 +272,7 @@ Dry-run is the default. Add `--live` only in an approved lab or controlled targe
 
 ### library
 
-Manage detection rule library indexes.
+Manage signed library indexes. Local library sync uses a separate YAML document that distinguishes reusable templates from active rules.
 
 #### Generate index
 
@@ -318,6 +318,47 @@ csctl library index verify -pubkey signing.pub -input library.index.yaml
 csctl library index keygen -output signing
 # Creates: signing.key (private) and signing.pub (public)
 ```
+
+---
+
+#### Local library sync YAML
+
+Library import/export automation uses `library.yaml` with a top-level `version` and `items` list. Each item has a required `type` value so Git clearly separates reusable library templates from active detection rules:
+
+```yaml
+version: 1
+items:
+  - type: rule_template
+    id: suspicious-powershell
+    name: Suspicious PowerShell
+    query_type: kql
+    query: |
+      SecurityEvent
+      | where EventID == 4688
+    severity: high
+    tactics: [execution]
+    techniques: [T1059.001]
+
+  - type: hunt_template
+    id: lateral-movement-hunt
+    name: Lateral movement hunt
+    queries:
+      - title: Remote service creation
+        query_type: spl
+        query: |
+          index=wineventlog EventCode=7045
+
+  - type: guide
+    id: credential-access-response
+    name: Credential access response
+    body: |
+      ## Runbook
+      Review identity alerts and privilege changes.
+```
+
+Valid values are `rule_template`, `hunt_template`, and `guide`. `type: rule` and `type: detection` are not valid in library YAML; active production detections use the detection rule format below.
+
+Tokens used for library sync need `library:read` to export or read sync status, and `library:sync` to import or apply library YAML. Local library export only includes the company's local library content, not managed remote or cloud library sources.
 
 ---
 

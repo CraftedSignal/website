@@ -168,6 +168,91 @@ Returns field-level changes between incoming YAML and the current platform rule,
 
 ---
 
+## Library sync endpoints
+
+Library sync endpoints handle tenant-local library content for Git and automation. They export local company templates and guides only; managed remote or cloud library sources are not copied into the export.
+
+Tokens need:
+
+- `library:read` for export and sync status.
+- `library:sync` for import or apply.
+
+### Export local library
+
+```
+GET /api/v1/library/export
+GET /api/v1/library/export?format=json
+```
+
+The default response is YAML:
+
+```yaml
+version: 1
+items:
+  - type: rule_template
+    id: suspicious-powershell
+    name: Suspicious PowerShell
+    query_type: kql
+    query: |
+      SecurityEvent
+      | where EventID == 4688
+
+  - type: hunt_template
+    id: lateral-movement-hunt
+    name: Lateral movement hunt
+    queries:
+      - title: Remote service creation
+        query_type: spl
+        query: |
+          index=wineventlog EventCode=7045
+
+  - type: guide
+    id: credential-access-response
+    name: Credential access response
+    body: |
+      ## Runbook
+      Review identity alerts and privilege changes.
+```
+
+Valid item `type` values are `rule_template`, `hunt_template`, and `guide`. `type: rule` and `type: detection` are intentionally rejected in library sync because active production detections use the detections sync endpoints.
+
+### Library sync status
+
+```
+GET /api/v1/library/sync-status
+```
+
+Returns each local library item with `type`, `id`, `name`, `hash`, `revision`, and `updated_at` for conflict detection.
+
+### Import or apply library items
+
+```
+POST /api/v1/library/import
+```
+
+```json
+{
+  "message": "Sync library from Git",
+  "atomic": true,
+  "items": [
+    {
+      "type": "rule_template",
+      "id": "suspicious-powershell",
+      "name": "Suspicious PowerShell",
+      "query_type": "kql",
+      "query": "SecurityEvent\n| where EventID == 4688\n",
+      "severity": "high",
+      "tactics": ["execution"],
+      "techniques": ["T1059.001"]
+    }
+  ]
+}
+```
+
+`atomic` defaults to `true`. The API rejects imports larger than 10 MiB or 5,000 items, and returns per-item results with created, updated, unchanged, and error counts.
+
+---
+
 ## Simulation endpoints
 
 Simulation tokens should include `simulations:read` and `simulations:write`.
