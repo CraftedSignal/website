@@ -231,6 +231,10 @@ csctl sync -token YOUR_TOKEN -resolve=local
 
 # Keep platform changes on conflict
 csctl sync -token YOUR_TOKEN -resolve=remote
+
+# Also sync local library templates and guides
+csctl sync -token YOUR_TOKEN -library
+csctl sync -token YOUR_TOKEN -library -library-file ./library.yaml
 ```
 
 | Flag | Default | Description |
@@ -245,10 +249,14 @@ csctl sync -token YOUR_TOKEN -resolve=remote
 | `-deploy` | `false` | Deploy after sync |
 | `-force-sync` | `false` | Continue despite validation or test failures |
 | `-force-deploy` | `false` | Deploy despite failures |
+| `-library` | `false` | Also sync local library YAML |
+| `-library-file` | `library.yaml` | Library YAML path used with `-library` |
 
 Exit codes: `0` = success, `1` = error, `2` = conflicts detected.
 
 Sync includes rule metadata, query, groups, tests, and response steps. If runbooks or playbooks change in Git or in the web UI, `csctl diff` and `csctl sync` show that change with the rule instead of treating it as a separate artifact.
+
+Library sync is opt-in on `csctl sync`; the default is `-library=false` so existing detection-only CI jobs do not need `library:read` or `library:sync` scopes. When `-library` is enabled and the library file exists, `csctl` applies that YAML to the platform. If the file does not exist, `csctl` exports the tenant-local library to that path.
 
 ---
 
@@ -272,7 +280,18 @@ Dry-run is the default. Add `--live` only in an approved lab or controlled targe
 
 ### library
 
-Manage signed library indexes. Local library sync uses a separate YAML document that distinguishes reusable templates from active rules.
+Manage local library sync and signed library indexes. Local library sync uses a separate YAML document that distinguishes reusable templates from active rules.
+
+#### Export or apply local library YAML
+
+```bash
+csctl library export -token YOUR_TOKEN -output library.yaml
+csctl library apply -token YOUR_TOKEN -input library.yaml -m "Sync library from Git"
+csctl library import -token YOUR_TOKEN library.yaml
+csctl library status -token YOUR_TOKEN
+```
+
+`import` is an alias for `apply`. Export and status require `library:read`; apply/import requires `library:sync`.
 
 #### Generate index
 
@@ -321,9 +340,9 @@ csctl library index keygen -output signing
 
 ---
 
-#### Local library sync YAML
+#### Library YAML schema
 
-Library import/export automation uses `library.yaml` with a top-level `version` and `items` list. Each item has a required `type` value so Git clearly separates reusable library templates from active detection rules:
+The library sync commands use `library.yaml` with a top-level `version` and `items` list. Each item has a required `type` value so Git clearly separates reusable library templates from active detection rules:
 
 ```yaml
 version: 1
@@ -358,7 +377,7 @@ items:
 
 Valid values are `rule_template`, `hunt_template`, and `guide`. `type: rule` and `type: detection` are not valid in library YAML; active production detections use the detection rule format below.
 
-Tokens used for library sync need `library:read` to export or read sync status, and `library:sync` to import or apply library YAML. Local library export only includes the company's local library content, not managed remote or cloud library sources.
+Local library export only includes the company's local library content, not managed remote or cloud library sources.
 
 ---
 

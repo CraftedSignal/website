@@ -37,6 +37,14 @@ Each entry can carry:
 
 Local company library content can be exported to Git and imported back from YAML. The sync schema uses `type` to distinguish reusable templates from active rules:
 
+```bash
+csctl library export -output library.yaml
+csctl library apply -input library.yaml -m "Sync library from Git"
+csctl sync -library -library-file library.yaml
+```
+
+Library sync is opt-in on `csctl sync`; the default is `-library=false` so existing detection-only CI jobs do not need extra library scopes.
+
 ```yaml
 version: 1
 items:
