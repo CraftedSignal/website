@@ -1,0 +1,4 @@
+Contact: hello@craftedsignal.io
+Expires: 2030-10-05T20:51
+Policy: https://craftedsignal.io/terms/
+Preferred-Languages: en
