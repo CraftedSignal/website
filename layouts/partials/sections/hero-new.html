@@ -66,13 +66,14 @@
     const el = document.getElementById('hero-rotator');
     if (!el) return;
 
-    const phrases = [
-      {{ i18n "heroNewTitle" | default "Supercharge your SOC." | jsonify }},
-      {{ i18n "heroNewTitle2" | default "Unsock your SOC" | jsonify }},
-      {{ i18n "heroNewTitle3" | default "Stop drowning in alerts" | jsonify }},
-      {{ i18n "heroNewTitle4" | default "Finally real threat coverage" | jsonify }},
-      {{ i18n "heroNewTitle5" | default "A SOC efficiency platform" | jsonify }}
-    ];
+    {{ $phrases := slice
+      (i18n "heroNewTitle" | default "Supercharge your SOC.")
+      (i18n "heroNewTitle2" | default "Unsock your SOC")
+      (i18n "heroNewTitle3" | default "Stop drowning in alerts")
+      (i18n "heroNewTitle4" | default "Finally real threat coverage")
+      (i18n "heroNewTitle5" | default "A SOC efficiency platform")
+    }}
+    const phrases = {{ $phrases | jsonify }};
 
     let index = 0;
     let charIndex = 0;
