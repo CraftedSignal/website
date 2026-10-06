@@ -51,6 +51,7 @@
         <div class="space-y-3">
           <h4 class="text-xs font-semibold uppercase tracking-[0.14em] text-text">Company</h4>
           <nav class="flex flex-col gap-2 text-sm text-muted">
+            <a href="/about/" class="hover:text-text transition">About</a>
             <a href="mailto:{{ .Site.Params.email }}" class="hover:text-text transition">Contact</a>
             {{ with .Site.Params.githubURL }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="hover:text-text transition">GitHub</a>{{ end }}
             <a href="/docs/security/" class="hover:text-text transition">Security</a>
