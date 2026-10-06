@@ -54,6 +54,18 @@ other = "SOC Control Plane"
 [heroNewTitle]
 other = "Supercharge your SOC."
 
+[heroNewTitle2]
+other = "Unsock your SOC"
+
+[heroNewTitle3]
+other = "Stop drowning in alerts"
+
+[heroNewTitle4]
+other = "Finally real threat coverage"
+
+[heroNewTitle5]
+other = "A SOC efficiency platform"
+
 [heroNewDescription]
 other = "Bring threats, findings, quality, telemetry gaps, and detection coverage into one risk-scored Backlog, so analysts, engineers, and managers know what matters and what to do next. Meanwhile, retain a live risk view at all times."
 

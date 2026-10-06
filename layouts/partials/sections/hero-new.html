@@ -5,7 +5,7 @@
     </p>
 
     <h1 class="font-display text-4xl md:text-5xl xl:text-6xl font-semibold leading-tight lg:whitespace-nowrap">
-      {{ i18n "heroNewTitle" | default "Supercharge your SOC." }}
+      <span id="hero-rotator" aria-live="polite">{{ i18n "heroNewTitle" | default "Supercharge your SOC." }}</span><span class="animate-pulse" aria-hidden="true">|</span>
     </h1>
 
     <p class="text-xl text-muted max-w-3xl mx-auto">
@@ -57,5 +57,53 @@
     window.addEventListener('scroll', function() {
       if (window.scrollY > 100) showSelector();
     }, { passive: true });
+  })();
+
+  // Rotating hero title — typewriter effect
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const el = document.getElementById('hero-rotator');
+    if (!el) return;
+
+    const phrases = [
+      {{ i18n "heroNewTitle" | default "Supercharge your SOC." | jsonify }},
+      {{ i18n "heroNewTitle2" | default "Unsock your SOC" | jsonify }},
+      {{ i18n "heroNewTitle3" | default "Stop drowning in alerts" | jsonify }},
+      {{ i18n "heroNewTitle4" | default "Finally real threat coverage" | jsonify }},
+      {{ i18n "heroNewTitle5" | default "A SOC efficiency platform" | jsonify }}
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeSpeed = 55;
+    const deleteSpeed = 30;
+    const pauseAfterType = 2500;
+
+    function tick() {
+      const current = phrases[index];
+      if (isDeleting) {
+        charIndex--;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex === 0) {
+          isDeleting = false;
+          index = (index + 1) % phrases.length;
+        }
+        setTimeout(tick, deleteSpeed);
+      } else {
+        charIndex++;
+        el.textContent = current.substring(0, charIndex);
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(tick, pauseAfterType);
+        } else {
+          setTimeout(tick, typeSpeed);
+        }
+      }
+    }
+
+    // Start after initial static text has been readable briefly
+    setTimeout(tick, 1500);
   })();
 </script>
