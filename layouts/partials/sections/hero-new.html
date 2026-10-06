@@ -81,11 +81,11 @@
       (i18n "heroNewTitle14" | default "The control plane for detection work.")
       (i18n "heroNewTitle15" | default "Runtime risk, managed.")
     }}
-    const phrases = {{ $phrases | jsonify }};
+    const phrases = {{ $phrases | jsonify | safeJS }};
 
     let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    let charIndex = phrases[0].length;
+    let isDeleting = true;
     const typeSpeed = 55;
     const deleteSpeed = 30;
     const pauseAfterType = 2500;
@@ -98,12 +98,14 @@
         if (charIndex === 0) {
           isDeleting = false;
           index = (index + 1) % phrases.length;
+          setTimeout(tick, typeSpeed);
+        } else {
+          setTimeout(tick, deleteSpeed);
         }
-        setTimeout(tick, deleteSpeed);
       } else {
         charIndex++;
-        el.textContent = current.substring(0, charIndex);
-        if (charIndex === current.length) {
+        el.textContent = phrases[index].substring(0, charIndex);
+        if (charIndex === phrases[index].length) {
           isDeleting = true;
           setTimeout(tick, pauseAfterType);
         } else {
@@ -112,7 +114,7 @@
       }
     }
 
-    // Start after initial static text has been readable briefly
-    setTimeout(tick, 1500);
+    // Hold the initial static text, then start the rotation
+    setTimeout(tick, pauseAfterType);
   })();
 </script>
