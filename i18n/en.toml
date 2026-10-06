@@ -66,6 +66,36 @@ other = "Finally real threat coverage"
 [heroNewTitle5]
 other = "A SOC efficiency platform"
 
+[heroNewTitle6]
+other = "Escape alert fatigue."
+
+[heroNewTitle7]
+other = "Too many tools, too little signal."
+
+[heroNewTitle8]
+other = "Stop guessing what to detect first."
+
+[heroNewTitle9]
+other = "From threat to action."
+
+[heroNewTitle10]
+other = "Run a SOC that scales."
+
+[heroNewTitle11]
+other = "For detection engineers who ship."
+
+[heroNewTitle12]
+other = "For SOC leads who need the full picture."
+
+[heroNewTitle13]
+other = "For CISOs who need proof, not promises."
+
+[heroNewTitle14]
+other = "The control plane for detection work."
+
+[heroNewTitle15]
+other = "Runtime risk, managed."
+
 [heroNewDescription]
 other = "Bring threats, findings, quality, telemetry gaps, and detection coverage into one risk-scored Backlog, so analysts, engineers, and managers know what matters and what to do next. Meanwhile, retain a live risk view at all times."
 

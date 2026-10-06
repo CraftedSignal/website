@@ -68,10 +68,18 @@
 
     {{ $phrases := slice
       (i18n "heroNewTitle" | default "Supercharge your SOC.")
-      (i18n "heroNewTitle2" | default "Unsock your SOC")
       (i18n "heroNewTitle3" | default "Stop drowning in alerts")
-      (i18n "heroNewTitle4" | default "Finally real threat coverage")
+      (i18n "heroNewTitle6" | default "Escape alert fatigue.")
+      (i18n "heroNewTitle7" | default "Too many tools, too little signal.")
+      (i18n "heroNewTitle8" | default "Stop guessing what to detect first.")
+      (i18n "heroNewTitle9" | default "From threat to action.")
+      (i18n "heroNewTitle10" | default "Run a SOC that scales.")
+      (i18n "heroNewTitle11" | default "For detection engineers who ship.")
+      (i18n "heroNewTitle12" | default "For SOC leads who need the full picture.")
+      (i18n "heroNewTitle13" | default "For CISOs who need proof, not promises.")
       (i18n "heroNewTitle5" | default "A SOC efficiency platform")
+      (i18n "heroNewTitle14" | default "The control plane for detection work.")
+      (i18n "heroNewTitle15" | default "Runtime risk, managed.")
     }}
     const phrases = {{ $phrases | jsonify }};
 
