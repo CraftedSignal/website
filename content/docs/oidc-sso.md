@@ -20,7 +20,7 @@ You need:
 - The public HTTPS URL users use to reach CraftedSignal.
 - The email domain or domains that should use this SSO configuration.
 
-For self-hosted deployments, set `http.public_url` to the browser-visible HTTPS origin. CraftedSignal builds the OIDC callback URL from this value.
+The examples below use `craftedsignal.io`. For self-hosted or on-prem deployments, replace `craftedsignal.io` with the browser-visible host configured in `http.public_url`. CraftedSignal builds the OIDC callback URL from this value.
 
 ```yaml
 http:
@@ -35,8 +35,8 @@ Configure the identity provider with these CraftedSignal values:
 
 | Value | Use |
 |-------|-----|
-| Callback URL | `https://<craftedsignal-host>/auth/oidc/callback`. Add this as a web redirect URI in the provider. |
-| IdP-initiated SSO URL | `https://<craftedsignal-host>/auth/oidc/launch/<launch-id>`. Optional. Use this for an IdP portal tile or app dashboard link. |
+| Callback URL | `https://craftedsignal.io/auth/oidc/callback`. Add this as a web redirect URI in the provider. For on-prem, use your own public host. |
+| IdP-initiated SSO URL | `https://craftedsignal.io/auth/oidc/launch/<launch-id>`. Optional. Use this for an IdP portal tile or app dashboard link. For on-prem, use your own public host. |
 | Scopes | `openid email profile`. |
 
 The callback URL and IdP-initiated SSO URL are shown in **Settings > Single Sign-On (SSO)** after SSO settings load.
@@ -68,7 +68,7 @@ Use a custom app registration for Microsoft Entra ID. This follows Microsoft's [
 5. Under **Redirect URI**, choose **Web** and enter:
 
 ```text
-https://<craftedsignal-host>/auth/oidc/callback
+https://craftedsignal.io/auth/oidc/callback
 ```
 
 6. Select **Register**.
@@ -135,7 +135,7 @@ For a Microsoft Entra portal tile, use the IdP-initiated SSO URL from CraftedSig
 | Symptom | Check |
 |---------|-------|
 | `OIDC discovery failed` | Issuer URL is reachable over HTTPS and points to the tenant-specific OIDC issuer. For Entra, use the `/v2.0` issuer. |
-| `redirect_uri` mismatch | The provider redirect URI exactly matches `https://<craftedsignal-host>/auth/oidc/callback`, including scheme, host, and path. |
+| `redirect_uri` mismatch | The provider redirect URI exactly matches `https://craftedsignal.io/auth/oidc/callback`, including scheme, host, and path. For on-prem, compare against your own public host instead. |
 | `OIDC not configured this email domain` | The user's email domain is listed in CraftedSignal without `@`, and SSO is enabled for the organization. |
 | User cannot sign in after secret rotation | Update the client secret in CraftedSignal with the new secret value. |
 | Email missing from token | Add or release an `email` claim in the provider, or verify the user's mail attribute is populated. |
