@@ -1,0 +1,143 @@
+---
+title: "OIDC SSO"
+description: "Configure OpenID Connect single sign-on for CraftedSignal, including Microsoft Entra ID setup, callback URLs, scopes, auto-provisioning, and SSO enforcement."
+weight: 9
+section: "Administration"
+---
+
+## Overview
+
+CraftedSignal supports OpenID Connect (OIDC) single sign-on for organization login. Admins configure SSO in the CraftedSignal web UI, then register CraftedSignal as a confidential web application in the identity provider.
+
+Users can start SSO from the CraftedSignal login page by entering an email address. CraftedSignal matches the email domain to the configured organization and redirects the user to the provider. CraftedSignal also exposes an IdP-initiated SSO URL for provider app tiles.
+
+## Before you start
+
+You need:
+
+- Admin access in CraftedSignal.
+- Application administrator access in your identity provider.
+- The public HTTPS URL users use to reach CraftedSignal.
+- The email domain or domains that should use this SSO configuration.
+
+For self-hosted deployments, set `http.public_url` to the browser-visible HTTPS origin. CraftedSignal builds the OIDC callback URL from this value.
+
+```yaml
+http:
+  public_url: "https://craftedsignal.example.com"
+```
+
+If you explicitly configure `http.trusted_origins`, include the same public origin so OIDC callbacks and authenticated form submissions pass origin checks.
+
+## Provider values
+
+Configure the identity provider with these CraftedSignal values:
+
+| Value | Use |
+|-------|-----|
+| Callback URL | `https://<craftedsignal-host>/auth/oidc/callback`. Add this as a web redirect URI in the provider. |
+| IdP-initiated SSO URL | `https://<craftedsignal-host>/auth/oidc/launch/<launch-id>`. Optional. Use this for an IdP portal tile or app dashboard link. |
+| Scopes | `openid email profile`. |
+
+The callback URL and IdP-initiated SSO URL are shown in **Settings > Single Sign-On (SSO)** after SSO settings load.
+
+## Generic OIDC setup
+
+1. Create a new OIDC web application in your identity provider.
+2. Add the CraftedSignal callback URL as a web redirect URI.
+3. Use the Authorization Code flow. Do not enable implicit grant for new applications.
+4. Allow the `openid`, `email`, and `profile` scopes.
+5. Create a client secret for the application.
+6. Copy the provider issuer URL, client ID, and client secret into CraftedSignal.
+7. Save the SSO settings and run the SSO test.
+8. Enable auto-provisioning only if new SSO users should be created automatically.
+9. Enforce SSO only after an admin has completed a successful SSO login.
+
+CraftedSignal stores the client secret encrypted. If the secret expires or is rotated in the provider, update the CraftedSignal SSO settings before the old secret stops working.
+
+## Microsoft Entra ID
+
+Use a custom app registration for Microsoft Entra ID. This follows Microsoft's [OIDC SSO setup flow for custom non-gallery applications](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-oidc-sso#configure-oidc-sso-for-custom-non-gallery-applications).
+
+### 1. Register the application
+
+1. Open the Microsoft Entra admin center.
+2. Go to **Entra ID > App registrations > New registration**.
+3. Name the application, for example `CraftedSignal`.
+4. For most organizations, select **Accounts in this organizational directory only**.
+5. Under **Redirect URI**, choose **Web** and enter:
+
+```text
+https://<craftedsignal-host>/auth/oidc/callback
+```
+
+6. Select **Register**.
+
+### 2. Create a client secret
+
+1. In the app registration, go to **Certificates & secrets**.
+2. Select **New client secret**.
+3. Choose an expiration period that matches your rotation policy.
+4. Copy the secret value immediately. Entra does not show the value again.
+
+Use the secret value in CraftedSignal, not the secret ID.
+
+### 3. Check permissions
+
+In **API permissions**, make sure the application can request the basic OIDC delegated scopes:
+
+- `openid`
+- `email`
+- `profile`
+
+Grant admin consent if your tenant policy requires it.
+
+If user email is not present in ID tokens, add an optional `email` claim under **Token configuration** or confirm that your users have a populated mail/user principal value that Entra releases to the application.
+
+### 4. Copy values into CraftedSignal
+
+In CraftedSignal, open **Settings > Single Sign-On (SSO)** and set:
+
+| CraftedSignal field | Microsoft Entra value |
+|---------------------|-----------------------|
+| Issuer URL | `https://login.microsoftonline.com/<tenant-id>/v2.0` |
+| Client ID | **Application (client) ID** from the app registration overview. |
+| Client Secret | Client secret value from **Certificates & secrets**. |
+| Scopes | `openid email profile` |
+| Email domains | Your login domains, for example `example.com` or `example.com, example.org`. Do not include `@`. |
+
+The Entra OIDC metadata document for a tenant is:
+
+```text
+https://login.microsoftonline.com/<tenant-id>/v2.0/.well-known/openid_configuration
+```
+
+### 5. Assign users
+
+If assignment is required for the enterprise application, go to **Enterprise applications**, open the CraftedSignal application, and assign the users or groups that should be able to sign in.
+
+For a Microsoft Entra portal tile, use the IdP-initiated SSO URL from CraftedSignal as the application home or launch URL.
+
+## CraftedSignal settings
+
+| Setting | Guidance |
+|---------|----------|
+| Issuer URL | The OIDC issuer or authority URL. For Entra, use the tenant-specific `https://login.microsoftonline.com/<tenant-id>/v2.0` value. |
+| Client ID | The OIDC application client ID. |
+| Client Secret | The confidential client secret. Leave blank on later edits unless rotating the secret. |
+| Email domains | Comma-separated domains used to route login attempts to this organization. Domains must be unique across organizations. |
+| Enforce SSO | Blocks password login for matching SSO users. Enable only after a successful test login. |
+| Auto-provision | Creates new users on first SSO login. |
+| Default role | Role assigned to auto-provisioned users. Use `Viewer` unless new users should immediately create or edit detection content. |
+
+## Troubleshooting
+
+| Symptom | Check |
+|---------|-------|
+| `OIDC discovery failed` | Issuer URL is reachable over HTTPS and points to the tenant-specific OIDC issuer. For Entra, use the `/v2.0` issuer. |
+| `redirect_uri` mismatch | The provider redirect URI exactly matches `https://<craftedsignal-host>/auth/oidc/callback`, including scheme, host, and path. |
+| `OIDC not configured this email domain` | The user's email domain is listed in CraftedSignal without `@`, and SSO is enabled for the organization. |
+| User cannot sign in after secret rotation | Update the client secret in CraftedSignal with the new secret value. |
+| Email missing from token | Add or release an `email` claim in the provider, or verify the user's mail attribute is populated. |
+
+Keep at least one tested admin access path while rolling out SSO enforcement.

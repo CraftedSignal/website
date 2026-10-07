@@ -80,11 +80,11 @@ New users are assigned the **User** role by default. Admins can change roles at 
 
 CraftedSignal supports:
 
-- **SSO**: OIDC providers (Okta, Azure AD, Google Workspace, etc.)
+- **SSO**: OIDC providers (Okta, Microsoft Entra ID, Google Workspace, etc.)
 - **Passkey MFA**: WebAuthn/FIDO2 passkeys for passwordless authentication
 - **IdP-managed MFA**: Enforce MFA through your identity provider
 
-Configure SSO in **Settings > Authentication** in the web UI.
+Configure SSO in **Settings > Single Sign-On (SSO)**. See [OIDC SSO](/docs/oidc-sso/) for provider setup, Microsoft Entra ID values, auto-provisioning, and enforcement guidance.
 
 ---
 
