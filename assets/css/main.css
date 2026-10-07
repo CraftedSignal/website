@@ -83,6 +83,42 @@ body {
   color: #e4eaf5;
 }
 
+.prose :where(h2[id], h3[id], h4[id], h5[id], h6[id]) {
+  position: relative;
+  scroll-margin-top: 6.5rem;
+}
+
+.prose :where(h2, h3, h4, h5, h6) .heading-anchor {
+  float: left;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  margin-left: -1.35rem;
+  margin-right: 0.35rem;
+  color: #3d8ed4;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7em;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  text-decoration: none;
+  transform: translateY(0.3em);
+  transition: color 150ms ease, opacity 150ms ease;
+}
+
+.prose :where(h2, h3, h4, h5, h6):hover .heading-anchor,
+.prose :where(h2, h3, h4, h5, h6) .heading-anchor:focus-visible,
+.prose :where(h2, h3, h4, h5, h6) .heading-anchor[data-copied="true"] {
+  opacity: 1;
+}
+
+.prose :where(h2, h3, h4, h5, h6) .heading-anchor:hover,
+.prose :where(h2, h3, h4, h5, h6) .heading-anchor:focus-visible {
+  color: #7ed0c0;
+  text-decoration: none;
+}
+
 /* Styled scrollbars — thin, dark, matching panel theme */
 * {
   scrollbar-width: thin;

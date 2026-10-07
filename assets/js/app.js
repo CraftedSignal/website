@@ -4,6 +4,50 @@ import yaml from 'highlight.js/lib/languages/yaml';
 hljs.registerLanguage('yaml', yaml);
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Documentation heading links
+  (function () {
+    const links = Array.from(document.querySelectorAll('[data-copy-heading-link]'));
+    if (links.length === 0) return;
+
+    const copyText = async (value) => {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(value);
+        return;
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = value;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    };
+
+    links.forEach((link) => {
+      link.addEventListener('click', async (event) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        event.preventDefault();
+        const url = new URL(href, window.location.href);
+
+        try {
+          await copyText(url.toString());
+          window.history.replaceState(null, '', url);
+          link.dataset.copied = 'true';
+          window.setTimeout(() => {
+            delete link.dataset.copied;
+          }, 1200);
+        } catch (err) {
+          window.location.hash = url.hash;
+        }
+      });
+    });
+  })();
+
   // Rules workspace interactions
   (function () {
     const rules = {

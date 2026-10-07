@@ -1,0 +1,6 @@
+<h{{ .Level }} id="{{ .Anchor | safeHTMLAttr }}">
+  {{- if eq .Page.Section "docs" -}}
+    <a class="heading-anchor" href="#{{ .Anchor | safeURL }}" aria-label="Copy link to {{ .PlainText }}" data-copy-heading-link>#</a>
+  {{- end -}}
+  {{- .Text | safeHTML -}}
+</h{{ .Level }}>
