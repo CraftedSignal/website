@@ -84,7 +84,7 @@ CraftedSignal supports:
 - **Passkey MFA**: WebAuthn/FIDO2 passkeys for passwordless authentication
 - **IdP-managed MFA**: Enforce MFA through your identity provider
 
-Configure SSO in **Settings > Single Sign-On (SSO)**. See [OIDC SSO](/docs/oidc-sso/) for provider setup, Microsoft Entra ID values, auto-provisioning, and enforcement guidance.
+Configure SSO in **Settings > Single Sign-On (SSO)**. See [Single-Sign On (SSO)](/docs/oidc-sso/) for provider setup, Microsoft Entra ID values, auto-provisioning, and enforcement guidance.
 
 ---
 

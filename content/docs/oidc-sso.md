@@ -1,5 +1,5 @@
 ---
-title: "OIDC SSO"
+title: "Single-Sign On (SSO)"
 description: "Configure OpenID Connect single sign-on for CraftedSignal, including Microsoft Entra ID setup, callback URLs, scopes, auto-provisioning, and SSO enforcement."
 weight: 9
 section: "Administration"

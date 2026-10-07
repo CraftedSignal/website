@@ -113,7 +113,7 @@ Audit logs are tamper-evident and can be exported to your SIEM or GRC system fro
 
 ## Identity & access
 
-- **SSO**: OIDC providers (Okta, Microsoft Entra ID, Google Workspace, etc.). See [OIDC SSO](/docs/oidc-sso/) for setup steps.
+- **SSO**: OIDC providers (Okta, Microsoft Entra ID, Google Workspace, etc.). See [Single-Sign On (SSO)](/docs/oidc-sso/) for setup steps.
 - **MFA**: Passkeys (WebAuthn/FIDO2) or IdP-managed MFA
 - **RBAC**: Admin, User, Viewer roles with separation of duties
 
