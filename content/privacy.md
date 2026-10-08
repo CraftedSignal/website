@@ -93,12 +93,7 @@ The CraftedSignal website uses only essential cookies for session management. We
 
 ## 10. Third-party services
 
-We use a minimal set of third-party services:
-
-| Service | Purpose | Data shared |
-|---------|---------|-------------|
-| Payment provider | Billing | Payment information |
-| Email provider | Transactional email | Email address |
+We use a limited set of third-party processors and subprocessors to operate the hosted service, website, security operations, notifications, and internal support workflows. The current public list is available at [Subprocessors](/subprocessors/).
 
 We do not sell or share your data with third parties for marketing purposes.
 
