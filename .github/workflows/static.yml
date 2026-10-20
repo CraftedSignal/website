@@ -23,8 +23,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          fetch-depth: 0
 
       - name: Generate version
         id: version
@@ -56,7 +54,9 @@ jobs:
         with:
           name: website-${{ steps.version.outputs.version }}
           path: 'public'
-          retention-days: 30
+          # This artifact only bridges the build and release jobs. The
+          # published GitHub Release is the durable copy.
+          retention-days: 1
 
       - name: Setup Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
@@ -81,9 +81,6 @@ jobs:
     needs: [build, deploy]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-
       - name: Download artifact
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
