@@ -60,6 +60,10 @@ Visit http://localhost:1313 to see the site.
 | `make fonts` | Copy fonts from node_modules |
 | `make setup` | Full setup (install + fonts) |
 
+After `make build`, run `python3 -m unittest discover -s tests -v` to check
+published routes, local assets, page metadata, sitemap entries, and crawler
+discovery. The deployment workflow runs these checks before publishing Pages.
+
 ## Internationalization (i18n)
 
 The site is prepared for internationalization. All user-facing strings are extracted to translation files.
